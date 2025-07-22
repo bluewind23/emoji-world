@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .output { font-size: 18px; font-weight: bold; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Font Transformation Test</h1>
+    
+    <div class="test">
+        <label>Input: Hello123</label>
+        <div id="bold" class="output">Loading...</div>
+        <div id="italic" class="output">Loading...</div>
+        <div id="boldItalic" class="output">Loading...</div>
+        <div id="script" class="output">Loading...</div>
+        <div id="boldScript" class="output">Loading...</div>
+        <div id="doubleStruck" class="output">Loading...</div>
+        <div id="monospace" class="output">Loading...</div>
+        <div id="smallCaps" class="output">Loading...</div>
+        <div id="flipped" class="output">Loading...</div>
+        <div id="mirror" class="output">Loading...</div>
+    </div>
+    
+    <script>
+        // Font transformation functions
+        function toBold(text) {
+            return text.replace(/[A-Za-z0-9]/g, char => {
+                const code = char.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D400); // A-Z bold
+                if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D41A); // a-z bold
+                if (code >= 48 && code <= 57) return String.fromCharCode(code - 48 + 0x1D7CE); // 0-9 bold
+                return char;
+            });
+        }
+
+        function toItalic(text) {
+            return text.replace(/[A-Za-z]/g, char => {
+                const code = char.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D434); // A-Z italic
+                if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D44E); // a-z italic
+                return char;
+            });
+        }
+
+        function toBoldItalic(text) {
+            return text.replace(/[A-Za-z]/g, char => {
+                const code = char.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D468); // A-Z bold italic
+                if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D482); // a-z bold italic
+                return char;
+            });
+        }
+
+        function toScript(text) {
+            return text.replace(/[A-Za-z]/g, char => {
+                const code = char.charCodeAt(0);
+                const scriptMap = {
+                    'B': '𝓑', 'E': '𝓔', 'F': '𝓕', 'H': '𝓗', 'I': '𝓘', 'L': '𝓛', 'M': '𝓜', 'R': '𝓡',
+                    'e': '𝑒', 'g': '𝑔', 'o': '𝑜'
+                };
+                if (scriptMap[char]) return scriptMap[char];
+                if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D49C); // A-Z script
+                if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D4B6); // a-z script
+                return char;
+            });
+        }
+
+        function toBoldScript(text) {
+            return text.replace(/[A-Za-z]/g, char => {
+                const code = char.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D4D0); // A-Z bold script
+                if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D4EA); // a-z bold script
+                return char;
+            });
+        }
+
+        function toDoubleStruck(text) {
+            return text.replace(/[A-Za-z0-9]/g, char => {
+                const code = char.charCodeAt(0);
+                const doubleStruckMap = {
+                    'C': 'ℂ', 'H': 'ℍ', 'N': 'ℕ', 'P': 'ℙ', 'Q': 'ℚ', 'R': 'ℝ', 'Z': 'ℤ'
+                };
+                if (doubleStruckMap[char]) return doubleStruckMap[char];
+                if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D538); // A-Z double-struck
+                if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D552); // a-z double-struck
+                if (code >= 48 && code <= 57) return String.fromCharCode(code - 48 + 0x1D7D8); // 0-9 double-struck
+                return char;
+            });
+        }
+
+        function toMonospace(text) {
+            return text.replace(/[A-Za-z0-9]/g, char => {
+                const code = char.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D670); // A-Z monospace
+                if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D68A); // a-z monospace
+                if (code >= 48 && code <= 57) return String.fromCharCode(code - 48 + 0x1D7F6); // 0-9 monospace
+                return char;
+            });
+        }
+
+        function toSmallCaps(text) {
+            return text.toLowerCase().replace(/[a-z]/g, char => {
+                const smallCaps = {
+                    'a': 'ᴀ', 'b': 'ʙ', 'c': 'ᴄ', 'd': 'ᴅ', 'e': 'ᴇ', 'f': 'ꜰ', 'g': 'ɢ', 'h': 'ʜ',
+                    'i': 'ɪ', 'j': 'ᴊ', 'k': 'ᴋ', 'l': 'ʟ', 'm': 'ᴍ', 'n': 'ɴ', 'o': 'ᴏ', 'p': 'ᴘ',
+                    'q': 'ǫ', 'r': 'ʀ', 's': 's', 't': 'ᴛ', 'u': 'ᴜ', 'v': 'ᴠ', 'w': 'ᴡ', 'x': 'x',
+                    'y': 'ʏ', 'z': 'ᴢ'
+                };
+                return smallCaps[char] || char;
+            });
+        }
+
+        function toFlipped(text) {
+            const flipped = {
+                'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ',
+                'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u', 'o': 'o', 'p': 'd',
+                'q': 'b', 'r': 'ɹ', 's': 's', 't': 'ʇ', 'u': 'n', 'v': 'ʌ', 'w': 'ʍ', 'x': 'x',
+                'y': 'ʎ', 'z': 'z', ' ': ' '
+            };
+            return text.toLowerCase().split('').reverse().map(char => flipped[char] || char).join('');
+        }
+
+        function toMirror(text) {
+            return text.split('').reverse().join('');
+        }
+
+        // Test all transformations
+        const testText = "Hello123";
+        document.getElementById('bold').textContent = `Bold: ${toBold(testText)}`;
+        document.getElementById('italic').textContent = `Italic: ${toItalic(testText)}`;
+        document.getElementById('boldItalic').textContent = `Bold Italic: ${toBoldItalic(testText)}`;
+        document.getElementById('script').textContent = `Script: ${toScript(testText)}`;
+        document.getElementById('boldScript').textContent = `Bold Script: ${toBoldScript(testText)}`;
+        document.getElementById('doubleStruck').textContent = `Double Struck: ${toDoubleStruck(testText)}`;
+        document.getElementById('monospace').textContent = `Monospace: ${toMonospace(testText)}`;
+        document.getElementById('smallCaps').textContent = `Small Caps: ${toSmallCaps(testText)}`;
+        document.getElementById('flipped').textContent = `Flipped: ${toFlipped(testText)}`;
+        document.getElementById('mirror').textContent = `Mirror: ${toMirror(testText)}`;
+    </script>
+</body>
+</html>

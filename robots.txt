@@ -1,0 +1,40 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /js/
+Allow: /styles/
+Allow: /data/
+Allow: /images/
+
+# Sitemap
+Sitemap: https://emoji-world.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block unnecessary crawling of development files
+Disallow: /*.log
+Disallow: /*.tmp
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /test/
+Disallow: /tests/
+
+# Allow common emoji search patterns
+Allow: /*emoji*
+Allow: /*font*
+Allow: /*instagram*

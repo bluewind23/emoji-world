@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(python3:*)",
+      "Bash(node:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(open index.html)",
+      "Bash(open:*)",
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "Bash(s/\"/\"\"/g\" src/data/emojiDataExtended.js)",
+      "WebFetch(domain:kr.piliapp.com)",
+      "Bash(npm start:*)",
+      "Bash(kill:*)",
+      "Bash(touch:*)",
+      "WebFetch(domain:snskeyboard.com)",
+      "WebFetch(domain:igfonts.io)"
+    ],
+    "deny": []
+  }
+}
