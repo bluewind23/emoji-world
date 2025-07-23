@@ -37,6 +37,64 @@ const allEmojis = Object.values(emojiCategories).flat();
 
 // --- 데이터 불러오기 끝 ---
 
+// 스킨톤 유니코드 맵 정의
+const SKIN_TONES = {
+  default: '',
+  '🏻': '\u{1F3FB}', // Light Skin Tone
+  '🏼': '\u{1F3FC}', // Medium-Light Skin Tone  
+  '🏽': '\u{1F3FD}', // Medium Skin Tone
+  '🏾': '\u{1F3FE}', // Medium-Dark Skin Tone
+  '🏿': '\u{1F3FF}'  // Dark Skin Tone
+};
+
+// 스킨톤 적용 가능한 이모지인지 확인하는 함수
+function isSkinToneSupported(emoji) {
+  // 기존 스킨톤 제거하여 기본 이모지만 추출
+  const cleanEmoji = emoji.replace(/[\u{1F3FB}-\u{1F3FF}]/gu, '');
+
+  // 스킨톤 적용 가능한 이모지 패턴들
+  const skinToneSupportedEmojis = [
+    // 손 제스처
+    '👋', '🤚', '🖐️', '✋', '🖖', '👌', '🤌', '🤏', '✌️', '🤞', '🤟', '🤘', '🤙', '👈', '👉', '👆', '🖕', '👇', '☝️', '👍', '👎', '👊', '✊', '🤛', '🤜', '👏', '🙌', '👐', '🤝', '🙏',
+    // 신체 부위
+    '👂', '👃', '🦵', '🦶', '💪', '🤳', '✍️',
+    // 사람 얼굴과 표현
+    '👶', '🧒', '👦', '👧', '🧑', '👱', '👨', '🧔', '👩', '🧓', '👴', '👵',
+    // 사람과 직업
+    '👮', '🕵️', '💂', '👷', '🤴', '👸', '👳', '👲', '🧕', '🤵', '👰', '🤰', '🤱', '👼', '🎅', '🤶', '🦸', '🦹', '🧙', '🧚', '🧛', '🧜', '🧝', '🧞', '🧟', '💆', '💇', '🚶', '🏃', '💃', '🕺', '🧖', '🧗', '🏇', '⛷️', '🏂', '🏌️', '🏄', '🚣', '🏊', '⛹️', '🏋️', '🚴', '🚵', '🤸', '🤼', '🤽', '🤾', '🤹', '🧘', '🛀', '🛌',
+    // 제스처와 표현 (추가)
+    '🤦', '🤷', '💁', '🙅', '🙆', '🙋', '🧏', '🙇', '🤢', '🤧', '🤲'
+  ];
+
+  return skinToneSupportedEmojis.includes(cleanEmoji);
+}
+
+// [수정된 코드 시작]
+// 스킨톤을 적용하는 함수
+function applySkinTone(emojiChar, skinToneKey) {
+    // 스킨톤 적용이 불가능한 이모지는 그대로 반환
+    if (!isSkinToneSupported(emojiChar)) {
+        return emojiChar;
+    }
+
+    // 1. 기존 스킨톤을 제거하여 기본 이모지만 추출
+    const cleanEmoji = emojiChar.replace(/[\u{1F3FB}-\u{1F3FF}]/gu, '');
+
+    // 2. 'default'나 빈 키가 오면 깨끗한 이모지만 반환 (노란색으로 복귀)
+    if (!skinToneKey || skinToneKey === '' || skinToneKey === 'default') {
+        return cleanEmoji;
+    }
+
+    // 3. 유효한 스킨톤 키가 오면 해당 유니코드를 찾아 조합
+    const skinToneUnicode = SKIN_TONES[skinToneKey];
+    if (!skinToneUnicode) {
+        return cleanEmoji; // 유효하지 않은 키면 기본 이모지 반환
+    }
+
+    // 4. 기본 이모지에 새 스킨톤 적용
+    return cleanEmoji + skinToneUnicode;
+}
+// [수정된 코드 끝]
 
 //  kelas EmojiApp 정의
 class EmojiApp {
@@ -54,8 +112,6 @@ class EmojiApp {
     this.currentLanguage = 'ko';
 
     this.currentModalEmoji = null;
-    this.currentEmojiForSkintone = null;
-    this.selectedSkintone = '';
 
     // 인스타 폰트 관련 - FontConverter 사용
     this.fontConverter = new FontConverter();
@@ -72,7 +128,7 @@ class EmojiApp {
     // 초기 폰트 설정
     this.updateFontOutput();
     this.updateFontStyleName();
-    
+
     // 최적 폰트 적용
     this.fontConverter.applyOptimalFont(this.elements.fontOutput);
 
@@ -105,8 +161,6 @@ class EmojiApp {
       toast: document.getElementById('toast'),
       noResults: document.getElementById('noResults'),
       loading: document.getElementById('loading'),
-      skintoneSelector: document.getElementById('skintoneSelector'),
-      skintoneClose: document.getElementById('skintoneClose'),
       subcategoryTags: document.getElementById('subcategoryTags'),
       subcategoryButtons: document.getElementById('subcategoryButtons'),
       // 언어 관련 요소들
@@ -119,7 +173,15 @@ class EmojiApp {
       fontOutput: document.getElementById('fontOutput'),
       fontPrev: document.getElementById('fontPrev'),
       fontNext: document.getElementById('fontNext'),
-      fontStyleName: document.getElementById('fontStyleName')
+      fontStyleName: document.getElementById('fontStyleName'),
+      // 연관 이모티콘 요소들
+      relatedEmojis: document.getElementById('relatedEmojis'),
+      relatedTitle: document.getElementById('relatedTitle'),
+      relatedTrack: document.getElementById('relatedTrack'),
+      sliderPrev: document.getElementById('sliderPrev'),
+      sliderNext: document.getElementById('sliderNext'),
+      // 스킨톤 팔레트 요소들
+      skintonePalette: document.getElementById('skintonePalette')
     };
   }
 
@@ -145,6 +207,14 @@ class EmojiApp {
     this.elements.fontNext.addEventListener('click', () => this.nextFontStyle());
     this.elements.fontOutput.addEventListener('click', () => this.copyFontText());
 
+    // 연관 이모티콘 슬라이드 이벤트
+    this.elements.sliderPrev.addEventListener('click', () => this.slideRelated(-1));
+    this.elements.sliderNext.addEventListener('click', () => this.slideRelated(1));
+
+    // 연관 이모티콘 슬라이드 초기화
+    this.currentSlideIndex = 0;
+    this.relatedEmojisData = [];
+
     this.elements.historyToggle.addEventListener('click', () => this.toggleHistoryPanel());
     this.elements.clearHistory.addEventListener('click', () => this.clearAllHistory());
 
@@ -160,29 +230,24 @@ class EmojiApp {
     this.elements.downloadSvg.addEventListener('click', () => this.downloadCurrentEmoji('svg'));
     this.elements.downloadPng.addEventListener('click', () => this.downloadCurrentEmoji('png'));
 
-    this.elements.skintoneClose.addEventListener('click', () => this.closeSkintoneSelector());
-
-    document.addEventListener('click', (e) => {
-      if (this.elements.skintoneSelector.classList.contains('show') && !e.target.closest('.skintone-selector') && !e.target.closest('.skintone-trigger')) {
-        this.closeSkintoneSelector();
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('skintone-option')) {
+    // 스킨톤 팔레트 클릭 이벤트
+    this.elements.skintonePalette.addEventListener('click', (e) => {
+      if (e.target.classList.contains('skintone-dot')) {
         const skintone = e.target.dataset.skintone;
-        this.applySkintone(skintone);
+        this.applyModalSkintone(skintone);
+
+        // 선택된 상태 표시
+        this.elements.skintonePalette.querySelectorAll('.skintone-dot').forEach(dot => {
+          dot.classList.remove('active');
+        });
+        e.target.classList.add('active');
       }
     });
+
 
     this.elements.emojiGrid.addEventListener('click', (e) => {
-      const skintoneBtn = e.target.closest('.skintone-trigger');
       const emojiItem = e.target.closest('.emoji-item');
-      if (skintoneBtn) {
-        e.stopPropagation();
-        const emojiData = JSON.parse(emojiItem.dataset.emoji);
-        this.showSkintoneSelector(emojiData, emojiItem);
-      } else if (emojiItem) {
+      if (emojiItem) {
         const emojiData = JSON.parse(emojiItem.dataset.emoji);
         this.handleEmojiClick(emojiData);
       }
@@ -193,17 +258,17 @@ class EmojiApp {
   setupRecommendations() {
     this.renderRecommended();
     this.renderPopular();
-    
+
     // 주기적으로 추천 이모지 업데이트 (30초마다)
     this.recommendedTimer = setInterval(() => {
       this.renderRecommended();
     }, 30000);
-    
+
     // 주기적으로 인기 이모지 업데이트 (45초마다)  
     this.popularTimer = setInterval(() => {
       this.renderPopular();
     }, 45000);
-    
+
     // 페이지 언로드시 타이머 정리
     window.addEventListener('beforeunload', () => {
       if (this.recommendedTimer) clearInterval(this.recommendedTimer);
@@ -228,24 +293,28 @@ class EmojiApp {
       // 활동들
       '⭐', '💖', '💕', '💗', '💘', '💝', '🎵', '🎶', '🎼', '🎤'
     ];
-    
+
     // 사용자 복사 기록을 바탕으로 개인화된 추천 추가
     const recentEmojis = this.copyHistory.slice(0, 5).map(item => item.emoji);
     const personalizedEmojis = recentEmojis.length > 0 ? recentEmojis : [];
-    
+
     // 개인화된 이모지와 추천 풀을 합쳐서 랜덤 선택
     const combinedPool = [...personalizedEmojis, ...recommendedPool.filter(emoji => !personalizedEmojis.includes(emoji))];
     const shuffled = combinedPool.sort(() => 0.5 - Math.random());
     const recommended = shuffled.slice(0, 15);
-    
+
     // 부드러운 업데이트 애니메이션
     this.elements.recommendedContent.classList.add('updating');
-    
+
     setTimeout(() => {
-      this.elements.recommendedContent.innerHTML = recommended.map(emoji => `<span class="rec-emoji" data-emoji="${emoji}">${emoji}</span>`).join('');
+      this.elements.recommendedContent.innerHTML = recommended.map(emoji => {
+        const emojiData = this.findEmojiData(emoji);
+        const isFlag = emojiData && emojiData.main_category === 'Flags';
+        return `<span class="rec-emoji${isFlag ? ' flag-emoji' : ''}" data-emoji="${emoji}">${emoji}</span>`;
+      }).join('');
       this.elements.recommendedContent.classList.remove('updating');
     }, 150);
-    
+
     // 클릭 이벤트는 한 번만 등록 (중복 방지)
     if (!this.elements.recommendedContent.hasAttribute('data-events-bound')) {
       this.elements.recommendedContent.setAttribute('data-events-bound', 'true');
@@ -275,11 +344,11 @@ class EmojiApp {
       // 기타 인기
       '✨', '🌟', '⭐', '🎯', '🎪', '🎭', '🎨', '🚀', '💎', '🔮'
     ];
-    
+
     // 시간대별로 다른 가중치 적용
     const hour = new Date().getHours();
     let weightedPool = [];
-    
+
     if (hour >= 6 && hour < 12) {
       // 아침 시간대 - 활기찬 이모지들
       weightedPool = ['😊', '☀️', '🌅', '☕', '🥰', '😍', '👍', '💪', '🎯', '🚀', '✨', '🌟', '😀', '😇', '🤗', '😌'];
@@ -293,20 +362,24 @@ class EmojiApp {
       // 밤 시간대 - 조용한 이모지들
       weightedPool = ['😴', '🌙', '⭐', '✨', '💫', '🌟', '😌', '💤', '🥱', '🌃', '🦉', '💜', '🖤', '🔮', '🌌', '💙'];
     }
-    
+
     // 가중치가 적용된 풀과 전체 풀을 섞어서 사용
     const combinedPool = [...weightedPool, ...popularPool.filter(emoji => !weightedPool.includes(emoji))];
     const shuffled = combinedPool.sort(() => 0.5 - Math.random());
     const popular = shuffled.slice(0, 16);
-    
+
     // 부드러운 업데이트 애니메이션
     this.elements.popularContent.classList.add('updating');
-    
+
     setTimeout(() => {
-      this.elements.popularContent.innerHTML = popular.map(emoji => `<span class="rec-emoji" data-emoji="${emoji}">${emoji}</span>`).join('');
+      this.elements.popularContent.innerHTML = popular.map(emoji => {
+        const emojiData = this.findEmojiData(emoji);
+        const isFlag = emojiData && emojiData.main_category === 'Flags';
+        return `<span class="rec-emoji${isFlag ? ' flag-emoji' : ''}" data-emoji="${emoji}">${emoji}</span>`;
+      }).join('');
       this.elements.popularContent.classList.remove('updating');
     }, 150);
-    
+
     // 클릭 이벤트는 한 번만 등록 (중복 방지)
     if (!this.elements.popularContent.hasAttribute('data-events-bound')) {
       this.elements.popularContent.setAttribute('data-events-bound', 'true');
@@ -327,22 +400,22 @@ class EmojiApp {
   // 언어 전환
   switchLanguage(lang) {
     this.currentLanguage = lang;
-    
+
     // 언어 버튼 활성화 상태 변경
     this.elements.languageBtns.forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
-    
+
     // UI 텍스트 업데이트
     this.updateUITexts();
-    
+
     // 폰트 스타일 이름 업데이트
     this.updateFontStyleName();
-    
+
     // 이모지 표시명 업데이트
     this.renderEmojis();
   }
-  
+
   // UI 텍스트 업데이트
   updateUITexts() {
     const texts = {
@@ -377,25 +450,25 @@ class EmojiApp {
         }
       }
     };
-    
+
     const currentTexts = texts[this.currentLanguage];
-    
+
     // 헤더 텍스트
     this.elements.logoText.textContent = currentTexts.logoText;
     this.elements.tagline.textContent = currentTexts.tagline;
     this.elements.searchInput.placeholder = currentTexts.searchPlaceholder;
-    
+
     // 추천 박스 타이틀들
     const recommendedTitle = document.querySelector('#recommendedBox .rec-title');
     const fontTitle = document.querySelector('#fontBox .rec-title');
     const popularTitle = document.querySelector('#popularBox .rec-title');
     const recentTitle = document.querySelector('.history-header h3');
-    
+
     if (recommendedTitle) recommendedTitle.textContent = currentTexts.recommendedTitle;
     if (fontTitle) fontTitle.textContent = currentTexts.fontTitle;
     if (popularTitle) popularTitle.textContent = currentTexts.popularTitle;
     if (recentTitle) recentTitle.textContent = currentTexts.recentCopyTitle;
-    
+
     // 카테고리 버튼 텍스트
     Object.entries(currentTexts.categories).forEach(([category, text]) => {
       const btn = document.querySelector(`[data-category="${category}"]`);
@@ -465,10 +538,10 @@ class EmojiApp {
 
   updateFontOutput() {
     const currentStyle = this.fontStyles[this.currentFontIndex];
-    
+
     // 문제가 있는 스타일들은 fallback 변환 사용
     const transformedText = this.fontConverter.convertWithFallback(this.inputText, currentStyle.key);
-    
+
     // HTML이 포함된 경우와 일반 텍스트 처리
     if (transformedText.includes('<span')) {
       this.elements.fontOutput.innerHTML = transformedText;
@@ -509,13 +582,16 @@ class EmojiApp {
 
     this.elements.emojiGrid.innerHTML = this.filteredEmojis.map(emoji => {
       // 언어에 따른 이름 선택
-      const displayName = this.currentLanguage === 'ko' ? 
-        (emoji.name_ko || emoji.name || '') : 
+      const displayName = this.currentLanguage === 'ko' ?
+        (emoji.name_ko || emoji.name || '') :
         (emoji.name_en || emoji.name || '');
-      
+
+      // 국기 이모지인 경우 추가 CSS 클래스
+      const isFlag = emoji.main_category === 'Flags';
+
       return `
           <div class="emoji-item" data-emoji='${JSON.stringify(emoji)}'>
-            <div class="emoji-char">${emoji.emoji}</div>
+            <div class="emoji-char${isFlag ? ' flag-emoji' : ''}">${emoji.emoji}</div>
             <div class="emoji-name">${displayName}</div>
             ${emoji.skintones ? '<button class="skintone-trigger" title="스킨톤 변경">🎨</button>' : ''}
           </div>
@@ -551,7 +627,7 @@ class EmojiApp {
       if (!searchMatch) return false;
 
       if (this.currentCategory === 'all') return true;
-      
+
       // 특수 카테고리 처리
       if (this.currentCategory === 'hands') {
         return emoji.sub_category === 'Hand Gestures';
@@ -560,7 +636,7 @@ class EmojiApp {
       } else if (this.currentCategory === 'professions') {
         return emoji.sub_category === 'Professions' || emoji.main_category === 'Professions';
       }
-      
+
       // 일반 카테고리
       const mappedCategory = categoryMap[this.currentCategory];
       return emoji.main_category === mappedCategory;
@@ -622,9 +698,45 @@ class EmojiApp {
 
   openModal(emojiData) {
     this.currentModalEmoji = emojiData;
+
+    // 기본 모달 데이터 설정
     this.elements.modalEmoji.textContent = emojiData.emoji;
-    this.elements.modalEmojiName.textContent = emojiData.name_ko || emojiData.name || '';
+    this.elements.modalEmojiName.textContent = this.currentLanguage === 'ko'
+      ? (emojiData.name_ko || emojiData.name || '')
+      : (emojiData.name_en || emojiData.name || '');
     this.elements.modalKeywords.textContent = emojiData.keywords || '';
+
+    // 국기 이모지인 경우 CSS 클래스 추가
+    if (emojiData.main_category === 'Flags') {
+      this.elements.modalEmoji.classList.add('flag-emoji');
+    } else {
+      this.elements.modalEmoji.classList.remove('flag-emoji');
+    }
+
+    // 스킨톤 팔레트 표시/숨김 처리
+    if (isSkinToneSupported(emojiData.emoji)) {
+      this.elements.skintonePalette.style.display = 'flex';
+
+      // 현재 이모지의 스킨톤 상태 확인
+      const currentSkinTone = this.getCurrentSkinTone(emojiData.emoji);
+
+      // 모든 스킨톤 버튼의 활성화 상태 초기화
+      this.elements.skintonePalette.querySelectorAll('.skintone-dot').forEach(dot => {
+        dot.classList.remove('active');
+      });
+
+      // 현재 스킨톤에 해당하는 버튼 활성화
+      const activeButton = this.elements.skintonePalette.querySelector(`[data-skintone="${currentSkinTone}"]`);
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+    } else {
+      this.elements.skintonePalette.style.display = 'none';
+    }
+
+    // 연관 이모티콘 렌더링
+    this.renderRelatedEmojis(emojiData);
+
     this.elements.emojiModal.classList.add('show');
   }
 
@@ -640,7 +752,7 @@ class EmojiApp {
 
   async copyCurrentEmoji() {
     if (!this.currentModalEmoji) return;
-    
+
     const success = await this.copyToClipboard(this.currentModalEmoji.emoji);
     if (success) {
       this.addToHistory(this.currentModalEmoji);
@@ -653,11 +765,11 @@ class EmojiApp {
 
   downloadCurrentEmoji(format) {
     if (!this.currentModalEmoji) return;
-    
+
     const emoji = this.currentModalEmoji.emoji;
     const name = this.currentModalEmoji.name_ko || this.currentModalEmoji.name || 'emoji';
     const filename = `${name}_${emoji}.${format}`;
-    
+
     if (format === 'svg') {
       this.downloadAsSVG(emoji, filename);
     } else if (format === 'png') {
@@ -665,31 +777,6 @@ class EmojiApp {
     }
   }
 
-  showSkintoneSelector(emojiData, element) {
-    this.currentEmojiForSkintone = emojiData;
-    const rect = element.getBoundingClientRect();
-    this.elements.skintoneSelector.style.top = `${rect.bottom + 5}px`;
-    this.elements.skintoneSelector.style.left = `${rect.left}px`;
-    this.elements.skintoneSelector.classList.add('show');
-  }
-
-  closeSkintoneSelector() {
-    this.elements.skintoneSelector.classList.remove('show');
-    this.currentEmojiForSkintone = null;
-  }
-
-  applySkintone(skintone) {
-    if (!this.currentEmojiForSkintone || !this.currentEmojiForSkintone.skintones) return;
-    
-    const skintoneEmoji = this.currentEmojiForSkintone.skintones[skintone];
-    if (skintoneEmoji) {
-      this.handleEmojiClick({
-        ...this.currentEmojiForSkintone,
-        emoji: skintoneEmoji
-      });
-    }
-    this.closeSkintoneSelector();
-  }
 
   clearAllHistory() {
     if (confirm('복사 기록을 모두 삭제하시겠습니까?')) {
@@ -701,14 +788,6 @@ class EmojiApp {
 
   toggleHistoryPanel() {
     this.elements.historyPanel.classList.toggle('collapsed');
-  }
-
-  openModal(emojiData) {
-    this.currentModalEmoji = emojiData;
-    this.elements.modalEmoji.textContent = emojiData.emoji;
-    this.elements.modalEmojiName.textContent = emojiData.name_ko || emojiData.name;
-    this.elements.modalKeywords.textContent = (emojiData.keywords || '').replace(/,/g, ', ');
-    this.elements.emojiModal.classList.add('show');
   }
 
   closeModal() {
@@ -789,6 +868,177 @@ class EmojiApp {
 
   hideLoading() {
     this.elements.loading.classList.add('hide');
+  }
+
+  // 연관 이모티콘 슬라이드 기능 - 페이지 단위
+  slideRelated(direction) {
+    if (this.relatedEmojisData.length === 0) {
+      console.log('slideRelated: 데이터 없음');
+      return;
+    }
+
+    const itemsPerPage = 6; // 한 페이지에 보여질 이모지 개수
+    const totalPages = Math.ceil(this.relatedEmojisData.length / itemsPerPage);
+
+    // 페이지 인덱스 업데이트 (루프 구조)
+    this.currentPageIndex = this.currentPageIndex || 0;
+    this.currentPageIndex += direction;
+
+    // 루프 처리: 마지막 페이지에서 다음을 누르면 처음으로, 첫 페이지에서 이전을 누르면 마지막으로
+    if (this.currentPageIndex >= totalPages) {
+      this.currentPageIndex = 0;
+    } else if (this.currentPageIndex < 0) {
+      this.currentPageIndex = totalPages - 1;
+    }
+
+    // 현재 페이지에 표시할 이모지들 추출
+    const startIdx = this.currentPageIndex * itemsPerPage;
+    const endIdx = startIdx + itemsPerPage;
+    const currentPageEmojis = this.relatedEmojisData.slice(startIdx, endIdx);
+
+    console.log(`slideRelated: 페이지 ${this.currentPageIndex + 1}/${totalPages}, 이모지 ${currentPageEmojis.length}개`);
+
+    // 연관 이모지 HTML 다시 생성
+    this.elements.relatedTrack.innerHTML = currentPageEmojis.map(relatedEmoji => {
+      const isFlag = relatedEmoji.main_category === 'Flags';
+      return `
+        <div class="related-emoji${isFlag ? ' flag-emoji' : ''}" 
+             data-emoji="${relatedEmoji.emoji}" 
+             title="${this.currentLanguage === 'ko' ? relatedEmoji.name_ko : relatedEmoji.name_en}">
+          ${relatedEmoji.emoji}
+        </div>
+      `;
+    }).join('');
+
+    // 루프 구조에서는 버튼을 비활성화하지 않음 (항상 순환 가능)
+    this.elements.sliderPrev.classList.remove('disabled');
+    this.elements.sliderNext.classList.remove('disabled');
+  }
+
+  // 연관 이모티콘 생성
+  generateRelatedEmojis(emoji) {
+    const related = [];
+
+    // 1. 같은 카테고리의 이모지들
+    const sameCategory = this.allEmojis.filter(e =>
+      e.main_category === emoji.main_category &&
+      e.emoji !== emoji.emoji
+    ).slice(0, 10);
+    related.push(...sameCategory);
+
+    // 2. 같은 서브 카테고리의 이모지들
+    if (emoji.sub_category) {
+      const sameSubCategory = this.allEmojis.filter(e =>
+        e.sub_category === emoji.sub_category &&
+        e.emoji !== emoji.emoji &&
+        !related.some(r => r.emoji === e.emoji)
+      ).slice(0, 8);
+      related.push(...sameSubCategory);
+    }
+
+    // 3. 키워드가 비슷한 이모지들
+    const emojiKeywords = emoji.keywords.toLowerCase().split(', ');
+    const keywordMatches = this.allEmojis.filter(e => {
+      if (e.emoji === emoji.emoji || related.some(r => r.emoji === e.emoji)) return false;
+      const eKeywords = e.keywords.toLowerCase();
+      return emojiKeywords.some(keyword => eKeywords.includes(keyword));
+    }).slice(0, 6);
+    related.push(...keywordMatches);
+
+    // 4. 랜덤 인기 이모지 추가
+    if (related.length < 18) {
+      const popularEmojis = ['😂', '🥰', '😍', '😁', '👍', '👏', '🎉', '❤️', '😊', '🙏', '💪', '😎', '🤩', '🥳', '🎆', '✨'];
+      const randomPopular = this.allEmojis.filter(e =>
+        popularEmojis.includes(e.emoji) &&
+        e.emoji !== emoji.emoji &&
+        !related.some(r => r.emoji === e.emoji)
+      );
+      related.push(...randomPopular.slice(0, 18 - related.length));
+    }
+
+    return related.slice(0, 24); // 최대 24개 (4페이지)
+  }
+
+  // 연관 이모티콘 렌더링
+  renderRelatedEmojis(emoji) {
+    this.relatedEmojisData = this.generateRelatedEmojis(emoji);
+    this.currentPageIndex = 0; // 페이지 인덱스 초기화
+
+    console.log('연관 이모티콘 데이터:', this.relatedEmojisData.length, '개'); // 디버깅
+
+    if (this.relatedEmojisData.length === 0) {
+      console.log('연관 이모티콘 없음'); // 디버깅
+      this.elements.relatedEmojis.style.display = 'none';
+      return;
+    }
+
+    this.elements.relatedEmojis.style.display = 'block';
+    this.elements.relatedTitle.textContent = this.currentLanguage === 'ko' ? '연관 이모티콘' : 'Related Emojis';
+
+    // 첫 번째 페이지 렌더링
+    this.slideRelated(0); // 처음 페이지 표시
+
+    // 연관 이모지 클릭 이벤트 (중복 방지)
+    if (!this.elements.relatedTrack.hasAttribute('data-events-bound')) {
+      this.elements.relatedTrack.setAttribute('data-events-bound', 'true');
+      this.elements.relatedTrack.addEventListener('click', (e) => {
+        if (e.target.classList.contains('related-emoji')) {
+          const emojiChar = e.target.dataset.emoji;
+          const emojiData = this.allEmojis.find(emoji => emoji.emoji === emojiChar);
+          if (emojiData) {
+            this.openModal(emojiData);
+          }
+        }
+      });
+    }
+  }
+
+  // 현재 이모지의 스킨톤 상태를 확인하는 함수
+  getCurrentSkinTone(emoji) {
+    // 스킨톤 유니코드 패턴으로 현재 스킨톤 찾기
+    const skinToneMatches = emoji.match(/[\u{1F3FB}-\u{1F3FF}]/gu);
+
+    if (!skinToneMatches || skinToneMatches.length === 0) {
+      return ''; // 기본 스킨톤
+    }
+
+    // 첫 번째 스킨톤 유니코드를 해당 키로 변환
+    const skinToneUnicode = skinToneMatches[0];
+    for (const [key, value] of Object.entries(SKIN_TONES)) {
+      if (value === skinToneUnicode) {
+        return key;
+      }
+    }
+
+    return ''; // 기본값
+  }
+
+  // 모달 내 스킨톤 적용 (새로운 유니코드 조합 방식)
+  applyModalSkintone(skintone) {
+    if (!this.currentModalEmoji) {
+      return;
+    }
+
+    // 스킨톤 지원 여부 확인
+    if (skintone !== '' && !isSkinToneSupported(this.currentModalEmoji.emoji)) {
+      return;
+    }
+
+    // 유니코드 조합으로 스킨톤 적용
+    const newEmoji = applySkinTone(this.currentModalEmoji.emoji, skintone);
+
+    // 새로운 이모지 데이터 생성
+    const newEmojiData = {
+      ...this.currentModalEmoji,
+      emoji: newEmoji
+    };
+
+    // 모달 업데이트
+    this.currentModalEmoji = newEmojiData;
+    this.elements.modalEmoji.textContent = newEmoji;
+
+    // 연관 이모티콘 다시 렌더링 (새로운 이모지 기준으로)
+    this.renderRelatedEmojis(newEmojiData);
   }
 }
 

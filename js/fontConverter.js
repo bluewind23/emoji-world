@@ -12,7 +12,7 @@ export class FontConverter {
         'boldScript': '굵은 손글씨',
         'doubleStruck': '더블라인',
         'monospace': '고정폭',
-        'smallCaps': '소문자',
+        'smallCaps': '스모올캐프스',
         'flipped': '뒤집기',
         'mirror': '거울',
         'underline': '밑줄',
@@ -128,14 +128,13 @@ export class FontConverter {
   convert(text, styleKey) {
     if (!text) return '';
     
+    // CSS로 처리할 스타일들
+    const cssStyles = ['bold', 'italic', 'boldItalic', 'script', 'boldScript', 'doubleStruck', 'monospace'];
+    if (cssStyles.includes(styleKey)) {
+      return this.convertWithFallback(text, styleKey);
+    }
+    
     switch (styleKey) {
-      case 'bold': return this.toBold(text);
-      case 'italic': return this.toItalic(text);
-      case 'boldItalic': return this.toBoldItalic(text);
-      case 'script': return this.toScript(text);
-      case 'boldScript': return this.toBoldScript(text);
-      case 'doubleStruck': return this.toDoubleStruck(text);
-      case 'monospace': return this.toMonospace(text);
       case 'smallCaps': return this.toSmallCaps(text);
       case 'flipped': return this.toFlipped(text);
       case 'mirror': return this.toMirror(text);
@@ -161,6 +160,7 @@ export class FontConverter {
   }
   
   toItalic(text) {
+    // CSS 기반 이탤릭 스타일링
     return text.replace(/[A-Za-z]/g, char => {
       const code = char.charCodeAt(0);
       if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D434); // A-Z
@@ -170,6 +170,7 @@ export class FontConverter {
   }
   
   toBoldItalic(text) {
+    // 굵은 이탤릭은 더 진한 기울임과 굵은 폰트 가중치 적용
     return text.replace(/[A-Za-z]/g, char => {
       const code = char.charCodeAt(0);
       if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D468); // A-Z
@@ -179,7 +180,8 @@ export class FontConverter {
   }
   
   toScript(text) {
-    return text.replace(/[A-Za-z]/g, char => {
+    // Safari 호환성을 위해 CSS 기반 손글씨 스타일 사용
+    const transformed = text.replace(/[A-Za-z]/g, char => {
       // 특수 케이스 먼저 확인
       if (this.scriptExceptions[char]) return this.scriptExceptions[char];
       
@@ -188,19 +190,27 @@ export class FontConverter {
       if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D4B6); // a-z
       return char;
     });
+    
+    // Safari에서 문제가 있으면 CSS 스타일 반환
+    return this.isSafari() ? `<span class="script-font">${text}</span>` : transformed;
   }
   
   toBoldScript(text) {
-    return text.replace(/[A-Za-z]/g, char => {
+    // 굵은 손글씨는 더 진한 손글씨 효과와 굵은 가중치
+    const transformed = text.replace(/[A-Za-z]/g, char => {
       const code = char.charCodeAt(0);
       if (code >= 65 && code <= 90) return String.fromCharCode(code - 65 + 0x1D4D0); // A-Z
       if (code >= 97 && code <= 122) return String.fromCharCode(code - 97 + 0x1D4EA); // a-z
       return char;
     });
+    
+    // Safari에서 문제가 있으면 CSS 스타일 반환
+    return this.isSafari() ? `<span class="bold-script-font">${text}</span>` : transformed;
   }
   
   toDoubleStruck(text) {
-    return text.replace(/[A-Za-z0-9]/g, char => {
+    // 더블라인 효과를 위해 text-shadow 사용
+    const transformed = text.replace(/[A-Za-z0-9]/g, char => {
       // 특수 케이스 먼저 확인
       if (this.doubleStruckExceptions[char]) return this.doubleStruckExceptions[char];
       
@@ -210,6 +220,9 @@ export class FontConverter {
       if (code >= 48 && code <= 57) return String.fromCharCode(code - 48 + 0x1D7D8); // 0-9
       return char;
     });
+    
+    // CSS 더블라인 효과 추가
+    return `<span class="double-struck-font">${transformed}</span>`;
   }
   
   toMonospace(text) {
@@ -394,18 +407,26 @@ export class FontConverter {
   
   // 문제가 있는 스타일들을 대체 문자로 변환
   convertWithFallback(text, styleKey) {
-    const problematicStyles = ['bold', 'italic', 'boldItalic', 'script', 'boldScript', 'doubleStruck', 'monospace'];
+    // CSS 기반 스타일로만 처리할 스타일들
+    const cssOnlyStyles = ['bold', 'italic', 'boldItalic', 'script', 'boldScript', 'doubleStruck', 'monospace'];
     
-    if (problematicStyles.includes(styleKey)) {
-      // script, boldScript, doubleStruck는 CSS로 처리
-      if (['script', 'boldScript', 'doubleStruck'].includes(styleKey)) {
-        return this.convertToAlternativeChars(text, styleKey);
-      }
-      // 나머지는 대체 문자 매핑 사용
+    if (cssOnlyStyles.includes(styleKey)) {
       return this.convertToAlternativeChars(text, styleKey);
     }
     
-    return this.convert(text, styleKey);
+    // 나머지는 직접 개별 함수 호출
+    switch (styleKey) {
+      case 'smallCaps': return this.toSmallCaps(text);
+      case 'flipped': return this.toFlipped(text);
+      case 'mirror': return this.toMirror(text);
+      case 'underline': return this.toUnderline(text);
+      case 'strikethrough': return this.toStrikethrough(text);
+      case 'circled': return this.toCircled(text);
+      case 'squared': return this.toSquared(text);
+      case 'parenthesized': return this.toParenthesized(text);
+      case 'negative': return this.toNegative(text);
+      default: return text;
+    }
   }
   
   // 대체 문자 변환 (잘 지원되는 Unicode 영역 사용)
@@ -458,21 +479,44 @@ export class FontConverter {
     // CSS 스타일로 처리해야 하는 경우들
     if (!map || map.return === 'css-style') {
       switch (styleKey) {
+        case 'bold':
+          return `<span class="bold-enhanced">${text}</span>`;
         case 'italic':
-          return `<span style="font-style: italic; transform: skew(-10deg); letter-spacing: 0.3px;">${text}</span>`;
+          return `<span class="italic-enhanced">${text}</span>`;
         case 'boldItalic':
-          return `<span style="font-weight: bold; font-style: italic; transform: skew(-10deg); letter-spacing: 0.3px;">${text}</span>`;
+          return `<span class="bold-italic-enhanced">${text}</span>`;
         case 'script':
-          return `<span style="font-family: cursive, 'Brush Script MT', fantasy; font-style: italic; letter-spacing: 0.5px;">${text}</span>`;
+          return `<span class="script-enhanced">${text}</span>`;
         case 'boldScript':
-          return `<span style="font-family: cursive, 'Brush Script MT', fantasy; font-weight: bold; font-style: italic; letter-spacing: 0.5px;">${text}</span>`;
+          return `<span class="bold-script-enhanced">${text}</span>`;
         case 'doubleStruck':
-          return `<span style="font-weight: bold; text-shadow: 1px 0 0 currentColor; letter-spacing: 1px;">${text}</span>`;
+          return `<span class="double-struck-enhanced">${text}</span>`;
+        case 'monospace':
+          return `<span class="monospace-enhanced">${text}</span>`;
         default:
-          return `<span style="font-weight: ${styleKey === 'bold' ? 'bold' : 'normal'}; font-style: ${styleKey === 'italic' ? 'italic' : 'normal'};">${text}</span>`;
+          return text;
       }
     }
     
     return text.split('').map(char => map[char] || char).join('');
+  }
+  
+  // Safari 감지 함수
+  isSafari() {
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  }
+  
+  // 소문자 폰트 설명 업데이트
+  getSmallCapsDescription(language = 'ko') {
+    return language === 'ko' 
+      ? '소문자를 작은 대문자 모양으로 변환합니다. (예: hello → ᴀᴇʟʟᴏ)'
+      : 'Converts lowercase letters to small capital forms. (e.g., hello → ᴀᴇʟʟᴏ)';
+  }
+  
+  // 더블라인 폰트 설명
+  getDoubleStruckDescription(language = 'ko') {
+    return language === 'ko'
+      ? '중단선(더블라인) 효과로 수학적 느낌을 준니다.'
+      : 'Creates a mathematical double-struck (outline) effect.';
   }
 }

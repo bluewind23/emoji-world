@@ -18,7 +18,8 @@
       "Bash(kill:*)",
       "Bash(touch:*)",
       "WebFetch(domain:snskeyboard.com)",
-      "WebFetch(domain:igfonts.io)"
+      "WebFetch(domain:igfonts.io)",
+      "mcp__ide__getDiagnostics"
     ],
     "deny": []
   }

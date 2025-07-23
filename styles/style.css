@@ -1,19 +1,90 @@
 /* 모던 모노톤 이모지 사이트 스타일 */
 
 /* Mathematical symbols를 위한 웹폰트 로드 - 성능 최적화 */
-@font-face {
-  font-family: 'MathFont';
-  src: url('https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff2') format('woff2'),
-       url('https://fonts.gstatic.com/s/latin/v1/LaTeX_Gyre_Termes-Regular.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+1D400-U+1D7FF; /* Mathematical Alphanumeric Symbols만 적용 */
+/* Google Fonts와 시스템 폰트를 사용하여 404 오류 해결 */
+
+/* 향상된 폰트 스타일들 */
+.bold-enhanced {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  text-shadow: 0.3px 0 0 currentColor;
+  display: inline-block;
 }
 
-@font-face {
-  font-family: 'DejaVuSans';
-  src: url('https://cdn.jsdelivr.net/npm/dejavu-fonts-ttf@2.37.6/ttf/DejaVuSans.ttf') format('truetype');
-  font-display: swap;
-  unicode-range: U+1D400-U+1D7FF;
+.monospace-enhanced {
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  background: rgba(0,0,0,0.05);
+  padding: 0 2px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.italic-enhanced {
+  font-style: italic;
+  transform: skew(-10deg);
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.bold-italic-enhanced {
+  font-style: italic;
+  font-weight: 800;
+  transform: skew(-12deg);
+  letter-spacing: 0.5px;
+  text-shadow: 0.3px 0 0 currentColor;
+  display: inline-block;
+}
+
+.script-enhanced {
+  font-family: 'Lucida Handwriting', 'Brush Script MT', 'Dancing Script', cursive;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  transform: rotate(-1deg) skew(-5deg);
+  text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.1);
+  display: inline-block;
+}
+
+.bold-script-enhanced {
+  font-family: 'Lucida Handwriting', 'Brush Script MT', 'Dancing Script', cursive;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.8px;
+  transform: rotate(-2deg) skew(-5deg);
+  text-shadow: 0.8px 0 0 currentColor, 0.5px 0.5px 0 rgba(0,0,0,0.15);
+  display: inline-block;
+}
+
+.double-struck-enhanced {
+  font-weight: 900;
+  color: var(--primary-text);
+  text-shadow: none;
+  -webkit-text-stroke: 2px currentColor;
+  -webkit-text-fill-color: var(--primary-bg);
+  letter-spacing: 2px;
+  display: inline-block;
+  position: relative;
+}
+
+/* Safari 전용 스타일 */
+@supports (-webkit-appearance: none) {
+  .script-font {
+    font-family: 'Apple Chancery', 'Brush Script MT', cursive;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    transform: rotate(-1deg);
+  }
+  
+  .bold-script-font {
+    font-family: 'Apple Chancery', 'Brush Script MT', cursive;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.8px;
+    transform: rotate(-2deg);
+    text-shadow: 0.5px 0 0 currentColor;
+  }
 }
 
 /* CSS 변수 */
@@ -40,10 +111,32 @@
   --border-radius-large: 12px;
   --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* [수정 또는 추가할 코드 시작] */
   /* Mathematical symbols를 위해 Noto Sans Math를 우선 적용, 한글은 Noto Sans KR로 렌더링 */
-  --font-family: 'Noto Sans Math', 'Noto Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  /* [수정 또는 추가할 코드 끝] */
+  --font-family: 
+    'Cambria Math',           /* Windows 기본 수학 폰트 */
+    'STIX Two Math',          /* Google Fonts 수학 폰트 */
+    'Apple Symbols',          /* macOS 심볼 폰트 */
+    'Segoe UI Symbol',        /* Windows 심볼 폰트 */
+    'Noto Sans Math',         /* Google Fonts Math */
+    'Noto Color Emoji',       /* 이모지 지원 */
+    'Apple Color Emoji',      /* Apple 이모지 */
+    'Segoe UI Emoji',         /* Windows 이모지 */
+    'Noto Sans KR',           /* 한글 지원 */
+    'Noto Sans',
+    -apple-system, 
+    BlinkMacSystemFont, 
+    'Segoe UI', 
+    Roboto, 
+    sans-serif;
+  
+  /* 국기 이모지 전용 폰트 스택 (Windows Chrome 호환성) */
+  --flag-font-family:
+    'Segoe UI Emoji',         /* Windows 기본 이모지 폰트 */
+    'Noto Color Emoji',       /* Google 이모지 폰트 */
+    'Apple Color Emoji',      /* Apple 이모지 폰트 */
+    'Twemoji Mozilla',        /* Firefox 이모지 */
+    emoji,                    /* 일반 이모지 fallback */
+    sans-serif;
 }
 
 /* 리셋 및 기본 스타일 */
@@ -878,8 +971,10 @@ body {
 }
 
 .modal-body {
-  padding: 24px;
+  padding: 20px;
   text-align: center;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .modal-emoji {
@@ -898,22 +993,23 @@ body {
 .modal-actions {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
 .action-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 16px;
+  gap: 6px;
+  padding: 8px 12px;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   background: var(--primary-bg);
   color: var(--secondary-text);
   cursor: pointer;
   transition: var(--transition);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   font-family: var(--font-family);
 }
@@ -935,6 +1031,75 @@ body {
 
 .btn-icon {
   font-size: 16px;
+}
+
+/* 스킨톤 팔레트 (이모지 이름 하단) */
+.skintone-palette {
+  margin: 12px 0;
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.skintone-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skintone-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skintone-dot:hover {
+  transform: scale(1.1);
+  border-color: var(--accent-text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.skintone-dot.default {
+  background: linear-gradient(45deg, #ffeb3b, #ffc107);
+  border-color: #ff9800;
+}
+
+.skintone-dot.light {
+  background: #fdbcb4;
+  border-color: #f8bbd9;
+}
+
+.skintone-dot.medium-light {
+  background: #f1c27d;
+  border-color: #e0ac69;
+}
+
+.skintone-dot.medium {
+  background: #e0ac69;
+  border-color: #d1975a;
+}
+
+.skintone-dot.medium-dark {
+  background: #bf8f68;
+  border-color: #a67c52;
+}
+
+.skintone-dot.dark {
+  background: #8d5524;
+  border-color: #6d4c41;
+}
+
+/* 선택된 스킨톤 표시 */
+.skintone-dot.active {
+  border-width: 3px;
+  border-color: var(--accent-text);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
 }
 
 /* 토스트 알림 */
@@ -1295,6 +1460,112 @@ body {
   }
 }
 
+/* 국기 이모지 전용 스타일 (Windows Chrome 호환성) */
+.flag-emoji {
+  font-family: var(--flag-font-family) !important;
+  font-feature-settings: "liga" on, "kern" on;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 연관 이모티콘 슬라이드 */
+.related-emojis {
+  margin-top: 16px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+}
+
+.related-emojis h4 {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--secondary-text);
+  font-weight: 500;
+}
+
+.related-slider {
+  position: relative;
+  overflow: visible; /* 버튼이 잘리지 않도록 */
+  padding: 0 28px; /* 슬라이드 버튼 공간을 줄임 */
+  height: 42px; /* 명시적 높이 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 가운데 정렬 */
+}
+
+.related-track {
+  display: flex;
+  gap: 6px;
+  transition: transform 0.3s ease;
+  align-items: center;
+  height: 100%;
+  justify-content: center; /* 가운데 정렬 */
+  flex-wrap: nowrap; /* 줄바꿈 방지 */
+}
+
+.related-emoji {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--primary-bg);
+}
+
+.related-emoji:hover {
+  background: var(--hover-bg);
+  transform: scale(1.1);
+  border-color: var(--accent-text);
+}
+
+.related-emoji.flag-emoji {
+  font-family: var(--flag-font-family) !important;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 10px;
+  color: var(--secondary-text);
+  z-index: 1;
+}
+
+.slider-controls:hover {
+  background: var(--primary-bg);
+  box-shadow: var(--shadow-medium);
+}
+
+.slider-prev {
+  left: 2px; /* 왼쪽 여백 줄임 */
+}
+
+.slider-next {
+  right: 2px; /* 오른쪽 여백 줄임 */
+}
+
+.slider-controls.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 @media (max-width: 480px) {
   .emoji-grid {
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
@@ -1319,8 +1590,43 @@ body {
     margin: 0 16px;
   }
 
+  .modal-body {
+    padding: 16px;
+    max-height: 90vh;
+  }
+
   .modal-emoji {
     font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .modal-actions {
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .action-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .related-emojis h4 {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .related-emoji {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .slider-controls {
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
   }
 
   /* 스킨톤 선택기 초소형 화면 최적화 */

@@ -72,11 +72,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Noto+Sans+Math&family=Noto+Sans+Symbols:wght@400;700&family=Noto+Color+Emoji&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Noto+Sans+Math&family=Noto+Sans+Symbols:wght@400;700&family=Noto+Color+Emoji&family=Dancing+Script:wght@400;700&display=swap"
         rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Noto+Sans+Math&family=Noto+Sans+Symbols:wght@400;700&family=Noto+Color+Emoji&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Noto+Sans+Math&family=Noto+Sans+Symbols:wght@400;700&family=Noto+Color+Emoji&family=Dancing+Script:wght@400;700&display=swap"
             rel="stylesheet">
     </noscript>
     <!-- Mathematical symbols를 위한 추가 폰트 -->
@@ -307,6 +307,19 @@
                 <div class="modal-body">
                     <div class="modal-emoji" id="modalEmoji">😀</div>
                     <div class="modal-keywords" id="modalKeywords"></div>
+                    
+                    <!-- 스킨톤 팔레트 (이모지 이름 하단에 표시) -->
+                    <div class="skintone-palette" id="skintonePalette" style="display: none;">
+                        <div class="skintone-dots">
+                            <button class="skintone-dot default active" data-skintone="" title="기본"></button>
+                            <button class="skintone-dot light" data-skintone="🏻" title="밝은 피부"></button>
+                            <button class="skintone-dot medium-light" data-skintone="🏼" title="약간 밝은 피부"></button>
+                            <button class="skintone-dot medium" data-skintone="🏽" title="보통 피부"></button>
+                            <button class="skintone-dot medium-dark" data-skintone="🏾" title="약간 어두운 피부"></button>
+                            <button class="skintone-dot dark" data-skintone="🏿" title="어두운 피부"></button>
+                        </div>
+                    </div>
+                    
                     <div class="modal-actions">
                         <button class="action-btn primary" id="copyEmoji">
                             <span class="btn-icon">📋</span>
@@ -320,6 +333,18 @@
                             <span class="btn-icon">⬇️</span>
                             PNG 다운로드
                         </button>
+                    </div>
+                    
+                    <!-- 연관 이모티콘 슬라이드 -->
+                    <div class="related-emojis" id="relatedEmojis">
+                        <h4 id="relatedTitle">연관 이모티콘</h4>
+                        <div class="related-slider">
+                            <button class="slider-controls slider-prev" id="sliderPrev">‹</button>
+                            <div class="related-track" id="relatedTrack">
+                                <!-- 연관 이모지들이 여기에 동적으로 추가됩니다 -->
+                            </div>
+                            <button class="slider-controls slider-next" id="sliderNext">›</button>
+                        </div>
                     </div>
                 </div>
             </div>
