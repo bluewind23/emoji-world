@@ -1574,6 +1574,25 @@ body {
   font-variant-emoji: emoji;
 }
 
+/* Twemoji 국기 이미지 스타일 */
+.twemoji-flag {
+  width: 1em !important;
+  height: 1em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  vertical-align: baseline !important;
+  display: inline !important;
+}
+
+/* 국기 이모지 컨테이너에서 Twemoji 이미지 최적화 */
+.flag-emoji .twemoji-flag,
+.related-emoji.flag-emoji .twemoji-flag {
+  width: 1em !important;
+  height: 1em !important;
+  vertical-align: -0.1em !important;
+}
+
 /* 연관 이모티콘 슬라이드 */
 .related-emojis {
   margin-top: 16px;

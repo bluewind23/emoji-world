@@ -11,6 +11,235 @@ import { festivalsEvents } from '../data/categories/festivals_events.js';
 import { flags } from '../data/categories/flags.js';
 import { FontConverter } from './fontConverter.js';
 
+// 플랫폼별 최적화된 이모지 폰트 설정
+function getOptimizedEmojiFontFamily() {
+  const ua = navigator.userAgent;
+  const platform = navigator.platform;
+  
+  // Windows 환경 (특히 Chrome에서 Segoe UI Emoji 문제 해결)
+  if (/Windows/i.test(ua) || /Win32|Win64/i.test(platform)) {
+    // Windows에서는 Noto Color Emoji를 우선으로 하여 컬러 이모지 보장
+    return '"Noto Color Emoji", "Segoe UI Emoji", "Twemoji Mozilla", "EmojiOne Color", sans-serif';
+  }
+  
+  // macOS/iOS 환경
+  if (/Mac OS X|iPhone|iPad/i.test(ua) || /MacIntel/i.test(platform)) {
+    return '"Apple Color Emoji", "Noto Color Emoji", sans-serif';
+  }
+  
+  // Android 환경
+  if (/Android/i.test(ua)) {
+    return '"Noto Color Emoji", "Apple Color Emoji", sans-serif';
+  }
+  
+  // 기타 Linux/Firefox 환경
+  return '"Noto Color Emoji", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", sans-serif';
+}
+
+// 플랫폼별 국기 이모지 최적화 폰트
+function getFlagEmojiFontFamily() {
+  const ua = navigator.userAgent;
+  
+  // Windows Chrome에서 국기 이모지가 문자로 보이는 문제 해결
+  if (/Windows/i.test(ua) && /Chrome/i.test(ua)) {
+    return '"Twemoji Mozilla", "Noto Color Emoji", "Segoe UI Emoji", sans-serif';
+  }
+  
+  return getOptimizedEmojiFontFamily();
+}
+
+// 동적 폰트 적용 함수
+function applyOptimizedFonts() {
+  const emojiFont = getOptimizedEmojiFontFamily();
+  const flagFont = getFlagEmojiFontFamily();
+  
+  // 동적 스타일 생성
+  const style = document.createElement('style');
+  style.id = 'dynamic-emoji-fonts';
+  style.innerHTML = `
+    /* 플랫폼 최적화 이모지 폰트 오버라이드 */
+    .emoji-char,
+    .rec-emoji,
+    .modal-emoji,
+    .related-emoji,
+    .logo-icon,
+    .search-clear,
+    .font-nav-btn,
+    .modal-close,
+    .btn-icon,
+    .skintone-close,
+    .slider-controls {
+      font-family: ${emojiFont} !important;
+      font-variant-emoji: emoji !important;
+      -webkit-font-feature-settings: "liga" off !important;
+      font-feature-settings: "liga" off !important;
+    }
+    
+    /* 국기 이모지 특별 처리 */
+    .flag-emoji,
+    .related-emoji.flag-emoji {
+      font-family: ${flagFont} !important;
+      font-variant-emoji: emoji !important;
+    }
+    
+    /* Windows Chrome 추가 최적화 */
+    @supports (-webkit-text-stroke: 1px) {
+      .emoji-char,
+      .modal-emoji,
+      .related-emoji {
+        -webkit-text-stroke: 0 !important;
+        text-stroke: 0 !important;
+      }
+    }
+  `;
+  
+  // 기존 동적 스타일 제거 후 새로 추가
+  const existingStyle = document.getElementById('dynamic-emoji-fonts');
+  if (existingStyle) {
+    existingStyle.remove();
+  }
+  
+  document.head.appendChild(style);
+  
+  console.log('🎨 플랫폼별 최적화 폰트 적용:', {
+    platform: navigator.platform,
+    userAgent: navigator.userAgent.substring(0, 50) + '...',
+    emojiFont: emojiFont,
+    flagFont: flagFont
+  });
+}
+
+// Twemoji를 사용한 이모지 렌더링 최적화
+function applyTwemoji() {
+  // Twemoji가 로드되었는지 확인
+  if (typeof twemoji === 'undefined') {
+    console.warn('⚠️ Twemoji 라이브러리가 로드되지 않았습니다.');
+    return;
+  }
+
+  // Windows Chrome에서만 Twemoji 적용 (성능 최적화)
+  const ua = navigator.userAgent;
+  const shouldUseTwemoji = /Windows/i.test(ua) && /Chrome/i.test(ua);
+  
+  if (!shouldUseTwemoji) {
+    console.log('🎯 현재 환경에서는 Twemoji 적용하지 않음');
+    return;
+  }
+
+  // 국기 이모지에만 Twemoji 적용
+  function parseFlagEmojis() {
+    const flagElements = document.querySelectorAll('.flag-emoji, .related-emoji.flag-emoji');
+    
+    flagElements.forEach(element => {
+      // 국기 이모지인지 확인 (U+1F1E6-U+1F1FF 범위)
+      const text = element.textContent;
+      const flagRegex = /[\u{1F1E6}-\u{1F1FF}]/gu;
+      
+      if (flagRegex.test(text)) {
+        // Twemoji로 파싱하여 이미지로 대체
+        twemoji.parse(element, {
+          folder: 'svg',
+          ext: '.svg',
+          base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
+          className: 'twemoji-flag'
+        });
+      }
+    });
+  }
+
+  // 초기 적용
+  parseFlagEmojis();
+
+  // 동적으로 추가되는 요소들에 대한 MutationObserver
+  const observer = new MutationObserver((mutations) => {
+    let hasNewFlags = false;
+    
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const flagElements = node.querySelectorAll?.('.flag-emoji, .related-emoji.flag-emoji') || [];
+            if (flagElements.length > 0 || node.classList?.contains('flag-emoji')) {
+              hasNewFlags = true;
+            }
+          }
+        });
+      }
+    });
+    
+    if (hasNewFlags) {
+      setTimeout(parseFlagEmojis, 50); // 약간의 지연 후 적용
+    }
+  });
+
+  // DOM 변경 감시 시작
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+  console.log('🏁 Twemoji 국기 이모지 최적화 적용 완료');
+}
+
+// 이모지 fallback 시스템 - HTML 엔티티로 변환
+function createEmojiFallback(emoji) {
+  // 이모지를 유니코드 코드포인트 배열로 변환
+  const codePoints = Array.from(emoji).map(char => {
+    const codePoint = char.codePointAt(0);
+    return `&#x${codePoint.toString(16).toUpperCase()};`;
+  });
+  
+  return codePoints.join('');
+}
+
+// 이모지 렌더링 문제 감지 및 fallback 적용
+function detectAndFixEmojiRendering() {
+  // 간단한 테스트 이모지로 렌더링 문제 감지
+  const testEmoji = '🇰🇷'; // 한국 국기
+  const testElement = document.createElement('div');
+  testElement.style.cssText = 'position: absolute; top: -9999px; font-size: 20px;';
+  testElement.textContent = testEmoji;
+  document.body.appendChild(testElement);
+  
+  // 렌더링된 크기로 문제 감지 (정상적으로 렌더링되면 일정 크기 이상)
+  const rect = testElement.getBoundingClientRect();
+  const isRenderingProperly = rect.width > 10 && rect.height > 10;
+  
+  document.body.removeChild(testElement);
+  
+  if (!isRenderingProperly) {
+    console.warn('⚠️ 이모지 렌더링 문제 감지됨 - fallback 시스템 활성화');
+    
+    // 국기 이모지를 HTML 엔티티로 변환
+    const flagElements = document.querySelectorAll('.flag-emoji');
+    flagElements.forEach(element => {
+      const originalText = element.textContent;
+      const flagRegex = /[\u{1F1E6}-\u{1F1FF}]/gu;
+      
+      if (flagRegex.test(originalText)) {
+        const fallbackHTML = createEmojiFallback(originalText);
+        element.innerHTML = fallbackHTML;
+        element.classList.add('emoji-fallback');
+      }
+    });
+    
+    // fallback CSS 스타일 추가
+    const fallbackStyle = document.createElement('style');
+    fallbackStyle.innerHTML = `
+      .emoji-fallback {
+        font-family: "Segoe UI", "Arial Unicode MS", sans-serif !important;
+        font-weight: normal !important;
+      }
+    `;
+    document.head.appendChild(fallbackStyle);
+    
+    return false;
+  }
+  
+  console.log('✅ 이모지 렌더링 정상 확인');
+  return true;
+}
+
 // 2. 특수 카테고리(hands, status)를 동적으로 생성합니다.
 const hands = peopleBody.filter(emoji => emoji.sub_category === 'Hand Gestures');
 const status = symbols.filter(emoji => emoji.sub_category === 'Status & Notification');
@@ -1043,7 +1272,24 @@ class EmojiApp {
 }
 
 // 앱 초기화
-document.addEventListener('DOMContentLoaded', () => new EmojiApp());
+document.addEventListener('DOMContentLoaded', () => {
+  // 플랫폼별 최적화 폰트 먼저 적용
+  applyOptimizedFonts();
+  
+  // 메인 앱 초기화
+  new EmojiApp();
+  
+  // 앱 로딩 후 렌더링 최적화 적용 (충분한 지연)
+  setTimeout(() => {
+    // 이모지 렌더링 문제 감지 및 fallback
+    const isRenderingOk = detectAndFixEmojiRendering();
+    
+    // 렌더링 문제가 있을 때만 Twemoji 적용
+    if (!isRenderingOk) {
+      applyTwemoji();
+    }
+  }, 500);
+});
 
 // 서비스 워커 등록
 if ('serviceWorker' in navigator) {
