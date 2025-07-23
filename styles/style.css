@@ -87,6 +87,25 @@
   }
 }
 
+/* 크로스 플랫폼 이모지 폰트 정의 */
+.emoji-universal {
+  font-family: 
+    "Apple Color Emoji",      /* iOS/macOS - 가장 우선 */
+    "Segoe UI Emoji",         /* Windows 10/11 */
+    "Noto Color Emoji",       /* Android/Linux */
+    "Twemoji Mozilla",        /* Firefox fallback */
+    "EmojiOne Color",         /* 웹폰트 fallback */
+    "Symbola",                /* 추가 fallback */
+    sans-serif;
+  
+  /* 이모지 렌더링 최적화 */
+  font-variant-emoji: emoji;
+  font-feature-settings: "liga" off;
+  -webkit-font-feature-settings: "liga" off;
+  text-rendering: optimizeSpeed;
+  -webkit-text-stroke: 0;
+}
+
 /* CSS 변수 */
 :root {
   --primary-bg: #ffffff;
@@ -336,6 +355,15 @@ body {
   transition: var(--transition);
   opacity: 0;
   visibility: hidden;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
 }
 
 .search-clear:hover {
@@ -492,6 +520,17 @@ body {
   transition: var(--transition);
   line-height: 1;
   animation: fadeInScale 0.3s ease-out;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
+  -webkit-font-feature-settings: "liga" off;
+  font-feature-settings: "liga" off;
 }
 
 .rec-emoji:hover {
@@ -554,6 +593,15 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: var(--secondary-text);
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
 }
 
 .font-nav-btn:hover {
@@ -712,6 +760,17 @@ body {
   font-size: 32px;
   margin-bottom: 8px;
   line-height: 1;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
+  -webkit-font-feature-settings: "liga" off;
+  font-feature-settings: "liga" off;
 }
 
 .emoji-name {
@@ -964,6 +1023,15 @@ body {
   border-radius: 4px;
   transition: var(--transition);
   font-size: 18px;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
 }
 
 .modal-close:hover {
@@ -981,6 +1049,17 @@ body {
   font-size: 64px;
   margin-bottom: 16px;
   line-height: 1;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
+  -webkit-font-feature-settings: "liga" off;
+  font-feature-settings: "liga" off;
 }
 
 .modal-keywords {
@@ -1031,6 +1110,15 @@ body {
 
 .btn-icon {
   font-size: 16px;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
 }
 
 /* 스킨톤 팔레트 (이모지 이름 하단) */
@@ -1232,6 +1320,15 @@ body {
   transition: var(--transition);
   font-size: 16px;
   line-height: 1;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
 }
 
 .skintone-close:hover {
@@ -1462,11 +1559,19 @@ body {
 
 /* 국기 이모지 전용 스타일 (Windows Chrome 호환성) */
 .flag-emoji {
-  font-family: var(--flag-font-family) !important;
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    var(--flag-font-family),
+    sans-serif !important;
   font-feature-settings: "liga" on, "kern" on;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-variant-emoji: emoji;
 }
 
 /* 연관 이모티콘 슬라이드 */
@@ -1516,6 +1621,17 @@ body {
   cursor: pointer;
   transition: var(--transition);
   background: var(--primary-bg);
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
+  -webkit-font-feature-settings: "liga" off;
+  font-feature-settings: "liga" off;
 }
 
 .related-emoji:hover {
@@ -1545,6 +1661,15 @@ body {
   font-size: 10px;
   color: var(--secondary-text);
   z-index: 1;
+  /* 크로스 플랫폼 이모지 폰트 적용 */
+  font-family: 
+    "Apple Color Emoji",
+    "Segoe UI Emoji", 
+    "Noto Color Emoji",
+    "Twemoji Mozilla",
+    "EmojiOne Color",
+    sans-serif !important;
+  font-variant-emoji: emoji;
 }
 
 .slider-controls:hover {
