@@ -1,0 +1,20 @@
+::1 - - [23/Jul/2025 13:24:12] "GET / HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /styles/style.css HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /js/app.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/smileys_emotion.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/people_body.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/animals_nature.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/professions.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/food_drink.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/activities.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/travel_places.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/objects.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/symbols.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/festivals_events.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /data/categories/flags.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /js/fontConverter.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /manifest.json HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /sw.js HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] "GET /index.html HTTP/1.1" 200 -
+::1 - - [23/Jul/2025 13:24:13] code 404, message File not found
+::1 - - [23/Jul/2025 13:24:13] "GET /src/data/emoji-data.js HTTP/1.1" 404 -
