@@ -1,6 +1,6 @@
 // symbols.js
 // '✨', '⭐', '❤️', '💚', '🤍', '🔴' 등 축제와 중복되는 항목 삭제
-export const symbols = [
+export const emoji_symbols = [
   {
     "emoji": "🧡",
     "name_ko": "주황 하트",

@@ -1,6 +1,6 @@
 // travel_places.js
 // '🏠' 등 축제와 중복되는 항목 삭제
-export const travelPlaces = [
+export const emoji_travel = [
   {
     "emoji": "✈️",
     "name_ko": "비행기",

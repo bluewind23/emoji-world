@@ -1,6 +1,6 @@
 // food_drink.js
 // '🌮', '🌯', '🥑', '🌶️', '🍪', '🎂', '🍰', '☕', '🍵', '🍺' 등 축제와 중복되는 항목 삭제
-export const foodDrink = [
+export const emoji_food = [
   {
     "emoji": "🍎",
     "name_ko": "사과",

@@ -1,6 +1,6 @@
 // activities.js
 // '🎭', '🎵', '🎶' 등 축제와 중복되는 항목 삭제
-export const activities = [
+export const emoji_activities = [
   {
     "emoji": "⚽",
     "name_ko": "축구공",

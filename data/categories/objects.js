@@ -1,6 +1,6 @@
 // objects.js
 // '🎁', '🎀', '🎊', '🎤', '🎭', '🎪' 등 축제와 중복되는 항목 삭제
-export const objects = [
+export const emoji_objects = [
   {
     "emoji": "📱",
     "name_ko": "휴대폰",

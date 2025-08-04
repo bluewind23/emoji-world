@@ -1,5 +1,5 @@
 // festivals_events.js
-export const festivalsEvents = [
+export const emoji_festivals = [
   // --- 크리스마스 (Christmas) ---
   {
     "emoji": "🎅",
