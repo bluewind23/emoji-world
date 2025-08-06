@@ -1,6 +1,6 @@
 // people_body.js
 // '🤠', '⛷️' 등 축제와 중복되는 항목 삭제
-export const emoji_people = [
+export const peopleBody = [
   {
     "emoji": "👋",
     "name_ko": "손 흔들기",

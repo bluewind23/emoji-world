@@ -1,6 +1,6 @@
 // animals_nature.js
 // '🦅', '🔥' 등 축제와 중복되는 항목 삭제
-export const emoji_animals = [
+export const animalsNature = [
   {
     "emoji": "🐶",
     "name_ko": "강아지 얼굴",

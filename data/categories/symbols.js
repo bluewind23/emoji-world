@@ -1,6 +1,6 @@
 // symbols.js
 // '✨', '⭐', '❤️', '💚', '🤍', '🔴' 등 축제와 중복되는 항목 삭제
-export const emoji_symbols = [
+export const symbols = [
   {
     "emoji": "🧡",
     "name_ko": "주황 하트",
@@ -360,5 +360,389 @@ export const emoji_symbols = [
     "keywords": "원, 돈, 통화, 한국, won, money, currency, korea",
     "main_category": "Symbols",
     "sub_category": "Currency"
+  },
+  {
+    "emoji": "💹",
+    "name_ko": "주식 상승",
+    "name_en": "Stock Chart",
+    "keywords": "주식, 상승, 투자, 차트, 돈, stock, rising, investment, chart, money",
+    "main_category": "Symbols",
+    "sub_category": "Finance"
+  },
+  {
+    "emoji": "📊",
+    "name_ko": "데이터 분석",
+    "name_en": "Data Analysis",
+    "keywords": "데이터, 분석, 통계, 차트, 그래프, data, analysis, statistics, chart, graph",
+    "main_category": "Symbols",
+    "sub_category": "Business"
+  },
+  {
+    "emoji": "🔗",
+    "name_ko": "링크",
+    "name_en": "Link Symbol",
+    "keywords": "링크, 연결, 체인, 웹링크, URL, link, connection, chain, web, url",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "💻",
+    "name_ko": "개발자",
+    "name_en": "Developer",
+    "keywords": "개발자, 프로그래머, 코딩, 컴퓨터, developer, programmer, coding, computer",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "🌐",
+    "name_ko": "월드와이드웹",
+    "name_en": "World Wide Web",
+    "keywords": "웹, 인터넷, WWW, 글로벌, web, internet, global, worldwide",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "📡",
+    "name_ko": "네트워크",
+    "name_en": "Network",
+    "keywords": "네트워크, 통신, 신호, 연결, network, communication, signal, connection",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "⚡",
+    "name_ko": "빠른 속도",
+    "name_en": "High Speed",
+    "keywords": "빠른, 속도, 전기, 에너지, 파워, fast, speed, electric, energy, power",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "🔥",
+    "name_ko": "핫한",
+    "name_en": "Hot Trending",
+    "keywords": "핫한, 인기, 트렌드, 뜨거운, 화재, hot, trending, popular, fire",
+    "main_category": "Symbols",
+    "sub_category": "Social"
+  },
+  {
+    "emoji": "💎",
+    "name_ko": "프리미엄",
+    "name_en": "Premium",
+    "keywords": "프리미엄, 다이아몬드, 고급, 특별, premium, diamond, luxury, special",
+    "main_category": "Symbols",
+    "sub_category": "Status"
+  },
+  {
+    "emoji": "🏆",
+    "name_ko": "1등",
+    "name_en": "Number One",
+    "keywords": "1등, 승리, 우승, 최고, 트로피, winner, victory, champion, trophy, best",
+    "main_category": "Symbols",
+    "sub_category": "Achievement"
+  },
+  {
+    "emoji": "⭐",
+    "name_ko": "평점",
+    "name_en": "Rating Star",
+    "keywords": "평점, 별점, 리뷰, 등급, rating, star, review, grade, quality",
+    "main_category": "Symbols",
+    "sub_category": "Rating"
+  },
+  {
+    "emoji": "❤️",
+    "name_ko": "좋아요",
+    "name_en": "Like Heart",
+    "keywords": "좋아요, 하트, 사랑, 인스타, 페이스북, like, heart, love, instagram, facebook",
+    "main_category": "Symbols",
+    "sub_category": "Social Media"
+  },
+  {
+    "emoji": "👍",
+    "name_ko": "굿",
+    "name_en": "Thumbs Up",
+    "keywords": "굿, 좋아요, 엄지척, 긍정, good, thumbs up, like, positive, approval",
+    "main_category": "Symbols",
+    "sub_category": "Social Media"
+  },
+  {
+    "emoji": "📢",
+    "name_ko": "공지",
+    "name_en": "Announcement",
+    "keywords": "공지, 알림, 광고, 홍보, announcement, notice, advertisement, promotion",
+    "main_category": "Symbols",
+    "sub_category": "Communication"
+  },
+  {
+    "emoji": "🔔",
+    "name_ko": "알림",
+    "name_en": "Notification",
+    "keywords": "알림, 벨, 푸시, 메시지, notification, bell, push, message, alert",
+    "main_category": "Symbols",
+    "sub_category": "Communication"
+  },
+  {
+    "emoji": "📌",
+    "name_ko": "고정",
+    "name_en": "Pin",
+    "keywords": "고정, 핀, 중요, 표시, pin, fixed, important, bookmark, mark",
+    "main_category": "Symbols",
+    "sub_category": "Organization"
+  },
+  {
+    "emoji": "🔖",
+    "name_ko": "북마크",
+    "name_en": "Bookmark",
+    "keywords": "북마크, 저장, 즐겨찾기, 표시, bookmark, save, favorite, mark",
+    "main_category": "Symbols",
+    "sub_category": "Organization"
+  },
+  {
+    "emoji": "🆕",
+    "name_ko": "새로운",
+    "name_en": "New",
+    "keywords": "새로운, 신규, 최신, 업데이트, new, latest, fresh, update",
+    "main_category": "Symbols",
+    "sub_category": "Status"
+  },
+  {
+    "emoji": "🆓",
+    "name_ko": "무료",
+    "name_en": "Free",
+    "keywords": "무료, 공짜, 프리, 비용없음, free, gratis, no cost, complimentary",
+    "main_category": "Symbols",
+    "sub_category": "Status"
+  },
+  {
+    "emoji": "🔥",
+    "name_ko": "핫딜",
+    "name_en": "Hot Deal",
+    "keywords": "핫딜, 세일, 할인, 특가, hot deal, sale, discount, special price",
+    "main_category": "Symbols",
+    "sub_category": "Shopping"
+  },
+  {
+    "emoji": "💰",
+    "name_ko": "돈",
+    "name_en": "Money",
+    "keywords": "돈, 수익, 비즈니스, 투자, money, profit, business, investment",
+    "main_category": "Symbols",
+    "sub_category": "Finance"
+  },
+  {
+    "emoji": "🎯",
+    "name_ko": "목표",
+    "name_en": "Target",
+    "keywords": "목표, 타겟, 집중, 성취, target, goal, focus, achievement",
+    "main_category": "Symbols",
+    "sub_category": "Business"
+  },
+  {
+    "emoji": "📈",
+    "name_ko": "성장",
+    "name_en": "Growth",
+    "keywords": "성장, 상승, 발전, 증가, growth, rising, progress, increase",
+    "main_category": "Symbols",
+    "sub_category": "Business"
+  },
+  {
+    "emoji": "🚀",
+    "name_ko": "급성장",
+    "name_en": "Rocket Growth",
+    "keywords": "급성장, 폭등, 런칭, 시작, rocket, launch, takeoff, startup, boom",
+    "main_category": "Symbols",
+    "sub_category": "Business"
+  },
+  {
+    "emoji": "💡",
+    "name_ko": "아이디어",
+    "name_en": "Idea",
+    "keywords": "아이디어, 창의, 혁신, 발상, idea, creative, innovation, inspiration",
+    "main_category": "Symbols",
+    "sub_category": "Creative"
+  },
+  {
+    "emoji": "⚙️",
+    "name_ko": "설정",
+    "name_en": "Settings",
+    "keywords": "설정, 옵션, 구성, 기어, settings, options, configuration, gear",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "🔧",
+    "name_ko": "도구",
+    "name_en": "Tools",
+    "keywords": "도구, 수리, 개발, 유지보수, tools, repair, development, maintenance",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "🔍",
+    "name_ko": "검색",
+    "name_en": "Search",
+    "keywords": "검색, 찾기, 탐색, 조사, search, find, explore, investigate",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "📊",
+    "name_ko": "분석",
+    "name_en": "Analytics",
+    "keywords": "분석, 통계, 데이터, 리포트, analytics, statistics, data, report",
+    "main_category": "Symbols",
+    "sub_category": "Business"
+  },
+  {
+    "emoji": "🎮",
+    "name_ko": "게임",
+    "name_en": "Gaming",
+    "keywords": "게임, 오락, 플레이, 엔터테인먼트, gaming, entertainment, play, fun",
+    "main_category": "Symbols",
+    "sub_category": "Entertainment"
+  },
+  {
+    "emoji": "🎵",
+    "name_ko": "음악",
+    "name_en": "Music",
+    "keywords": "음악, 멜로디, 사운드, 노래, music, melody, sound, song",
+    "main_category": "Symbols",
+    "sub_category": "Entertainment"
+  },
+  {
+    "emoji": "📺",
+    "name_ko": "비디오",
+    "name_en": "Video",
+    "keywords": "비디오, 영상, 동영상, 콘텐츠, video, streaming, content, media",
+    "main_category": "Symbols",
+    "sub_category": "Entertainment"
+  },
+  {
+    "emoji": "📷",
+    "name_ko": "사진",
+    "name_en": "Photo",
+    "keywords": "사진, 촬영, 인스타그램, 이미지, photo, picture, instagram, image",
+    "main_category": "Symbols",
+    "sub_category": "Social Media"
+  },
+  {
+    "emoji": "💬",
+    "name_ko": "채팅",
+    "name_en": "Chat",
+    "keywords": "채팅, 대화, 메신저, 소통, chat, conversation, messenger, communication",
+    "main_category": "Symbols",
+    "sub_category": "Communication"
+  },
+  {
+    "emoji": "📞",
+    "name_ko": "전화",
+    "name_en": "Phone Call",
+    "keywords": "전화, 통화, 콜, 연락, phone, call, contact, communication",
+    "main_category": "Symbols",
+    "sub_category": "Communication"
+  },
+  {
+    "emoji": "✉️",
+    "name_ko": "메일",
+    "name_en": "Email",
+    "keywords": "메일, 이메일, 편지, 메시지, mail, email, letter, message",
+    "main_category": "Symbols",
+    "sub_category": "Communication"
+  },
+  {
+    "emoji": "🌟",
+    "name_ko": "특별한",
+    "name_en": "Special",
+    "keywords": "특별한, 별, 스페셜, 프리미엄, special, star, premium, exclusive",
+    "main_category": "Symbols",
+    "sub_category": "Status"
+  },
+  {
+    "emoji": "✨",
+    "name_ko": "반짝이는",
+    "name_en": "Sparkles",
+    "keywords": "반짝이는, 빛나는, 마법, 특별, sparkles, shining, magic, special",
+    "main_category": "Symbols",
+    "sub_category": "Status"
+  },
+  {
+    "emoji": "🔥",
+    "name_ko": "인기",
+    "name_en": "Popular",
+    "keywords": "인기, 핫한, 트렌드, 베스트, popular, hot, trending, best",
+    "main_category": "Symbols",
+    "sub_category": "Social"
+  },
+  {
+    "emoji": "💯",
+    "name_ko": "백점",
+    "name_en": "100 Points",
+    "keywords": "백점, 완벽, 최고, 100%, perfect, excellent, 100 points, top",
+    "main_category": "Symbols",
+    "sub_category": "Achievement"
+  },
+  {
+    "emoji": "🔒",
+    "name_ko": "보안",
+    "name_en": "Security",
+    "keywords": "보안, 잠금, 프라이빗, 안전, security, lock, private, safe",
+    "main_category": "Symbols",
+    "sub_category": "Security"
+  },
+  {
+    "emoji": "🛡️",
+    "name_ko": "방어",
+    "name_en": "Protection",
+    "keywords": "방어, 보호, 방패, 안전, protection, shield, defense, safety",
+    "main_category": "Symbols",
+    "sub_category": "Security"
+  },
+  {
+    "emoji": "⚠️",
+    "name_ko": "주의",
+    "name_en": "Warning",
+    "keywords": "주의, 경고, 위험, 알림, warning, caution, danger, alert",
+    "main_category": "Symbols",
+    "sub_category": "Alert"
+  },
+  {
+    "emoji": "❌",
+    "name_ko": "에러",
+    "name_en": "Error",
+    "keywords": "에러, 오류, 실패, 취소, error, mistake, failure, cancel",
+    "main_category": "Symbols",
+    "sub_category": "Status"
+  },
+  {
+    "emoji": "✅",
+    "name_ko": "성공",
+    "name_en": "Success",
+    "keywords": "성공, 완료, 체크, 확인, success, complete, check, confirmed",
+    "main_category": "Symbols",
+    "sub_category": "Status"
+  },
+  {
+    "emoji": "🔄",
+    "name_ko": "새로고침",
+    "name_en": "Refresh",
+    "keywords": "새로고침, 리로드, 업데이트, 갱신, refresh, reload, update, renew",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "📶",
+    "name_ko": "신호",
+    "name_en": "Signal",
+    "keywords": "신호, 네트워크, 연결, 와이파이, signal, network, connection, wifi",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
+  },
+  {
+    "emoji": "🔋",
+    "name_ko": "배터리",
+    "name_en": "Battery",
+    "keywords": "배터리, 전원, 충전, 에너지, battery, power, charge, energy",
+    "main_category": "Symbols",
+    "sub_category": "Technology"
   }
 ]

@@ -1,5 +1,5 @@
 // flags.js
-export const emoji_flags = [
+export const flags = [
   {
     "emoji": "🇰🇷",
     "name_ko": "대한민국",
