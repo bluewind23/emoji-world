@@ -149,9 +149,97 @@ export const animalsNature = [
     "emoji": "🙊",
     "name_ko": "입 막은 원숭이",
     "name_en": "Speak-No-Evil Monkey",
-    "keywords": "원숭이, 비밀, 조용, monkey, speak no evil, secret",
+    "keywords": "원숭이, 비밀, 조용, 쉿, 입막기, 말하지마, monkey, speak no evil, secret, shh, quiet, silence",
     "main_category": "Animals & Nature",
     "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🤫",
+    "name_ko": "쉿하는 얼굴",
+    "name_en": "Shushing Face",
+    "keywords": "쉿, 비밀, 조용히, 입다물어, 침묵, shh, secret, quiet, silence, hush",
+    "main_category": "Animals & Nature",
+    "sub_category": "Expression"
+  },
+  {
+    "emoji": "🤐",
+    "name_ko": "입 지퍼 얼굴",
+    "name_en": "Zipper-Mouth Face",
+    "keywords": "비밀, 침묵, 입다물기, 조용, 지퍼, secret, silence, quiet, zip, sealed lips",
+    "main_category": "Animals & Nature",
+    "sub_category": "Expression"
+  },
+  {
+    "emoji": "😎",
+    "name_ko": "선글라스 얼굴",
+    "name_en": "Smiling Face with Sunglasses",
+    "keywords": "선글라스, 멋진, 쿨, 안경, 햇빛, 시크, sunglasses, cool, stylish, glasses, sunny, chic",
+    "main_category": "Animals & Nature",
+    "sub_category": "Expression"
+  },
+  {
+    "emoji": "🕶️",
+    "name_ko": "선글라스",
+    "name_en": "Sunglasses",
+    "keywords": "선글라스, 안경, 햇빛, 멋진, 액세서리, 쿨, sunglasses, glasses, sunny, cool, accessory, stylish",
+    "main_category": "Animals & Nature",
+    "sub_category": "Accessory"
+  },
+  {
+    "emoji": "👶",
+    "name_ko": "아기",
+    "name_en": "Baby",
+    "keywords": "아기, 아이, 어린이, 새끼, 귀여운, 작은, baby, child, infant, cute, small",
+    "main_category": "Animals & Nature",
+    "sub_category": "People"
+  },
+  {
+    "emoji": "🧒",
+    "name_ko": "아이",
+    "name_en": "Child",
+    "keywords": "아이, 어린이, 아동, 꼬마, 유년기, child, kid, young, little, childhood",
+    "main_category": "Animals & Nature",
+    "sub_category": "People"
+  },
+  {
+    "emoji": "👧",
+    "name_ko": "여자 아이",
+    "name_en": "Girl",
+    "keywords": "여자아이, 소녀, 아이, 어린이, 딸, girl, young girl, child, daughter",
+    "main_category": "Animals & Nature",
+    "sub_category": "People"
+  },
+  {
+    "emoji": "🧑",
+    "name_ko": "사람",
+    "name_en": "Person",
+    "keywords": "사람, 인간, 개인, 성인, 남녀, person, human, individual, adult, people",
+    "main_category": "Animals & Nature",
+    "sub_category": "People"
+  },
+  {
+    "emoji": "👤",
+    "name_ko": "사람 실루엣",
+    "name_en": "Bust in Silhouette",
+    "keywords": "사람, 실루엣, 그림자, 프로필, 익명, person, silhouette, shadow, profile, anonymous",
+    "main_category": "Animals & Nature",
+    "sub_category": "People"
+  },
+  {
+    "emoji": "👥",
+    "name_ko": "두 사람 실루엣",
+    "name_en": "Busts in Silhouette",
+    "keywords": "사람들, 두명, 실루엣, 그룹, 친구, people, two people, silhouette, group, friends",
+    "main_category": "Animals & Nature",
+    "sub_category": "People"
+  },
+  {
+    "emoji": "👨‍👩‍👧‍👦",
+    "name_ko": "가족",
+    "name_en": "Family",
+    "keywords": "가족, 부모, 아이, 사람들, 집안, family, parents, children, people, household",
+    "main_category": "Animals & Nature",
+    "sub_category": "People"
   },
   {
     "emoji": "🐒",
@@ -237,7 +325,47 @@ export const animalsNature = [
     "emoji": "🐘",
     "name_ko": "코끼리",
     "name_en": "Elephant",
-    "keywords": "코끼리, 큰, 동물원, elephant, big, zoo",
+    "keywords": "코끼리, 큰, 동물원, 코, 상아, 아프리카, elephant, big, zoo, trunk, ivory, africa",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦏",
+    "name_ko": "코뿔소",
+    "name_en": "Rhinoceros",
+    "keywords": "코뿔소, 뿔, 큰, 아프리카, 동물원, rhinoceros, horn, big, africa, zoo",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦛",
+    "name_ko": "하마",
+    "name_en": "Hippopotamus",
+    "keywords": "하마, 물, 큰, 아프리카, 강, hippopotamus, water, big, africa, river",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐪",
+    "name_ko": "낙타",
+    "name_en": "Camel",
+    "keywords": "낙타, 사막, 혹, 아프리카, 아시아, camel, desert, hump, africa, asia",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐫",
+    "name_ko": "쌍봉낙타",
+    "name_en": "Two-Hump Camel",
+    "keywords": "낙타, 쌍봉, 사막, 아시아, 몽골, camel, two hump, desert, asia, mongolia",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦙",
+    "name_ko": "라마",
+    "name_en": "Llama",
+    "keywords": "라마, 안데스, 남미, 털, 귀여운, llama, andes, south america, fur, cute",
     "main_category": "Animals & Nature",
     "sub_category": "Mammal"
   },
@@ -282,6 +410,46 @@ export const animalsNature = [
     "sub_category": "Insect"
   },
   {
+    "emoji": "🐜",
+    "name_ko": "개미",
+    "name_en": "Ant",
+    "keywords": "개미, 곤충, 부지런한, 일개미, 집단, ant, insect, hardworking, worker, colony",
+    "main_category": "Animals & Nature",
+    "sub_category": "Insect"
+  },
+  {
+    "emoji": "🐞",
+    "name_ko": "무당벌레",
+    "name_en": "Lady Beetle",
+    "keywords": "무당벌레, 곤충, 빨간색, 점, 행운, lady beetle, insect, red, spots, lucky",
+    "main_category": "Animals & Nature",
+    "sub_category": "Insect"
+  },
+  {
+    "emoji": "🕷️",
+    "name_ko": "거미",
+    "name_en": "Spider",
+    "keywords": "거미, 거미줄, 8다리, 곤충, 무서운, spider, web, eight legs, insect, scary",
+    "main_category": "Animals & Nature",
+    "sub_category": "Insect"
+  },
+  {
+    "emoji": "🦗",
+    "name_ko": "귀뚜라미",
+    "name_en": "Cricket",
+    "keywords": "귀뚜라미, 곤충, 소리, 밤, 가을, cricket, insect, sound, night, autumn",
+    "main_category": "Animals & Nature",
+    "sub_category": "Insect"
+  },
+  {
+    "emoji": "🦟",
+    "name_ko": "모기",
+    "name_en": "Mosquito",
+    "keywords": "모기, 곤충, 물림, 피, 여름, mosquito, insect, bite, blood, summer",
+    "main_category": "Animals & Nature",
+    "sub_category": "Insect"
+  },
+  {
     "emoji": "🐠",
     "name_ko": "열대어",
     "name_en": "Tropical Fish",
@@ -318,6 +486,62 @@ export const animalsNature = [
     "name_ko": "게",
     "name_en": "Crab",
     "keywords": "게, 갑각류, 바다, crab, crustacean, sea",
+    "main_category": "Animals & Nature",
+    "sub_category": "Marine"
+  },
+  {
+    "emoji": "🦞",
+    "name_ko": "바닷가재",
+    "name_en": "Lobster",
+    "keywords": "바닷가재, 갑각류, 바다, 음식, lobster, crustacean, sea, food",
+    "main_category": "Animals & Nature",
+    "sub_category": "Marine"
+  },
+  {
+    "emoji": "🦑",
+    "name_ko": "오징어",
+    "name_en": "Squid",
+    "keywords": "오징어, 바다, 촉수, 먹물, squid, sea, tentacle, ink",
+    "main_category": "Animals & Nature",
+    "sub_category": "Marine"
+  },
+  {
+    "emoji": "🐙",
+    "name_ko": "문어",
+    "name_en": "Octopus",
+    "keywords": "문어, 8다리, 바다, 똑똑한, octopus, eight legs, sea, intelligent",
+    "main_category": "Animals & Nature",
+    "sub_category": "Marine"
+  },
+  {
+    "emoji": "🐡",
+    "name_ko": "복어",
+    "name_en": "Blowfish",
+    "keywords": "복어, 바다, 독, 부풀어, blowfish, sea, poison, inflate",
+    "main_category": "Animals & Nature",
+    "sub_category": "Marine"
+  },
+  {
+    "emoji": "🐳",
+    "name_ko": "고래",
+    "name_en": "Whale",
+    "keywords": "고래, 큰, 바다, 물뿜기, 포유류, whale, big, sea, spout, mammal",
+    "main_category": "Animals & Nature",
+    "sub_category": "Marine"
+  },
+  {
+    "emoji": "🐋",
+    "name_ko": "고래",
+    "name_en": "Whale",
+    "keywords": "고래, 큰, 바다, 포유류, 깊은바다, whale, big, sea, mammal, deep sea",
+    "main_category": "Animals & Nature",
+    "sub_category": "Marine"
+  },
+  {
+    "emoji": "🐬",
+    "name_ko": "돌고래",
+    "name_en": "Dolphin",
+    "keywords": "돌고래, 똑똑한, 바다, 점프, 귀여운, dolphin, intelligent, sea, jump, cute",
     "main_category": "Animals & Nature",
     "sub_category": "Marine"
   },
@@ -650,6 +874,30 @@ export const animalsNature = [
     "sub_category": "Nature & Weather"
   },
   {
+    "emoji": "🎆",
+    "name_ko": "폭죽",
+    "name_en": "Fireworks",
+    "keywords": "폭죽, 불꽃놀이, 축제, 새해, 축하, 밤하늘, fireworks, celebration, festival, new year, party, night sky",
+    "main_category": "Animals & Nature",
+    "sub_category": "Celebration"
+  },
+  {
+    "emoji": "🎇",
+    "name_ko": "불꽃",
+    "name_en": "Sparkler",
+    "keywords": "불꽃, 스파클러, 축제, 반짝, 손에든, sparkler, celebration, festival, sparkle, handheld",
+    "main_category": "Animals & Nature",
+    "sub_category": "Celebration"
+  },
+  {
+    "emoji": "🧨",
+    "name_ko": "폭죽",
+    "name_en": "Firecracker",
+    "keywords": "폭죽, 다이너마이트, 폭발, 시끄러운, 위험, firecracker, dynamite, explosion, loud, dangerous",
+    "main_category": "Animals & Nature",
+    "sub_category": "Celebration"
+  },
+  {
     "emoji": "🪸",
     "name_ko": "산호",
     "name_en": "Coral",
@@ -750,6 +998,70 @@ export const animalsNature = [
     "name_ko": "도도새",
     "name_en": "Dodo",
     "keywords": "도도새, 멸종, 고대, 새, dodo, extinct, ancient, bird",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🐓",
+    "name_ko": "수탉",
+    "name_en": "Rooster",
+    "keywords": "수탉, 닭, 농장, 아침, 시끄러운, rooster, chicken, farm, morning, loud",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🐔",
+    "name_ko": "닭",
+    "name_en": "Chicken",
+    "keywords": "닭, 농장, 계란, 가축, 새, chicken, farm, egg, livestock, bird",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🐣",
+    "name_ko": "알에서 나오는 병아리",
+    "name_en": "Hatching Chick",
+    "keywords": "병아리, 알, 부화, 새끼, 탄생, chick, egg, hatching, baby, birth",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🐤",
+    "name_ko": "병아리",
+    "name_en": "Baby Chick",
+    "keywords": "병아리, 새끼, 노란색, 귀여운, 작은, baby chick, young, yellow, cute, small",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🐥",
+    "name_ko": "앞을 보는 병아리",
+    "name_en": "Front-Facing Baby Chick",
+    "keywords": "병아리, 새끼, 앞모습, 귀여운, 노란색, baby chick, young, front view, cute, yellow",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🦅",
+    "name_ko": "독수리",
+    "name_en": "Eagle",
+    "keywords": "독수리, 맹금류, 강한, 사냥꾼, 하늘, eagle, bird of prey, strong, hunter, sky",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🦉",
+    "name_ko": "올빼미",
+    "name_en": "Owl",
+    "keywords": "올빼미, 밤, 똑똑한, 지혜, 큰눈, owl, night, intelligent, wisdom, big eyes",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🦚",
+    "name_ko": "공작",
+    "name_en": "Peacock",
+    "keywords": "공작, 아름다운, 화려한, 깃털, 펼치기, peacock, beautiful, colorful, feather, display",
     "main_category": "Animals & Nature",
     "sub_category": "Bird"
   },
