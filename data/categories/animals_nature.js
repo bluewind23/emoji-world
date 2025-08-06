@@ -418,6 +418,62 @@ export const animalsNature = [
     "sub_category": "Plant"
   },
   {
+    "emoji": "🌹",
+    "name_ko": "장미",
+    "name_en": "Rose",
+    "keywords": "장미, 꽃, 사랑, 빨간색, 향기, rose, flower, love, red, fragrant",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🥀",
+    "name_ko": "시든 꽃",
+    "name_en": "Wilted Flower",
+    "keywords": "시든꽃, 꽃, 슬픔, 죽음, 말라죽은, wilted flower, flower, sadness, death, dried",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌺",
+    "name_ko": "히비스커스",
+    "name_en": "Hibiscus",
+    "keywords": "히비스커스, 꽃, 열대, 하와이, 빨간색, hibiscus, flower, tropical, hawaii, red",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌻",
+    "name_ko": "해바라기",
+    "name_en": "Sunflower",
+    "keywords": "해바라기, 꽃, 노란색, 큰, 씨앗, sunflower, flower, yellow, big, seeds",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌼",
+    "name_ko": "꽃",
+    "name_en": "Blossom",
+    "keywords": "꽃, 데이지, 흰색, 예쁜, 작은, blossom, daisy, white, pretty, small",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌷",
+    "name_ko": "튤립",
+    "name_en": "Tulip",
+    "keywords": "튤립, 꽃, 봄, 네덜란드, 알뿌리, tulip, flower, spring, netherlands, bulb",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "💐",
+    "name_ko": "꽃다발",
+    "name_en": "Bouquet",
+    "keywords": "꽃다발, 꽃, 선물, 결혼식, 축하, bouquet, flower, gift, wedding, celebration",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
     "emoji": "🪶",
     "name_ko": "깃털",
     "name_en": "Feather",
@@ -470,6 +526,102 @@ export const animalsNature = [
     "name_ko": "통나무",
     "name_en": "Wood",
     "keywords": "통나무, 나무, 목재, 장작, wood, log, timber, firewood",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌳",
+    "name_ko": "활엽수",
+    "name_en": "Deciduous Tree",
+    "keywords": "활엽수, 나무, 잎, 그림자, 자연, deciduous tree, tree, leaves, shade, nature",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌲",
+    "name_ko": "침엽수",
+    "name_en": "Evergreen Tree",
+    "keywords": "침엽수, 나무, 소나무, 전나무, 크리스마스, evergreen tree, tree, pine, fir, christmas",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌴",
+    "name_ko": "야자수",
+    "name_en": "Palm Tree",
+    "keywords": "야자수, 나무, 열대, 해변, 코코넛, palm tree, tree, tropical, beach, coconut",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🎋",
+    "name_ko": "대나무",
+    "name_en": "Tanabata Tree",
+    "keywords": "대나무, 나무, 소원, 칠석, 아시아, bamboo, tree, wish, tanabata, asia",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🎍",
+    "name_ko": "문 장식",
+    "name_en": "Pine Decoration",
+    "keywords": "소나무장식, 새해, 일본, 장식, 전통, pine decoration, new year, japan, decoration, traditional",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌱",
+    "name_ko": "새싹",
+    "name_en": "Seedling",
+    "keywords": "새싹, 성장, 시작, 어린, 생명, seedling, growth, beginning, young, life",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🌿",
+    "name_ko": "허브",
+    "name_en": "Herb",
+    "keywords": "허브, 잎, 식물, 약초, 향신료, herb, leaf, plant, medicine, spice",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "☘️",
+    "name_ko": "클로버",
+    "name_en": "Shamrock",
+    "keywords": "클로버, 세잎클로버, 아일랜드, 행운, shamrock, clover, ireland, luck",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🍀",
+    "name_ko": "네잎클로버",
+    "name_en": "Four Leaf Clover",
+    "keywords": "네잎클로버, 행운, 희귀, 찾기어려운, four leaf clover, luck, rare, hard to find",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🎄",
+    "name_ko": "크리스마스트리",
+    "name_en": "Christmas Tree",
+    "keywords": "크리스마스트리, 나무, 장식, 축제, 겨울, christmas tree, tree, decoration, festival, winter",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "💮",
+    "name_ko": "흰 꽃",
+    "name_en": "White Flower",
+    "keywords": "흰꽃, 꽃, 순수, 깨끗, 일본, white flower, flower, pure, clean, japan",
+    "main_category": "Animals & Nature",
+    "sub_category": "Plant"
+  },
+  {
+    "emoji": "🏵️",
+    "name_ko": "로제트",
+    "name_en": "Rosette",
+    "keywords": "로제트, 꽃장식, 상장, 수상, 인정, rosette, flower decoration, award, prize, recognition",
     "main_category": "Animals & Nature",
     "sub_category": "Plant"
   },
