@@ -568,5 +568,277 @@ export const smileysEmotion = [
     "keywords": "천사, 선함, 순수, angel, innocent, halo",
     "main_category": "Smileys & Emotion",
     "sub_category": "Positive"
+  },
+  {
+    "emoji": "🥹",
+    "name_ko": "눈물 고인 미소",
+    "name_en": "Face Holding Back Tears",
+    "keywords": "감동, 눈물, 미소, 기쁨, touched, tears, smile, joy, emotional",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Positive"
+  },
+  {
+    "emoji": "🫠",
+    "name_ko": "녹아내리는 얼굴",
+    "name_en": "Melting Face",
+    "keywords": "더위, 스트레스, 피곤, 녹아내림, melting, hot, stress, exhausted",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Negative"
+  },
+  {
+    "emoji": "🫨",
+    "name_ko": "흔들리는 얼굴",
+    "name_en": "Shaking Face",
+    "keywords": "떨림, 충격, 놀람, 진동, shaking, shock, surprised, vibration",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Surprised"
+  },
+  {
+    "emoji": "🫡",
+    "name_ko": "경례하는 얼굴",
+    "name_en": "Saluting Face",
+    "keywords": "경례, 존경, 인사, 군대, salute, respect, greeting, military",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Positive"
+  },
+  {
+    "emoji": "🫥",
+    "name_ko": "점선 얼굴",
+    "name_en": "Dotted Line Face",
+    "keywords": "투명, 사라짐, 없어짐, 소외, invisible, disappear, fade, isolated",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Neutral"
+  },
+  {
+    "emoji": "🫤",
+    "name_ko": "애매한 얼굴",
+    "name_en": "Face with Diagonal Mouth",
+    "keywords": "애매, 불확실, 망설임, 곤란, uncertain, hesitant, confused, awkward",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Neutral"
+  },
+  {
+    "emoji": "🥲",
+    "name_ko": "눈물 흘리며 웃는 얼굴",
+    "name_en": "Smiling Face with Tear",
+    "keywords": "복잡한 감정, 기쁘면서 슬픔, 웃으며 울기, mixed feelings, happy but sad, bittersweet",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Mixed"
+  },
+  {
+    "emoji": "🥸",
+    "name_ko": "변장한 얼굴",
+    "name_en": "Disguised Face",
+    "keywords": "변장, 가면, 숨기기, 비밀, disguise, mask, hiding, secret, incognito",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Playful"
+  },
+  {
+    "emoji": "🫣",
+    "name_ko": "손으로 눈 가리는 얼굴",
+    "name_en": "Face with Peeking Eye",
+    "keywords": "부끄러움, 몰래보기, 숨기기, 부끄, shy, peeking, hiding, embarrassed",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Shy"
+  },
+  {
+    "emoji": "🫢",
+    "name_ko": "손으로 입 가리는 얼굴",
+    "name_en": "Face with Open Eyes and Hand Over Mouth",
+    "keywords": "깜짝, 놀람, 입막기, 비밀, surprised, shocked, secret, oops",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Surprised"
+  },
+  {
+    "emoji": "🫶",
+    "name_ko": "하트 손모양",
+    "name_en": "Heart Hands",
+    "keywords": "사랑, 하트, 손하트, 애정, love, heart, finger heart, affection",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Heart"
+  },
+  {
+    "emoji": "🤌",
+    "name_ko": "집게 손모양",
+    "name_en": "Pinched Fingers",
+    "keywords": "조금, 작은, 정도, 이탈리아, little, small, amount, italian gesture",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
+  },
+  {
+    "emoji": "🫰",
+    "name_ko": "돈 손모양",
+    "name_en": "Hand with Index Finger and Thumb Crossed",
+    "keywords": "돈, 비싸다, 값비싼, 손가락, money, expensive, costly, fingers",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
+  },
+  {
+    "emoji": "🫳",
+    "name_ko": "손바닥 아래로",
+    "name_en": "Palm Down Hand",
+    "keywords": "진정, 차분, 아래로, 손바닥, calm down, lower, palm down, settle",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
+  },
+  {
+    "emoji": "🫴",
+    "name_ko": "손바닥 위로",
+    "name_en": "Palm Up Hand",
+    "keywords": "받기, 위로, 손바닥, 요청, receive, up, palm up, request",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
+  },
+  {
+    "emoji": "🫱",
+    "name_ko": "오른손 악수",
+    "name_en": "Rightwards Hand",
+    "keywords": "악수, 오른손, 인사, 만남, handshake, right hand, greeting, meet",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
+  },
+  {
+    "emoji": "🫲",
+    "name_ko": "왼손 악수",
+    "name_en": "Leftwards Hand",
+    "keywords": "악수, 왼손, 인사, 만남, handshake, left hand, greeting, meet",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
+  },
+  {
+    "emoji": "🩷",
+    "name_ko": "연핑크 하트",
+    "name_en": "Pink Heart",
+    "keywords": "사랑, 하트, 연핑크, 로맨틱, love, heart, light pink, romantic, soft",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Heart"
+  },
+  {
+    "emoji": "🩵",
+    "name_ko": "하늘색 하트",
+    "name_en": "Light Blue Heart",
+    "keywords": "사랑, 하트, 하늘색, 평화, love, heart, light blue, peace, calm",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Heart"
+  },
+  {
+    "emoji": "🩶",
+    "name_ko": "회색 하트",
+    "name_en": "Grey Heart",
+    "keywords": "사랑, 하트, 회색, 중립, love, heart, grey, neutral, subdued",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Heart"
+  },
+  {
+    "emoji": "🔥",
+    "name_ko": "불",
+    "name_en": "Fire",
+    "keywords": "불, 뜨거운, 핫한, 멋진, fire, hot, cool, awesome, lit",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Popular"
+  },
+  {
+    "emoji": "💯",
+    "name_ko": "백점",
+    "name_en": "Hundred Points",
+    "keywords": "완벽, 100점, 최고, 대박, perfect, 100, best, amazing",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Achievement"
+  },
+  {
+    "emoji": "💢",
+    "name_ko": "화남 마크",
+    "name_en": "Anger Symbol",
+    "keywords": "화남, 분노, 짜증, 열받음, anger, mad, annoyed, frustrated",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Angry"
+  },
+  {
+    "emoji": "💦",
+    "name_ko": "땀방울",
+    "name_en": "Sweat Droplets",
+    "keywords": "땀, 힘듦, 노력, 어려움, sweat, hard work, effort, difficult",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Effort"
+  },
+  {
+    "emoji": "💨",
+    "name_ko": "바람",
+    "name_en": "Dashing Away",
+    "keywords": "빠른, 바람, 달리기, 급함, fast, wind, running, rush, speed",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Movement"
+  },
+  {
+    "emoji": "🫧",
+    "name_ko": "비누방울",
+    "name_en": "Bubbles",
+    "keywords": "비누방울, 거품, 꿈같은, 환상, bubbles, foam, dreamy, fantasy",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Playful"
+  },
+  {
+    "emoji": "💭",
+    "name_ko": "생각 구름",
+    "name_en": "Thought Balloon",
+    "keywords": "생각, 상상, 꿈, 아이디어, thinking, imagination, dream, idea",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Thinking"
+  },
+  {
+    "emoji": "💤",
+    "name_ko": "잠",
+    "name_en": "Zzz",
+    "keywords": "잠, 졸림, 수면, 피곤, sleep, sleepy, tired, zzz",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Sleep"
+  },
+  {
+    "emoji": "🗯️",
+    "name_ko": "화난 말풍선",
+    "name_en": "Right Anger Bubble",
+    "keywords": "화남, 외침, 분노, 소리, angry, yelling, shout, mad",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Angry"
+  },
+  {
+    "emoji": "💬",
+    "name_ko": "말풍선",
+    "name_en": "Speech Balloon",
+    "keywords": "말, 대화, 채팅, 이야기, speech, talk, chat, conversation",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Communication"
+  },
+  {
+    "emoji": "👁️‍🗨️",
+    "name_ko": "눈과 말풍선",
+    "name_en": "Eye in Speech Bubble",
+    "keywords": "증인, 목격, 보기, 관찰, witness, see, observe, watch",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Observation"
+  },
+  {
+    "emoji": "🫵",
+    "name_ko": "너를 가리키는 손가락",
+    "name_en": "Index Pointing at the Viewer",
+    "keywords": "너, 가리키기, 선택, 지목, you, pointing, choose, select",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Pointing"
+  },
+  {
+    "emoji": "🫸",
+    "name_ko": "오른쪽으로 밀기",
+    "name_en": "Rightwards Pushing Hand",
+    "keywords": "밀기, 정지, 거절, 오른쪽, push, stop, reject, right",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
+  },
+  {
+    "emoji": "🫷",
+    "name_ko": "왼쪽으로 밀기",
+    "name_en": "Leftwards Pushing Hand",
+    "keywords": "밀기, 정지, 거절, 왼쪽, push, stop, reject, left",
+    "main_category": "Smileys & Emotion",
+    "sub_category": "Gesture"
   }
 ]

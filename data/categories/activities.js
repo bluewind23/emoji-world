@@ -408,5 +408,245 @@ export const activities = [
     "keywords": "매듭, 묶기, 로프, knot, tie, rope",
     "main_category": "Activities",
     "sub_category": "Arts & Crafts"
+  },
+  {
+    "emoji": "📱",
+    "name_ko": "틱톡 촬영",
+    "name_en": "TikTok Recording",
+    "keywords": "틱톡, 숏폼, 영상촬영, Z세대, 바이럴, tiktok, short video, viral, gen z",
+    "main_category": "Activities",
+    "sub_category": "Social Media"
+  },
+  {
+    "emoji": "🎬",
+    "name_ko": "유튜브 제작",
+    "name_en": "YouTube Creation",
+    "keywords": "유튜브, 영상제작, 크리에이터, 콘텐츠, youtube, content creation, creator, vlog",
+    "main_category": "Activities",
+    "sub_category": "Content Creation"
+  },
+  {
+    "emoji": "📸",
+    "name_ko": "인스타 스토리",
+    "name_en": "Instagram Story",
+    "keywords": "인스타, 스토리, 일상공유, SNS, instagram, story, daily share, social media",
+    "main_category": "Activities",
+    "sub_category": "Social Media"
+  },
+  {
+    "emoji": "🤳",
+    "name_ko": "셀카",
+    "name_en": "Selfie",
+    "keywords": "셀카, 자촬, 인스타그램, 사진, selfie, self portrait, instagram, photo",
+    "main_category": "Activities",
+    "sub_category": "Photography"
+  },
+  {
+    "emoji": "💃",
+    "name_ko": "챌린지 댄스",
+    "name_en": "Challenge Dance",
+    "keywords": "챌린지, 댄스, 틱톡댄스, 트렌드, challenge, dance, tiktok dance, trend",
+    "main_category": "Activities",
+    "sub_category": "Dancing"
+  },
+  {
+    "emoji": "🎤",
+    "name_ko": "노래방",
+    "name_en": "Karaoke",
+    "keywords": "노래방, 노래, 친구들, 스트레스해소, karaoke, singing, friends, stress relief",
+    "main_category": "Activities",
+    "sub_category": "Entertainment"
+  },
+  {
+    "emoji": "🛍️",
+    "name_ko": "언박싱",
+    "name_en": "Unboxing",
+    "keywords": "언박싱, 개봉기, 쇼핑, 리뷰, unboxing, opening, shopping, review",
+    "main_category": "Activities",
+    "sub_category": "Shopping"
+  },
+  {
+    "emoji": "☕",
+    "name_ko": "카페 투어",
+    "name_en": "Cafe Hopping",
+    "keywords": "카페투어, 맛집탐방, 인스타, 분위기, cafe hopping, food tour, aesthetic, instagram",
+    "main_category": "Activities",
+    "sub_category": "Food & Culture"
+  },
+  {
+    "emoji": "🏃‍♀️",
+    "name_ko": "런데이",
+    "name_en": "Running Day",
+    "keywords": "런데이, 러닝, 운동, 건강, running day, exercise, health, workout",
+    "main_category": "Activities",
+    "sub_category": "Fitness"
+  },
+  {
+    "emoji": "🧘‍♀️",
+    "name_ko": "요가",
+    "name_en": "Yoga",
+    "keywords": "요가, 명상, 힐링, 건강, yoga, meditation, healing, wellness",
+    "main_category": "Activities",
+    "sub_category": "Wellness"
+  },
+  {
+    "emoji": "📚",
+    "name_ko": "북스타그램",
+    "name_en": "Bookstagram",
+    "keywords": "북스타그램, 독서, 책리뷰, 인스타, bookstagram, reading, book review, instagram",
+    "main_category": "Activities",
+    "sub_category": "Reading"
+  },
+  {
+    "emoji": "🎨",
+    "name_ko": "아트 클래스",
+    "name_en": "Art Class",
+    "keywords": "아트클래스, 원데이클래스, 취미, 그림, art class, one day class, hobby, drawing",
+    "main_category": "Activities",
+    "sub_category": "Arts & Crafts"
+  },
+  {
+    "emoji": "🍳",
+    "name_ko": "쿡방",
+    "name_en": "Cooking Show",
+    "keywords": "쿡방, 요리, 레시피, 집밥, cooking show, recipe, home cooking, food",
+    "main_category": "Activities",
+    "sub_category": "Cooking"
+  },
+  {
+    "emoji": "🎮",
+    "name_ko": "게임 스트리밍",
+    "name_en": "Game Streaming",
+    "keywords": "게임스트리밍, 트위치, 방송, 게임, game streaming, twitch, broadcast, gaming",
+    "main_category": "Activities",
+    "sub_category": "Gaming"
+  },
+  {
+    "emoji": "🎧",
+    "name_ko": "팟캐스트 청취",
+    "name_en": "Podcast Listening",
+    "keywords": "팟캐스트, 오디오콘텐츠, 멀티태스킹, podcast, audio content, multitasking",
+    "main_category": "Activities",
+    "sub_category": "Audio"
+  },
+  {
+    "emoji": "🛒",
+    "name_ko": "온라인 쇼핑",
+    "name_en": "Online Shopping",
+    "keywords": "온라인쇼핑, 쿠팡, 배송, 택배, online shopping, delivery, package, coupang",
+    "main_category": "Activities",
+    "sub_category": "Shopping"
+  },
+  {
+    "emoji": "🚗",
+    "name_ko": "드라이브",
+    "name_en": "Drive",
+    "keywords": "드라이브, 힐링, 여행, 자유, drive, healing, travel, freedom",
+    "main_category": "Activities",
+    "sub_category": "Travel"
+  },
+  {
+    "emoji": "🏕️",
+    "name_ko": "캠핑",
+    "name_en": "Camping",
+    "keywords": "캠핑, 글램핑, 자연, 힐링, camping, glamping, nature, healing",
+    "main_category": "Activities",
+    "sub_category": "Outdoor"
+  },
+  {
+    "emoji": "🎪",
+    "name_ko": "화상회의",
+    "name_en": "Video Conference",
+    "keywords": "화상회의, 줌, 재택근무, 온라인미팅, video conference, zoom, remote work, online meeting",
+    "main_category": "Activities",
+    "sub_category": "Work"
+  },
+  {
+    "emoji": "📝",
+    "name_ko": "플래너 작성",
+    "name_en": "Planner Writing",
+    "keywords": "플래너, 다이어리, 계획, 자기관리, planner, diary, planning, self management",
+    "main_category": "Activities",
+    "sub_category": "Planning"
+  },
+  {
+    "emoji": "🌱",
+    "name_ko": "반려식물 키우기",
+    "name_en": "Plant Parenting",
+    "keywords": "반려식물, 식물키우기, 가드닝, 힐링, plant parenting, gardening, healing, green",
+    "main_category": "Activities",
+    "sub_category": "Gardening"
+  },
+  {
+    "emoji": "🧩",
+    "name_ko": "퍼즐 맞추기",
+    "name_en": "Puzzle Solving",
+    "keywords": "퍼즐, 집중, 취미, 마음챙김, puzzle, focus, hobby, mindfulness",
+    "main_category": "Activities",
+    "sub_category": "Mind Games"
+  },
+  {
+    "emoji": "🕯️",
+    "name_ko": "캔들 만들기",
+    "name_en": "Candle Making",
+    "keywords": "캔들만들기, 원데이클래스, 향초, 힐링, candle making, one day class, scented, healing",
+    "main_category": "Activities",
+    "sub_category": "Arts & Crafts"
+  },
+  {
+    "emoji": "🎭",
+    "name_ko": "연극 관람",
+    "name_en": "Theater Watching",
+    "keywords": "연극관람, 뮤지컬, 문화생활, 공연, theater, musical, culture, performance",
+    "main_category": "Activities",
+    "sub_category": "Culture"
+  },
+  {
+    "emoji": "🍿",
+    "name_ko": "넷플릭스 시청",
+    "name_en": "Netflix Watching",
+    "keywords": "넷플릭스, 드라마시청, 힐링타임, OTT, netflix, drama, healing time, streaming",
+    "main_category": "Activities",
+    "sub_category": "Entertainment"
+  },
+  {
+    "emoji": "🎊",
+    "name_ko": "파티",
+    "name_en": "Party",
+    "keywords": "파티, 축하, 생일, 친구들, party, celebration, birthday, friends",
+    "main_category": "Activities",
+    "sub_category": "Social"
+  },
+  {
+    "emoji": "🛁",
+    "name_ko": "반신욕",
+    "name_en": "Half Bath",
+    "keywords": "반신욕, 힐링, 휴식, 자기관리, half bath, healing, relaxation, self care",
+    "main_category": "Activities",
+    "sub_category": "Self Care"
+  },
+  {
+    "emoji": "💅",
+    "name_ko": "네일아트",
+    "name_en": "Nail Art",
+    "keywords": "네일아트, 셀프네일, 뷰티, 자기관리, nail art, self nail, beauty, self care",
+    "main_category": "Activities",
+    "sub_category": "Beauty"
+  },
+  {
+    "emoji": "🧴",
+    "name_ko": "스킨케어",
+    "name_en": "Skincare",
+    "keywords": "스킨케어, 뷰티, 자기관리, 마스크팩, skincare, beauty, self care, face mask",
+    "main_category": "Activities",
+    "sub_category": "Beauty"
+  },
+  {
+    "emoji": "🛋️",
+    "name_ko": "집순이",
+    "name_en": "Stay Home",
+    "keywords": "집순이, 집콕, 힐링, 휴식, stay home, homebody, healing, rest",
+    "main_category": "Activities",
+    "sub_category": "Relaxation"
   }
 ]

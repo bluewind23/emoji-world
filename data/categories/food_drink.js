@@ -824,5 +824,237 @@ export const foodDrink = [
     "keywords": "항아리, 도자기, 그릇, amphora, pottery, vessel",
     "main_category": "Food & Drink",
     "sub_category": "Utensils"
+  },
+  {
+    "emoji": "🍜",
+    "name_ko": "김치찌개",
+    "name_en": "Korean Stew",
+    "keywords": "김치찌개, 한식, 찌개, 한국음식, 매운맛, kimchi stew, korean food, spicy",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🍛",
+    "name_ko": "비빔밥",
+    "name_en": "Korean Mixed Rice",
+    "keywords": "비빔밥, 한식, 한국음식, 야채, 고추장, bibimbap, korean food, vegetables",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🥩",
+    "name_ko": "불고기",
+    "name_en": "Korean BBQ",
+    "keywords": "불고기, 한식, 고기, 바베큐, bulgogi, korean bbq, meat, grilled",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🍲",
+    "name_ko": "삼계탕",
+    "name_en": "Ginseng Chicken Soup",
+    "keywords": "삼계탕, 한식, 닭, 인삼, 보양식, samgyetang, korean chicken soup, ginseng",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🥟",
+    "name_ko": "김치만두",
+    "name_en": "Kimchi Dumpling",
+    "keywords": "김치만두, 만두, 한식, 김치, kimchi dumpling, korean dumpling, fermented",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🍘",
+    "name_ko": "떡",
+    "name_en": "Korean Rice Cake",
+    "keywords": "떡, 한과, 전통, 설날, 추석, rice cake, korean traditional, holiday",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🫖",
+    "name_ko": "전통차",
+    "name_en": "Korean Traditional Tea",
+    "keywords": "전통차, 한국차, 녹차, 유자차, korean tea, traditional tea, green tea",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Drink"
+  },
+  {
+    "emoji": "🧊",
+    "name_ko": "팥빙수",
+    "name_en": "Korean Shaved Ice",
+    "keywords": "팥빙수, 빙수, 여름, 디저트, 팥, patbingsu, korean dessert, red beans",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Dessert"
+  },
+  {
+    "emoji": "🍶",
+    "name_ko": "소주",
+    "name_en": "Soju",
+    "keywords": "소주, 한국술, 술, 회식, soju, korean alcohol, drinking, social",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Drink"
+  },
+  {
+    "emoji": "🍺",
+    "name_ko": "치맥",
+    "name_en": "Chicken and Beer",
+    "keywords": "치맥, 치킨, 맥주, 한국, chimaek, chicken, beer, korean culture",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🥢",
+    "name_ko": "젓가락과 숟가락",
+    "name_en": "Korean Chopsticks and Spoon",
+    "keywords": "젓가락, 숟가락, 한식, 식사, 스테인리스, korean utensils, stainless steel",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Utensils"
+  },
+  {
+    "emoji": "🥣",
+    "name_ko": "뚝배기",
+    "name_en": "Korean Stone Bowl",
+    "keywords": "뚝배기, 돌솥, 찌개, 한식그릇, stone bowl, korean pottery, stew",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Utensils"
+  },
+  {
+    "emoji": "🍜",
+    "name_ko": "냉면",
+    "name_en": "Cold Noodles",
+    "keywords": "냉면, 여름음식, 시원한, 면, naengmyeon, cold noodles, summer, refreshing",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🥘",
+    "name_ko": "갈비탕",
+    "name_en": "Galbi Soup",
+    "keywords": "갈비탕, 갈비, 한식, 국물, galbitang, short rib soup, korean soup",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🌶️",
+    "name_ko": "김치",
+    "name_en": "Kimchi",
+    "keywords": "김치, 발효식품, 매운맛, 건강식품, kimchi, fermented, spicy, healthy",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🍳",
+    "name_ko": "계란찜",
+    "name_en": "Korean Egg Custard",
+    "keywords": "계란찜, 반찬, 부드러운, 한식, gyeran-jjim, korean side dish, soft",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🐟",
+    "name_ko": "생선구이",
+    "name_en": "Grilled Fish",
+    "keywords": "생선구이, 한식, 건강식, 고등어, grilled fish, korean healthy food",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🥬",
+    "name_ko": "상추쌈",
+    "name_en": "Lettuce Wrap",
+    "keywords": "상추쌈, 쌈, 고기쌈, 야채, lettuce wrap, korean wrap, vegetables",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Food"
+  },
+  {
+    "emoji": "🧄",
+    "name_ko": "마늘",
+    "name_en": "Korean Garlic",
+    "keywords": "마늘, 한식재료, 조미료, 건강, garlic, korean ingredient, seasoning",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Ingredients"
+  },
+  {
+    "emoji": "🫚",
+    "name_ko": "생강차",
+    "name_en": "Ginger Tea",
+    "keywords": "생강차, 전통차, 따뜻한, 겨울, ginger tea, traditional tea, warm, winter",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Drink"
+  },
+  {
+    "emoji": "🍯",
+    "name_ko": "꿀",
+    "name_en": "Korean Honey",
+    "keywords": "꿀, 전통감미료, 건강, 천연, honey, traditional sweetener, natural, healthy",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Ingredients"
+  },
+  {
+    "emoji": "🌰",
+    "name_ko": "밤",
+    "name_en": "Korean Chestnut",
+    "keywords": "밤, 견과류, 가을, 군밤, chestnut, nuts, autumn, roasted",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Snacks"
+  },
+  {
+    "emoji": "🥜",
+    "name_ko": "호두",
+    "name_en": "Korean Walnut",
+    "keywords": "호두, 견과류, 건강식품, 호두과자, walnut, nuts, healthy snack",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Snacks"
+  },
+  {
+    "emoji": "🍊",
+    "name_ko": "귤",
+    "name_en": "Korean Tangerine",
+    "keywords": "귤, 감귤, 제주도, 겨울과일, tangerine, jeju, winter fruit, citrus",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Fruit"
+  },
+  {
+    "emoji": "🍐",
+    "name_ko": "배",
+    "name_en": "Korean Pear",
+    "keywords": "배, 한국배, 과일, 시원한, korean pear, fruit, crisp, refreshing",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Fruit"
+  },
+  {
+    "emoji": "🍇",
+    "name_ko": "포도",
+    "name_en": "Korean Grapes",
+    "keywords": "포도, 과일, 달콤한, 포도주, grapes, fruit, sweet, wine",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Fruit"
+  },
+  {
+    "emoji": "🍓",
+    "name_ko": "딸기",
+    "name_en": "Korean Strawberry",
+    "keywords": "딸기, 봄과일, 달콤한, 빨간색, strawberry, spring fruit, sweet, red",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Fruit"
+  },
+  {
+    "emoji": "🍑",
+    "name_ko": "체리",
+    "name_en": "Korean Cherry",
+    "keywords": "체리, 버찌, 과일, 여름, cherry, fruit, summer, red",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Fruit"
+  },
+  {
+    "emoji": "🥭",
+    "name_ko": "망고빙수",
+    "name_en": "Mango Bingsu",
+    "keywords": "망고빙수, 빙수, 망고, 여름디저트, mango bingsu, shaved ice, summer dessert",
+    "main_category": "Food & Drink",
+    "sub_category": "Korean Dessert"
   }
 ]
