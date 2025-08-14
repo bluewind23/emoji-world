@@ -90,10 +90,98 @@ export const animalsNature = [
     "sub_category": "Mammal"
   },
   {
+    "emoji": "🦁",
+    "name_ko": "사자",
+    "name_en": "Lion",
+    "keywords": "사자, 갈기, 백수의왕, 아프리카, 사파리, lion, mane, king of beasts, africa, safari",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐅",
+    "name_ko": "호랑이",
+    "name_en": "Tiger",
+    "keywords": "호랑이, 줄무늬, 맹수, 아시아, 정글, tiger, stripes, big cat, asia, jungle",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐆",
+    "name_ko": "표범",
+    "name_en": "Leopard",
+    "keywords": "표범, 점박이, 빠른, 나무타기, 맹수, leopard, spots, fast, climbing, big cat",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
     "emoji": "🐮",
     "name_ko": "소 얼굴",
     "name_en": "Cow Face",
     "keywords": "소, 황소, 농장, cow, bull, farm",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐉",
+    "name_ko": "용",
+    "name_en": "Dragon",
+    "keywords": "용, 신화, 동양, 판타지, 강력한, dragon, myth, oriental, fantasy, powerful",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mythical"
+  },
+  {
+    "emoji": "🐲",
+    "name_ko": "용 얼굴",
+    "name_en": "Dragon Face",
+    "keywords": "용, 용얼굴, 신화, 동양, 무서운, dragon, dragon face, myth, oriental, scary",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mythical"
+  },
+  {
+    "emoji": "🐍",
+    "name_ko": "뱀",
+    "name_en": "Snake",
+    "keywords": "뱀, 파충류, 길쭉한, 독, 무서운, snake, reptile, long, poison, scary",
+    "main_category": "Animals & Nature",
+    "sub_category": "Reptile"
+  },
+  {
+    "emoji": "🐴",
+    "name_ko": "말 얼굴",
+    "name_en": "Horse Face",
+    "keywords": "말, 말얼굴, 농장, 승마, 경주, horse, horse face, farm, riding, racing",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐎",
+    "name_ko": "말",
+    "name_en": "Horse",
+    "keywords": "말, 경주마, 빠른, 승마, 동물, horse, racehorse, fast, riding, animal",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🏇",
+    "name_ko": "경마",
+    "name_en": "Horse Racing",
+    "keywords": "경마, 기수, 승마, 경주, 스포츠, horse racing, jockey, riding, race, sport",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐑",
+    "name_ko": "양",
+    "name_en": "Sheep",
+    "keywords": "양, 양털, 농장, 하얀, 순한, sheep, wool, farm, white, gentle",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐏",
+    "name_ko": "숫양",
+    "name_en": "Ram",
+    "keywords": "숫양, 뿔, 양, 수컷, 강한, ram, horn, sheep, male, strong",
     "main_category": "Animals & Nature",
     "sub_category": "Mammal"
   },
@@ -120,6 +208,30 @@ export const animalsNature = [
     "keywords": "개구리, 연못, 양서류, frog, pond, amphibian",
     "main_category": "Animals & Nature",
     "sub_category": "Amphibian"
+  },
+  {
+    "emoji": "🦡",
+    "name_ko": "오소리",
+    "name_en": "Badger",
+    "keywords": "오소리, 굴파기, 야행성, 줄무늬, 땅속, badger, digging, nocturnal, stripes, underground",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐇",
+    "name_ko": "토끼",
+    "name_en": "Rabbit",
+    "keywords": "토끼, 점프, 귀여운, 빠른, 부활절, rabbit, jump, cute, fast, easter",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐿️",
+    "name_ko": "다람쥐",
+    "name_en": "Chipmunk",
+    "keywords": "다람쥐, 도토리, 나무, 귀여운, 빠른, chipmunk, acorn, tree, cute, fast",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
   },
   {
     "emoji": "🐵",
@@ -298,6 +410,22 @@ export const animalsNature = [
     "sub_category": "Mammal"
   },
   {
+    "emoji": "🐕‍🦺",
+    "name_ko": "경찰견",
+    "name_en": "Police Dog",
+    "keywords": "경찰견, 탐지견, 훈련된개, 조끼입은개, 근무견, police dog, detection dog, trained dog, vest dog, working dog",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦴",
+    "name_ko": "뼈다귀",
+    "name_en": "Bone",
+    "keywords": "뼈다귀, 개간식, 강아지, 뼈, 개껌, bone, dog treat, puppy, dog chew",
+    "main_category": "Animals & Nature",
+    "sub_category": "Object"
+  },
+  {
     "emoji": "🐈",
     "name_ko": "고양이",
     "name_en": "Cat",
@@ -378,6 +506,166 @@ export const animalsNature = [
     "sub_category": "Mythical"
   },
   {
+    "emoji": "🦌",
+    "name_ko": "사슴",
+    "name_en": "Deer",
+    "keywords": "사슴, 뿔, 숲, 우아한, 야생, deer, antlers, forest, elegant, wild",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦝",
+    "name_ko": "너구리",
+    "name_en": "Raccoon",
+    "keywords": "너구리, 라쿤, 마스크, 꼬리, 귀여운, raccoon, mask, tail, cute, trash panda",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐂",
+    "name_ko": "황소",
+    "name_en": "Ox",
+    "keywords": "황소, 수소, 강한, 투우, 뿔, ox, bull, strong, bullfight, horns",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐃",
+    "name_ko": "물소",
+    "name_en": "Water Buffalo",
+    "keywords": "물소, 버팔로, 아시아, 강한, 농사, water buffalo, buffalo, asia, strong, farming",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐄",
+    "name_ko": "젖소",
+    "name_en": "Cow",
+    "keywords": "젖소, 얼룩소, 우유, 농장, 목장, cow, dairy, milk, farm, ranch",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐐",
+    "name_ko": "염소",
+    "name_en": "Goat",
+    "keywords": "염소, 산양, 뿔, 수염, 산, goat, horns, beard, mountain, climb",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦒",
+    "name_ko": "기린 얼굴",
+    "name_en": "Giraffe Face",
+    "keywords": "기린얼굴, 긴목, 아프리카, 키큰, 점박이, giraffe face, long neck, africa, tall, spots",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐕‍🦺",
+    "name_ko": "안내견",
+    "name_en": "Service Dog",
+    "keywords": "안내견, 도우미견, 서비스견, 조끼, 훈련, service dog, guide dog, vest, trained, helper",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐈‍⬛",
+    "name_ko": "검은 고양이",
+    "name_en": "Black Cat",
+    "keywords": "검은고양이, 블랙캣, 미신, 신비, 우아한, black cat, superstition, mystery, elegant, dark",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦃",
+    "name_ko": "칠면조",
+    "name_en": "Turkey",
+    "keywords": "칠면조, 추수감사절, 새, 농장, 큰새, turkey, thanksgiving, bird, farm, big bird",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🦢",
+    "name_ko": "백조",
+    "name_en": "Swan",
+    "keywords": "백조, 우아한, 하얀, 호수, 아름다운, swan, elegant, white, lake, beautiful",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🦜",
+    "name_ko": "앵무새",
+    "name_en": "Parrot",
+    "keywords": "앵무새, 말하는새, 화려한, 열대, 똑똑한, parrot, talking bird, colorful, tropical, smart",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🦩",
+    "name_ko": "플라밍고",
+    "name_en": "Flamingo",
+    "keywords": "플라밍고, 홍학, 핑크, 한다리, 열대, flamingo, pink, one leg, tropical, elegant",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🕊️",
+    "name_ko": "비둘기",
+    "name_en": "Dove",
+    "keywords": "비둘기, 평화, 하얀, 날개, 자유, dove, peace, white, wings, freedom",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🦅",
+    "name_ko": "독수리",
+    "name_en": "Eagle",
+    "keywords": "독수리, 맹금류, 강한, 사냥꾼, 자유, eagle, bird of prey, strong, hunter, freedom",
+    "main_category": "Animals & Nature",
+    "sub_category": "Bird"
+  },
+  {
+    "emoji": "🐢",
+    "name_ko": "거북이",
+    "name_en": "Turtle",
+    "keywords": "거북이, 느린, 등껍질, 장수, 바다거북, turtle, slow, shell, longevity, sea turtle",
+    "main_category": "Animals & Nature",
+    "sub_category": "Reptile"
+  },
+  {
+    "emoji": "🦎",
+    "name_ko": "도마뱀",
+    "name_en": "Lizard",
+    "keywords": "도마뱀, 파충류, 꼬리, 재생, 빠른, lizard, reptile, tail, regeneration, fast",
+    "main_category": "Animals & Nature",
+    "sub_category": "Reptile"
+  },
+  {
+    "emoji": "🐊",
+    "name_ko": "악어",
+    "name_en": "Crocodile",
+    "keywords": "악어, 이빨, 강한턱, 물속, 위험한, crocodile, teeth, strong jaw, water, dangerous",
+    "main_category": "Animals & Nature",
+    "sub_category": "Reptile"
+  },
+  {
+    "emoji": "🦕",
+    "name_ko": "용각류",
+    "name_en": "Sauropod",
+    "keywords": "용각류, 공룡, 초식공룡, 긴목, 고대, sauropod, dinosaur, herbivore, long neck, ancient",
+    "main_category": "Animals & Nature",
+    "sub_category": "Dinosaur"
+  },
+  {
+    "emoji": "🦖",
+    "name_ko": "티라노사우루스",
+    "name_en": "T-Rex",
+    "keywords": "티라노사우루스, 공룡, 육식공룡, 무서운, 고대, t-rex, dinosaur, carnivore, scary, ancient",
+    "main_category": "Animals & Nature",
+    "sub_category": "Dinosaur"
+  },
+  {
     "emoji": "🐝",
     "name_ko": "벌",
     "name_en": "Honeybee",
@@ -448,6 +736,46 @@ export const animalsNature = [
     "keywords": "모기, 곤충, 물림, 피, 여름, mosquito, insect, bite, blood, summer",
     "main_category": "Animals & Nature",
     "sub_category": "Insect"
+  },
+  {
+    "emoji": "🦧",
+    "name_ko": "원숭이",
+    "name_en": "Ape",
+    "keywords": "원숭이, 유인원, 영장류, 생각하는, 지능, ape, primate, thinking, intelligent",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦮",
+    "name_ko": "맹인안내견",
+    "name_en": "Guide Dog",
+    "keywords": "맹인안내견, 안내견, 도우미개, 충성심, 훈련, guide dog, helping dog, loyal, trained",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦙",
+    "name_ko": "알파카",
+    "name_en": "Alpaca",
+    "keywords": "알파카, 털, 남미, 귀여운, 온순한, alpaca, wool, south america, cute, gentle",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🦒",
+    "name_ko": "기린 전신",
+    "name_en": "Giraffe Full",
+    "keywords": "기린, 긴목, 전신, 아프리카, 초원, giraffe, long neck, full body, africa, savanna",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
+  },
+  {
+    "emoji": "🐅",
+    "name_ko": "호랑이 전신",
+    "name_en": "Tiger Full",
+    "keywords": "호랑이, 전신, 줄무늬, 포효, 정글, tiger, full body, stripes, roar, jungle",
+    "main_category": "Animals & Nature",
+    "sub_category": "Mammal"
   },
   {
     "emoji": "🐠",
