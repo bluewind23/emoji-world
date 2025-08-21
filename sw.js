@@ -1,96 +1,54 @@
-// 서비스 워커 - 오프라인 지원
-const CACHE_NAME = 'emoji-world-v1.0.1'; // 캐시 버전 업데이트 권장
-const STATIC_CACHE_URLS = [
-  '/',
-  '/index.html',
+const CACHE = 'emoji-world-v3';
+const ALLOWED = [
+  '/', '/index.html',
   '/styles/style.css',
-  '/js/app.js',
-  // 아래 경로를 수정합니다.
-  '/src/data/emoji-data.js', // '/src/data/emojiDataExtended.js' 에서 변경
-  'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap'
+  '/js/app.js', '/js/fontConverter.js',
+  // 필요한 데이터 파일들 추가
+  '/data/categories/smileys_emotion.js',
+  '/data/categories/people_body.js',
+  '/data/categories/professions.js',
+  '/data/categories/animals_nature.js',
+  '/data/categories/food_drink.js',
+  '/data/categories/travel_places.js',
+  '/data/categories/activities.js',
+  '/data/categories/objects.js',
+  '/data/categories/symbols.js',
+  '/data/categories/festivals_events.js',
+  '/data/categories/flags.js'
 ];
 
-// 설치 이벤트
-self.addEventListener('install', (event) => {
-  console.log('Service Worker: Install event');
-
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Service Worker: Caching files');
-        return cache.addAll(STATIC_CACHE_URLS);
-      })
-      .then(() => {
-        console.log('Service Worker: All files cached');
-        return self.skipWaiting();
-      })
-      .catch((error) => {
-        console.error('Service Worker: Cache failed', error);
-      })
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(CACHE).then(cache => cache.addAll(ALLOWED)).catch(() => { })
   );
 });
 
-// 활성화 이벤트
-self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activate event');
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then(keys => Promise.all(keys.map(k => k !== CACHE && caches.delete(k))))
+  );
+});
 
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Service Worker: Deleting old cache', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => {
-      console.log('Service Worker: Activated');
-      return self.clients.claim();
+self.addEventListener('fetch', (e) => {
+  const url = new URL(e.request.url);
+
+  // http/https 이외, 확장/파일 스킴은 무시
+  if (!/^https?:$/.test(url.protocol)) return;
+
+  // 동일 출처만 캐시
+  if (url.origin !== self.location.origin) return;
+
+  // GET만 캐시
+  if (e.request.method !== 'GET') return;
+
+  e.respondWith(
+    caches.match(e.request).then(match => {
+      if (match) return match;
+      return fetch(e.request).then(res => {
+        const clone = res.clone();
+        caches.open(CACHE).then(c => c.put(e.request, clone)).catch(() => { });
+        return res;
+      });
     })
-  );
-});
-
-// 페치 이벤트 - 네트워크 우선, 캐시 폴백 전략
-self.addEventListener('fetch', (event) => {
-  // GET 요청만 처리
-  if (event.request.method !== 'GET') {
-    return;
-  }
-
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        // 네트워크에서 성공적으로 가져온 경우
-        if (response.status === 200) {
-          // 응답 복사본을 캐시에 저장
-          const responseClone = response.clone();
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseClone);
-            });
-        }
-        return response;
-      })
-      .catch(() => {
-        // 네트워크 실패 시 캐시에서 찾기
-        return caches.match(event.request)
-          .then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
-            }
-
-            // 캐시에도 없으면 오프라인 페이지 반환
-            if (event.request.destination === 'document') {
-              return caches.match('/index.html');
-            }
-
-            // 기타 요청은 네트워크 오류 반환
-            return new Response('오프라인 상태입니다', {
-              status: 503,
-              statusText: 'Service Unavailable'
-            });
-          });
-      })
   );
 });

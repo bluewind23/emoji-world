@@ -1488,5 +1488,115 @@ export const animalsNature = [
     "keywords": "물, 붓기, 음료, 액체, water, pouring, drink, liquid",
     "main_category": "Animals & Nature",
     "sub_category": "Nature & Weather"
+  },
+
+  {
+    emoji: '🌌', name_ko: '은하수', name_en: 'Milky Way',
+    keywords: '은하수, 밤하늘, 우주, milky way, galaxy',
+    main_category: 'Animals & Nature', sub_category: 'Space'
+  },
+
+  {
+    emoji: '🌠', name_ko: '유성(별똥별)', name_en: 'Shooting Star',
+    keywords: '별똥별, 유성, meteor, shooting star',
+    main_category: 'Animals & Nature', sub_category: 'Space'
+  },
+
+  {
+    emoji: '🛰️', name_ko: '인공위성', name_en: 'Satellite',
+    keywords: '위성, 인공위성, satellite, space',
+    main_category: 'Animals & Nature', sub_category: 'Space'
+  },
+
+  {
+    emoji: '🌃', name_ko: '별이 빛나는 밤', name_en: 'Night with Stars',
+    keywords: '밤, 별, night with stars',
+    main_category: 'Animals & Nature', sub_category: 'Nature & Weather'
+  },
+
+  {
+    emoji: '🌕', name_ko: '보름달', name_en: 'Full Moon',
+    keywords: '달, 보름달, full moon, moon',
+    main_category: 'Animals & Nature', sub_category: 'Space'
+  },
+
+  {
+    emoji: '🌙', name_ko: '초승달', name_en: 'Crescent Moon',
+    keywords: '달, 초승달, crescent, moon',
+    main_category: 'Animals & Nature', sub_category: 'Space'
   }
-]
+];
+// === Batch append: Animals & Nature (Astronomy / Weather) ===
+animalsNature.push(
+  // --- Moon Phases & Faces (달/위상) ---
+  { "emoji": "🌑", "name_ko": "그믐달", "name_en": "New Moon", "keywords": "달, 그믐, new moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌒", "name_ko": "초승달(초기)", "name_en": "Waxing Crescent Moon", "keywords": "달, 초승, waxing crescent", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌓", "name_ko": "상현달", "name_en": "First Quarter Moon", "keywords": "달, 상현, first quarter", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌔", "name_ko": "상현 보름달", "name_en": "Waxing Gibbous Moon", "keywords": "달, 상현, waxing gibbous", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌖", "name_ko": "하현 보름달", "name_en": "Waning Gibbous Moon", "keywords": "달, 하현, waning gibbous", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌗", "name_ko": "하현달", "name_en": "Last Quarter Moon", "keywords": "달, 하현, last quarter", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌘", "name_ko": "그믐달(후기)", "name_en": "Waning Crescent Moon", "keywords": "달, 그믐, waning crescent", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌝", "name_ko": "보름달 얼굴", "name_en": "Full Moon Face", "keywords": "달, 보름달, 얼굴, moon face", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌚", "name_ko": "그믐달 얼굴", "name_en": "New Moon Face", "keywords": "달, 그믐, 얼굴, new moon face", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌛", "name_ko": "초승달 얼굴", "name_en": "First Quarter Moon Face", "keywords": "달, 초승, 얼굴, quarter face", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌜", "name_ko": "하현달 얼굴", "name_en": "Last Quarter Moon Face", "keywords": "달, 하현, 얼굴, quarter face", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+
+  // --- Earth / Space ---
+  { "emoji": "🌍", "name_ko": "지구(유럽·아프리카)", "name_en": "Earth Globe Europe-Africa", "keywords": "지구, 지구본, earth, globe", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌎", "name_ko": "지구(아메리카)", "name_en": "Earth Globe Americas", "keywords": "지구, 지구본, earth, globe", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌏", "name_ko": "지구(아시아·오세아니아)", "name_en": "Earth Globe Asia-Australia", "keywords": "지구, 지구본, earth, globe", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌞", "name_ko": "해 얼굴", "name_en": "Sun with Face", "keywords": "태양, 해, 얼굴, sun face", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "☄️", "name_ko": "혜성", "name_en": "Comet", "keywords": "혜성, 우주, comet, space", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌈", "name_ko": "무지개", "name_en": "Rainbow", "keywords": "무지개, 비, 햇빛, rainbow", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+
+  // --- Weather (날씨) ---
+  { "emoji": "⛈️", "name_ko": "천둥번개 비", "name_en": "Cloud with Lightning and Rain", "keywords": "천둥, 번개, 비, thunder, lightning, rain", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌩️", "name_ko": "번개", "name_en": "Cloud with Lightning", "keywords": "번개, 뇌우, lightning, storm", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌧️", "name_ko": "비 오는 구름", "name_en": "Cloud with Rain", "keywords": "비, 우중, rain", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌨️", "name_ko": "눈 오는 구름", "name_en": "Cloud with Snow", "keywords": "눈, snow", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌦️", "name_ko": "해와 비", "name_en": "Sun Behind Rain Cloud", "keywords": "해, 비, 소나기, sun, rain", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌤️", "name_ko": "해와 구름", "name_en": "Sun Behind Small Cloud", "keywords": "구름, 해, sun, cloud", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌥️", "name_ko": "구름 낀 해", "name_en": "Sun Behind Large Cloud", "keywords": "구름, 해, sun, cloud", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌪️", "name_ko": "토네이도", "name_en": "Tornado", "keywords": "폭풍, 회오리, tornado", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌫️", "name_ko": "안개", "name_en": "Fog", "keywords": "안개, 흐림, fog", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌬️", "name_ko": "바람 얼굴", "name_en": "Wind Face", "keywords": "바람, 바람불다, wind", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "☃️", "name_ko": "눈사람", "name_en": "Snowman", "keywords": "눈, 겨울, snowman", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "⛄", "name_ko": "눈 없는 눈사람", "name_en": "Snowman Without Snow", "keywords": "눈사람, 겨울, snowman", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌡️", "name_ko": "온도계", "name_en": "Thermometer", "keywords": "온도, 더위, 추위, thermometer", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" }
+);
+
+animalsNature.push(
+  // Moon phases
+  { "emoji": "🌑", "name_ko": "그믐달", "name_en": "New Moon", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌒", "name_ko": "초승달(초기)", "name_en": "Waxing Crescent", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌓", "name_ko": "상현달", "name_en": "First Quarter", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌔", "name_ko": "상현 보름달", "name_en": "Waxing Gibbous", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌕", "name_ko": "보름달", "name_en": "Full Moon", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌖", "name_ko": "하현 보름달", "name_en": "Waning Gibbous", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌗", "name_ko": "하현달", "name_en": "Last Quarter", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌘", "name_ko": "그믐달(후기)", "name_en": "Waning Crescent", "keywords": "moon", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+
+  // Earth / Space / Weather
+  { "emoji": "🌍", "name_ko": "지구(유럽·아프리카)", "name_en": "Earth Europe-Africa", "keywords": "earth", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌎", "name_ko": "지구(아메리카)", "name_en": "Earth Americas", "keywords": "earth", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌏", "name_ko": "지구(아시아·오세아니아)", "name_en": "Earth Asia-Australia", "keywords": "earth", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌌", "name_ko": "은하수", "name_en": "Milky Way", "keywords": "galaxy", "main_category": "Animals & Nature", "sub_category": "Space" },
+  { "emoji": "🌠", "name_ko": "별똥별", "name_en": "Shooting Star", "keywords": "meteor", "main_category": "Animals & Nature", "sub_category": "Space" },
+  { "emoji": "🛰️", "name_ko": "인공위성", "name_en": "Satellite", "keywords": "satellite", "main_category": "Animals & Nature", "sub_category": "Space" },
+  { "emoji": "🌈", "name_ko": "무지개", "name_en": "Rainbow", "keywords": "rainbow", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "⛈️", "name_ko": "천둥번개 비", "name_en": "Thunder Cloud & Rain", "keywords": "storm", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌪️", "name_ko": "토네이도", "name_en": "Tornado", "keywords": "tornado", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "🌫️", "name_ko": "안개", "name_en": "Fog", "keywords": "fog", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "☃️", "name_ko": "눈사람", "name_en": "Snowman", "keywords": "snowman", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" },
+  { "emoji": "⛄", "name_ko": "눈 없는 눈사람", "name_en": "Snowman Without Snow", "keywords": "snowman", "main_category": "Animals & Nature", "sub_category": "Nature & Weather" }
+);
+
+animalsNature.push(
+  { emoji: '🌌', name_ko: '은하수', name_en: 'Milky Way', keywords: '은하수, galaxy', main_category: 'Animals & Nature', sub_category: 'Space' },
+  { emoji: '🌠', name_ko: '별똥별', name_en: 'Shooting Star', keywords: '유성, meteor', main_category: 'Animals & Nature', sub_category: 'Space' },
+  { emoji: '🛰️', name_ko: '인공위성', name_en: 'Satellite', keywords: '위성, satellite', main_category: 'Animals & Nature', sub_category: 'Space' },
+  { emoji: '🌍', name_ko: '지구(유럽·아프리카)', name_en: 'Earth Europe-Africa', keywords: '지구, earth', main_category: 'Animals & Nature', sub_category: 'Nature & Weather' },
+  { emoji: '🌎', name_ko: '지구(아메리카)', name_en: 'Earth Americas', keywords: '지구, earth', main_category: 'Animals & Nature', sub_category: 'Nature & Weather' },
+  { emoji: '🌏', name_ko: '지구(아시아·오세아니아)', name_en: 'Earth Asia-Australia', keywords: '지구, earth', main_category: 'Animals & Nature', sub_category: 'Nature & Weather' },
+  { emoji: '🌕', name_ko: '보름달', name_en: 'Full Moon', keywords: '달, moon', main_category: 'Animals & Nature', sub_category: 'Nature & Weather' }
+);

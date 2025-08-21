@@ -183,8 +183,11 @@
         <header class="header" role="banner">
             <div class="header-content">
                 <h1 class="logo" itemscope itemtype="https://schema.org/WebSite">
-                    <span class="logo-icon" role="img" aria-label="별 이모지">🌟</span>
-                    <span class="logo-text" id="logoText" itemprop="name">이모지 월드</span>
+                    <a href="/" itemprop="url"
+                        style="text-decoration:none; color:inherit; display:inline-flex; align-items:center; gap:.5rem;">
+                        <span class="logo-icon" role="img" aria-label="별 이모지">🌟</span>
+                        <span class="logo-text" id="logoText" itemprop="name">이모지 월드</span>
+                    </a>
                 </h1>
                 <p class="tagline" id="tagline" itemprop="description">모든 이모지를 한 곳에서 쉽게 찾고 복사하세요</p>
             </div>
@@ -285,14 +288,10 @@
 
                 <!-- Google AdSense 배너 광고 -->
                 <div class="ad-container" style="text-align: center; margin: 20px 0; min-height: 90px;">
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-5809883478660758"
-                         data-ad-slot="1234567890"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5809883478660758"
+                        data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
+                        (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
 
@@ -307,14 +306,10 @@
 
                 <!-- 하단 광고 영역 -->
                 <div class="bottom-ad-container" style="text-align: center; margin: 30px 0; min-height: 250px;">
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-5809883478660758"
-                         data-ad-slot="0987654321"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5809883478660758"
+                        data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
+                        (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
             </div>
@@ -440,6 +435,61 @@
     <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 
     <script type="module" src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1) main-content 안의 'ff', 'f' 같은 노이즈 텍스트 노드 제거
+            const scope = document.querySelector('.main-content') || document.body;
+            const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT);
+            const garbage = [];
+            while (walker.nextNode()) {
+                const t = walker.currentNode;
+                const s = (t.textContent || '').trim().toLowerCase();
+                if (s === 'ff' || s === 'f' || s === 'ads' || s === 'ad') garbage.push(t);
+            }
+            garbage.forEach(n => n.remove());
+
+            // 2) widgets(추천/폰트/인기)와 결과 그리드 사이의 '빈 요소' 접기
+            const results = document.querySelector('.emoji-grid, .emoji-list, .emoji-results');
+            if (results) {
+                let el = results.previousElementSibling;
+                const stopSel = '.search-section, .top-widgets, .widgets-row, .recommend-section';
+                while (el && !el.matches(stopSel)) {
+                    const onlyText = el.children.length === 0;
+                    const t = (el.textContent || '').trim();
+                    if (onlyText && (t === '' || /^f{1,3}$/i.test(t) || /^ad(s)?$/i.test(t))) {
+                        el.style.display = 'none';
+                        el.style.minHeight = '0';
+                        el.style.margin = '0';
+                        el.style.padding = '0';
+                    }
+                    el = el.previousElementSibling;
+                }
+            }
+        });
+    </script>
+    <script>
+        /* 최근 복사 패널의 상단(y)과 결과 그리드의 상단(y)을 같게 조정 */
+        function alignResultsTopWithSidebar() {
+            const sidebar = document.querySelector('.recent-copy, .recent-copies, .recent-panel, .sidebar .card:first-child');
+            const grid = document.querySelector('.emoji-grid, .emoji-list, .emoji-results');
+            if (!sidebar || !grid) return;
+
+            // 현재 문서 기준 top 좌표
+            const sTop = sidebar.getBoundingClientRect().top + window.scrollY;
+            const gTop = grid.getBoundingClientRect().top + window.scrollY;
+            const delta = Math.round(sTop - gTop);
+
+            // grid가 더 아래에 있으면 위로 당겨서 같은 라인으로 맞춤(음수 margin 허용)
+            if (Math.abs(delta) > 0) {
+                const cur = parseFloat(getComputedStyle(grid).marginTop) || 0;
+                grid.style.marginTop = (cur + delta) + 'px';
+            }
+        }
+
+        window.addEventListener('load', alignResultsTopWithSidebar);
+        window.addEventListener('resize', alignResultsTopWithSidebar);
+    </script>
+
 </body>
 
 </html>

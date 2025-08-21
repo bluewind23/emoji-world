@@ -15,23 +15,23 @@ import { FontConverter } from './fontConverter.js';
 function getOptimizedEmojiFontFamily() {
   const ua = navigator.userAgent;
   const platform = navigator.platform;
-  
+
   // Windows 환경 (특히 Chrome에서 Segoe UI Emoji 문제 해결)
   if (/Windows/i.test(ua) || /Win32|Win64/i.test(platform)) {
     // Windows에서는 Noto Color Emoji를 우선으로 하여 컬러 이모지 보장
     return '"Noto Color Emoji", "Segoe UI Emoji", "Twemoji Mozilla", "EmojiOne Color", sans-serif';
   }
-  
+
   // macOS/iOS 환경
   if (/Mac OS X|iPhone|iPad/i.test(ua) || /MacIntel/i.test(platform)) {
     return '"Apple Color Emoji", "Noto Color Emoji", sans-serif';
   }
-  
+
   // Android 환경
   if (/Android/i.test(ua)) {
     return '"Noto Color Emoji", "Apple Color Emoji", sans-serif';
   }
-  
+
   // 기타 Linux/Firefox 환경
   return '"Noto Color Emoji", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", sans-serif';
 }
@@ -39,12 +39,12 @@ function getOptimizedEmojiFontFamily() {
 // 플랫폼별 국기 이모지 최적화 폰트
 function getFlagEmojiFontFamily() {
   const ua = navigator.userAgent;
-  
+
   // Windows Chrome에서 국기 이모지가 문자로 보이는 문제 해결
   if (/Windows/i.test(ua) && /Chrome/i.test(ua)) {
     return '"Twemoji Mozilla", "Noto Color Emoji", "Segoe UI Emoji", sans-serif';
   }
-  
+
   return getOptimizedEmojiFontFamily();
 }
 
@@ -52,7 +52,7 @@ function getFlagEmojiFontFamily() {
 function applyOptimizedFonts() {
   const emojiFont = getOptimizedEmojiFontFamily();
   const flagFont = getFlagEmojiFontFamily();
-  
+
   // 동적 스타일 생성
   const style = document.createElement('style');
   style.id = 'dynamic-emoji-fonts';
@@ -92,15 +92,15 @@ function applyOptimizedFonts() {
       }
     }
   `;
-  
+
   // 기존 동적 스타일 제거 후 새로 추가
   const existingStyle = document.getElementById('dynamic-emoji-fonts');
   if (existingStyle) {
     existingStyle.remove();
   }
-  
+
   document.head.appendChild(style);
-  
+
   console.log('🎨 플랫폼별 최적화 폰트 적용:', {
     platform: navigator.platform,
     userAgent: navigator.userAgent.substring(0, 50) + '...',
@@ -120,7 +120,7 @@ function applyTwemoji() {
   // Windows Chrome에서만 Twemoji 적용 (성능 최적화)
   const ua = navigator.userAgent;
   const shouldUseTwemoji = /Windows/i.test(ua) && /Chrome/i.test(ua);
-  
+
   if (!shouldUseTwemoji) {
     console.log('🎯 현재 환경에서는 Twemoji 적용하지 않음');
     return;
@@ -129,12 +129,12 @@ function applyTwemoji() {
   // 국기 이모지에만 Twemoji 적용
   function parseFlagEmojis() {
     const flagElements = document.querySelectorAll('.flag-emoji, .related-emoji.flag-emoji');
-    
+
     flagElements.forEach(element => {
       // 국기 이모지인지 확인 (U+1F1E6-U+1F1FF 범위)
       const text = element.textContent;
       const flagRegex = /[\u{1F1E6}-\u{1F1FF}]/gu;
-      
+
       if (flagRegex.test(text)) {
         // Twemoji로 파싱하여 이미지로 대체
         twemoji.parse(element, {
@@ -153,7 +153,7 @@ function applyTwemoji() {
   // 동적으로 추가되는 요소들에 대한 MutationObserver
   const observer = new MutationObserver((mutations) => {
     let hasNewFlags = false;
-    
+
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList') {
         mutation.addedNodes.forEach((node) => {
@@ -166,7 +166,7 @@ function applyTwemoji() {
         });
       }
     });
-    
+
     if (hasNewFlags) {
       setTimeout(parseFlagEmojis, 50); // 약간의 지연 후 적용
     }
@@ -188,7 +188,7 @@ function createEmojiFallback(emoji) {
     const codePoint = char.codePointAt(0);
     return `&#x${codePoint.toString(16).toUpperCase()};`;
   });
-  
+
   return codePoints.join('');
 }
 
@@ -200,29 +200,29 @@ function detectAndFixEmojiRendering() {
   testElement.style.cssText = 'position: absolute; top: -9999px; font-size: 20px;';
   testElement.textContent = testEmoji;
   document.body.appendChild(testElement);
-  
+
   // 렌더링된 크기로 문제 감지 (정상적으로 렌더링되면 일정 크기 이상)
   const rect = testElement.getBoundingClientRect();
   const isRenderingProperly = rect.width > 10 && rect.height > 10;
-  
+
   document.body.removeChild(testElement);
-  
+
   if (!isRenderingProperly) {
     console.warn('⚠️ 이모지 렌더링 문제 감지됨 - fallback 시스템 활성화');
-    
+
     // 국기 이모지를 HTML 엔티티로 변환
     const flagElements = document.querySelectorAll('.flag-emoji');
     flagElements.forEach(element => {
       const originalText = element.textContent;
       const flagRegex = /[\u{1F1E6}-\u{1F1FF}]/gu;
-      
+
       if (flagRegex.test(originalText)) {
         const fallbackHTML = createEmojiFallback(originalText);
         element.innerHTML = fallbackHTML;
         element.classList.add('emoji-fallback');
       }
     });
-    
+
     // fallback CSS 스타일 추가
     const fallbackStyle = document.createElement('style');
     fallbackStyle.innerHTML = `
@@ -232,10 +232,10 @@ function detectAndFixEmojiRendering() {
       }
     `;
     document.head.appendChild(fallbackStyle);
-    
+
     return false;
   }
-  
+
   console.log('✅ 이모지 렌더링 정상 확인');
   return true;
 }
@@ -301,27 +301,27 @@ function isSkinToneSupported(emoji) {
 // [수정된 코드 시작]
 // 스킨톤을 적용하는 함수
 function applySkinTone(emojiChar, skinToneKey) {
-    // 스킨톤 적용이 불가능한 이모지는 그대로 반환
-    if (!isSkinToneSupported(emojiChar)) {
-        return emojiChar;
-    }
+  // 스킨톤 적용이 불가능한 이모지는 그대로 반환
+  if (!isSkinToneSupported(emojiChar)) {
+    return emojiChar;
+  }
 
-    // 1. 기존 스킨톤을 제거하여 기본 이모지만 추출
-    const cleanEmoji = emojiChar.replace(/[\u{1F3FB}-\u{1F3FF}]/gu, '');
+  // 1. 기존 스킨톤을 제거하여 기본 이모지만 추출
+  const cleanEmoji = emojiChar.replace(/[\u{1F3FB}-\u{1F3FF}]/gu, '');
 
-    // 2. 'default'나 빈 키가 오면 깨끗한 이모지만 반환 (노란색으로 복귀)
-    if (!skinToneKey || skinToneKey === '' || skinToneKey === 'default') {
-        return cleanEmoji;
-    }
+  // 2. 'default'나 빈 키가 오면 깨끗한 이모지만 반환 (노란색으로 복귀)
+  if (!skinToneKey || skinToneKey === '' || skinToneKey === 'default') {
+    return cleanEmoji;
+  }
 
-    // 3. 유효한 스킨톤 키가 오면 해당 유니코드를 찾아 조합
-    const skinToneUnicode = SKIN_TONES[skinToneKey];
-    if (!skinToneUnicode) {
-        return cleanEmoji; // 유효하지 않은 키면 기본 이모지 반환
-    }
+  // 3. 유효한 스킨톤 키가 오면 해당 유니코드를 찾아 조합
+  const skinToneUnicode = SKIN_TONES[skinToneKey];
+  if (!skinToneUnicode) {
+    return cleanEmoji; // 유효하지 않은 키면 기본 이모지 반환
+  }
 
-    // 4. 기본 이모지에 새 스킨톤 적용
-    return cleanEmoji + skinToneUnicode;
+  // 4. 기본 이모지에 새 스킨톤 적용
+  return cleanEmoji + skinToneUnicode;
 }
 // [수정된 코드 끝]
 
@@ -1275,15 +1275,15 @@ class EmojiApp {
 document.addEventListener('DOMContentLoaded', () => {
   // 플랫폼별 최적화 폰트 먼저 적용
   applyOptimizedFonts();
-  
+
   // 메인 앱 초기화
   new EmojiApp();
-  
+
   // 앱 로딩 후 렌더링 최적화 적용 (충분한 지연)
   setTimeout(() => {
     // 이모지 렌더링 문제 감지 및 fallback
     const isRenderingOk = detectAndFixEmojiRendering();
-    
+
     // 렌더링 문제가 있을 때만 Twemoji 적용
     if (!isRenderingOk) {
       applyTwemoji();
@@ -1299,3 +1299,117 @@ if ('serviceWorker' in navigator) {
       .catch(err => console.log('SW registration failed:', err));
   });
 }
+
+/* === 정확도 보정 검색 === */
+(function () {
+  const STAR_EXCLUDE = ['별로', '특별', '구별', '차별', '식별', '분별', '개별', '별칭', '별개', '별도', '별안간'];
+
+  function starWordMatch(s) {
+    if (!s) return false;
+    const str = String(s).toLowerCase();
+    if (STAR_EXCLUDE.some(x => str.includes(x))) return false;
+
+    // 한국어 '별'이 '단어'처럼 쓰인 경우만 허용
+    return (
+      str.trim() === '별' ||                     // 정확히 '별'
+      str.includes(' 별') || str.includes('별 ') || // 공백 경계
+      str.startsWith('별') ||                     // '별자리', '별똥별' 등
+      str.includes('별자리') || str.includes('별똥별') ||
+      str.includes('반짝이는 별') ||
+      str.includes('glowing star') || str.includes('shooting star') || str.includes(' star')
+    );
+  }
+
+  function fields(e) { return [(e.name_ko || ''), (e.name_en || ''), (e.keywords || '')]; }
+
+  function matchEmoji(e, q) {
+    const qn = q.trim().toLowerCase();
+    const [ko, en, kw] = fields(e).map(v => v.toLowerCase());
+
+    // '별' 특수 처리
+    if (qn === '별') return [ko, en, kw].some(starWordMatch);
+
+    // 일반 쿼리: 부분포함(기존 동작 유지)
+    return [ko, en, kw].some(v => v.includes(qn));
+  }
+
+  function score(e, q) {
+    let s = 0;
+    const ko = (e.name_ko || '');
+    if (q.trim() === '별') {
+      if (['⭐', '🌟', '✨', '🌠', '🔯'].includes(e.emoji)) s += 80;
+      if (ko === '별') s += 100;
+      if (ko.startsWith('별')) s += 40;               // 별자리, 별똥별 등
+      if ((e.keywords || '').includes('별자리')) s += 30;
+    }
+    return s;
+  }
+
+  // drop-in: 기존 검색 사용부에서 이 함수로 바꿔 호출
+  window.searchEmojisAccurate = function (list, query) {
+    const res = list.filter(e => matchEmoji(e, query));
+    // 중복 제거(같은 이모지 중복 방지)
+    const seen = new Set();
+    const uniq = [];
+    for (const e of res) {
+      if (seen.has(e.emoji)) continue;
+      seen.add(e.emoji);
+      uniq.push(e);
+    }
+    // 랭킹 정렬
+    uniq.sort((a, b) => score(b, query) - score(a, query));
+    return uniq;
+  };
+})();
+
+// ===== 상단 라인 맞춤: 우측 '최근 복사'와 좌측 결과 그리드의 윗선 정렬 =====
+function alignResultsTopWithSidebar() {
+  const sidebar = document.querySelector('.recent-copy, .recent-copies, .recent-panel, .sidebar .card:first-child');
+  const grid = document.querySelector('.emoji-grid, .emoji-list, .emoji-results');
+  if (!sidebar || !grid) return;
+
+  const sTop = sidebar.getBoundingClientRect().top + window.scrollY;
+  const gTop = grid.getBoundingClientRect().top + window.scrollY;
+  const delta = Math.round(sTop - gTop);
+
+  if (delta !== 0) {
+    const cur = parseFloat(getComputedStyle(grid).marginTop) || 0;
+    grid.style.marginTop = (cur + delta) + 'px';
+  }
+}
+window.addEventListener('load', alignResultsTopWithSidebar);
+window.addEventListener('resize', alignResultsTopWithSidebar);
+
+// ===== 공백 원인 제거: 'ff' 같은 텍스트 노드 + 빈 슬롯 접기 =====
+(function collapseGaps() {
+  const domReady = (fn) =>
+    (document.readyState === 'loading')
+      ? document.addEventListener('DOMContentLoaded', fn)
+      : fn();
+
+  domReady(() => {
+    // 1) 'ff' 같은 노이즈 텍스트 노드 제거
+    const scope = document.querySelector('.main-content') || document.body;
+    const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT);
+    const trash = [];
+    while (walker.nextNode()) {
+      const s = (walker.currentNode.textContent || '').trim().toLowerCase();
+      if (s === 'ff' || s === 'f' || s === 'ads' || s === 'ad') trash.push(walker.currentNode);
+    }
+    trash.forEach(n => n.remove());
+
+    // 2) 비어 있는 광고/배너 컨테이너 접기
+    const adSel = [
+      'ins.adsbygoogle', '.adsbygoogle', '.ad-slot', '.ad-container', '.ad-banner',
+      '.gpt-ad', '#gpt-ad', '[id^="google_ads_iframe_"]'
+    ];
+    document.querySelectorAll(adSel.join(',')).forEach(el => {
+      const hasElementChild = el.querySelector('*') !== null;
+      const txt = (el.textContent || '').trim();
+      const noise = txt === '' || /^f{1,3}$/i.test(txt) || /^ad(s)?$/i.test(txt);
+      if (!hasElementChild && noise) {
+        Object.assign(el.style, { display: 'none', minHeight: 0, height: 0, margin: 0, padding: 0 });
+      }
+    });
+  });
+})();

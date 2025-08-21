@@ -744,5 +744,187 @@ export const symbols = [
     "keywords": "배터리, 전원, 충전, 에너지, battery, power, charge, energy",
     "main_category": "Symbols",
     "sub_category": "Technology"
-  }
-]
+  },
+
+  // --- Stars & Astral (별/상징) ---
+  { emoji: '⭐', name_ko: '별', name_en: 'Star', keywords: '별, star, 반짝이는, 좋아요, 즐겨찾기', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '🌟', name_ko: '반짝이는 별', name_en: 'Glowing Star', keywords: '반짝, glow, sparkle, star', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '✨', name_ko: '반짝이', name_en: 'Sparkles', keywords: '반짝이, 빛, sparkle, shine', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '✴️', name_ko: '팔각 별', name_en: 'Eight-pointed Star', keywords: '팔각, 별, eight-pointed, star', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '✳️', name_ko: '팔갈래 별', name_en: 'Eight-spoked Asterisk', keywords: '별, asterisk, eight-spoked', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '❇️', name_ko: '반짝이는 별', name_en: 'Sparkle', keywords: '별, 스파클, sparkle', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '🔯', name_ko: '점있는 육각별', name_en: 'Six-pointed Star with Dot', keywords: '다윗별, hexagram, star of david', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+
+  // --- Zodiac (별자리 12궁) ---
+  { emoji: '♈', name_ko: '양자리', name_en: 'Aries', keywords: '별자리, 양, aries, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♉', name_ko: '황소자리', name_en: 'Taurus', keywords: '별자리, 황소, taurus, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♊', name_ko: '쌍둥이자리', name_en: 'Gemini', keywords: '별자리, 쌍둥이, gemini, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♋', name_ko: '게자리', name_en: 'Cancer', keywords: '별자리, 게, cancer, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♌', name_ko: '사자자리', name_en: 'Leo', keywords: '별자리, 사자, leo, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♍', name_ko: '처녀자리', name_en: 'Virgo', keywords: '별자리, 처녀, virgo, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♎', name_ko: '천칭자리', name_en: 'Libra', keywords: '별자리, 저울, libra, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♏', name_ko: '전갈자리', name_en: 'Scorpio', keywords: '별자리, 전갈, scorpio, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♐', name_ko: '사수자리', name_en: 'Sagittarius', keywords: '별자리, 궁수, sagittarius, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♑', name_ko: '염소자리', name_en: 'Capricorn', keywords: '별자리, 염소, capricorn, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♒', name_ko: '물병자리', name_en: 'Aquarius', keywords: '별자리, 물병, aquarius, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+  { emoji: '♓', name_ko: '물고기자리', name_en: 'Pisces', keywords: '별자리, 물고기, pisces, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+
+  // --- Status & Notification (상태/알림) ---
+  { emoji: '✅', name_ko: '확인', name_en: 'Check', keywords: '확인, 체크, 완료, ok, done', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '❌', name_ko: '취소', name_en: 'Cross Mark', keywords: '취소, 실패, x, error', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '⚠️', name_ko: '주의', name_en: 'Warning', keywords: '주의, 경고, warning', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: 'ℹ️', name_ko: '안내', name_en: 'Information', keywords: '정보, 안내, info', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🔔', name_ko: '알림', name_en: 'Bell', keywords: '알림, 벨, 공지, notification, bell', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🔕', name_ko: '알림 끔', name_en: 'Bell with Slash', keywords: '알림 끔, 무음, mute, bell off', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🆕', name_ko: 'NEW', name_en: 'NEW Button', keywords: '새로운, new', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🆙', name_ko: 'UP', name_en: 'UP Button', keywords: '업, 상승, up', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🆒', name_ko: 'COOL', name_en: 'COOL Button', keywords: '쿨, cool', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🆗', name_ko: 'OK', name_en: 'OK Button', keywords: '오케이, ok', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🟢', name_ko: '온라인', name_en: 'Online', keywords: '상태, 온라인, green dot, online', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🟡', name_ko: '자리비움', name_en: 'Away', keywords: '상태, 자리비움, yellow dot, away', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '🔴', name_ko: '바쁨', name_en: 'Busy', keywords: '상태, 바쁨, dnd, red dot, busy', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '⚪', name_ko: '오프라인', name_en: 'Offline', keywords: '상태, 오프라인, white circle, offline', main_category: 'Symbols', sub_category: 'Status & Notification' }
+];
+
+symbols.push(
+  // --- Zodiac (추가: 뱀주인자리) ---
+  { "emoji": "⛎", "name_ko": "뱀주인자리", "name_en": "Ophiuchus", "keywords": "별자리, 13번째 별자리, ophiuchus, zodiac", "main_category": "Symbols", "sub_category": "Zodiac" },
+
+  // --- Arrows (화살표) ---
+  { "emoji": "⬆️", "name_ko": "위쪽 화살표", "name_en": "Up Arrow", "keywords": "위, 화살표, up, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⬇️", "name_ko": "아래쪽 화살표", "name_en": "Down Arrow", "keywords": "아래, 화살표, down, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⬅️", "name_ko": "왼쪽 화살표", "name_en": "Left Arrow", "keywords": "왼쪽, 화살표, left, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "➡️", "name_ko": "오른쪽 화살표", "name_en": "Right Arrow", "keywords": "오른쪽, 화살표, right, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↗️", "name_ko": "우상향 화살표", "name_en": "Up-Right Arrow", "keywords": "우상향, 대각선, arrow, northeast", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↘️", "name_ko": "우하향 화살표", "name_en": "Down-Right Arrow", "keywords": "우하향, 대각선, arrow, southeast", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↙️", "name_ko": "좌하향 화살표", "name_en": "Down-Left Arrow", "keywords": "좌하향, 대각선, arrow, southwest", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↖️", "name_ko": "좌상향 화살표", "name_en": "Up-Left Arrow", "keywords": "좌상향, 대각선, arrow, northwest", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↕️", "name_ko": "상하 화살표", "name_en": "Up-Down Arrow", "keywords": "상하, 양방향, arrow, vertical", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↔️", "name_ko": "좌우 화살표", "name_en": "Left-Right Arrow", "keywords": "좌우, 양방향, arrow, horizontal", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⤴️", "name_ko": "위로 굽은 화살표", "name_en": "Right Arrow Curving Up", "keywords": "굽은, 꺾임, arrow, curve up", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⤵️", "name_ko": "아래로 굽은 화살표", "name_en": "Right Arrow Curving Down", "keywords": "굽은, 꺾임, arrow, curve down", "main_category": "Symbols", "sub_category": "Arrows" },
+
+  // --- Media Controls (재생/이동) ---
+  { "emoji": "▶️", "name_ko": "재생", "name_en": "Play Button", "keywords": "재생, 시작, play", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "◀️", "name_ko": "이전", "name_en": "Reverse Button", "keywords": "이전, 뒤로, reverse", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏩", "name_ko": "빨리감기", "name_en": "Fast-Forward Button", "keywords": "빨리감기, 앞으로, fast forward", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏪", "name_ko": "되감기", "name_en": "Fast-Reverse Button", "keywords": "되감기, 뒤로, rewind", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏫", "name_ko": "위로 빠르게", "name_en": "Fast Up Button", "keywords": "위, 빠르게, fast up", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏬", "name_ko": "아래로 빠르게", "name_en": "Fast Down Button", "keywords": "아래, 빠르게, fast down", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏯️", "name_ko": "재생/일시정지", "name_en": "Play/Pause Button", "keywords": "재생, 일시정지, play, pause", "main_category": "Symbols", "sub_category": "Media Controls" },
+
+  // --- Shapes & Colors (도형/색) ---
+  { "emoji": "🟠", "name_ko": "주황 원", "name_en": "Orange Circle", "keywords": "주황, 원, circle, orange", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟣", "name_ko": "보라 원", "name_en": "Purple Circle", "keywords": "보라, 원, circle, purple", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "⚫", "name_ko": "검은 원", "name_en": "Black Circle", "keywords": "검정, 원, circle, black", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟥", "name_ko": "빨간 사각형", "name_en": "Red Square", "keywords": "빨강, 사각형, square, red", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟧", "name_ko": "주황 사각형", "name_en": "Orange Square", "keywords": "주황, 사각형, square, orange", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟨", "name_ko": "노란 사각형", "name_en": "Yellow Square", "keywords": "노랑, 사각형, square, yellow", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟩", "name_ko": "초록 사각형", "name_en": "Green Square", "keywords": "초록, 사각형, square, green", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟦", "name_ko": "파란 사각형", "name_en": "Blue Square", "keywords": "파랑, 사각형, square, blue", "main_category": "Symbols", "sub_category": "Shapes" },
+
+  // --- Belief/Peace & Hazard (상징/위험) ---
+  { "emoji": "✝️", "name_ko": "라틴 십자가", "name_en": "Latin Cross", "keywords": "십자가, cross", "main_category": "Symbols", "sub_category": "Belief & Philosophy" },
+  { "emoji": "✡️", "name_ko": "유대별", "name_en": "Star of David", "keywords": "유대, 다윗별, star of david", "main_category": "Symbols", "sub_category": "Belief & Philosophy" },
+  { "emoji": "☪️", "name_ko": "초승달과 별", "name_en": "Star and Crescent", "keywords": "이슬람, crescent, star", "main_category": "Symbols", "sub_category": "Belief & Philosophy" },
+  { "emoji": "☮️", "name_ko": "평화의 상징", "name_en": "Peace Symbol", "keywords": "평화, peace", "main_category": "Symbols", "sub_category": "Belief & Philosophy" },
+  { "emoji": "☯️", "name_ko": "음양", "name_en": "Yin Yang", "keywords": "음양, yin yang, balance", "main_category": "Symbols", "sub_category": "Belief & Philosophy" },
+  { "emoji": "♻️", "name_ko": "재활용", "name_en": "Recycling Symbol", "keywords": "재활용, 환경, recycling, environment", "main_category": "Symbols", "sub_category": "Environment" },
+  { "emoji": "☢️", "name_ko": "방사능", "name_en": "Radioactive", "keywords": "위험, 방사능, hazard, radioactive", "main_category": "Symbols", "sub_category": "Alert" },
+  { "emoji": "☣️", "name_ko": "생물학적 위험", "name_en": "Biohazard", "keywords": "위험, 생물, biohazard, hazard", "main_category": "Symbols", "sub_category": "Alert" },
+
+  // --- Language & Ideograph (언어/한자 표기) ---
+  { "emoji": "🔤", "name_ko": "영문 입력", "name_en": "Input Latin Letters", "keywords": "언어, 입력, 영어, latin", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🔡", "name_ko": "소문자 입력", "name_en": "Input Latin Lowercase", "keywords": "언어, 입력, 소문자, lowercase", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🔠", "name_ko": "대문자 입력", "name_en": "Input Latin Uppercase", "keywords": "언어, 입력, 대문자, uppercase", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🔣", "name_ko": "기호 입력", "name_en": "Input Symbols", "keywords": "언어, 입력, 기호, symbols", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🈚", "name_ko": "무료", "name_en": "Japanese “Free”", "keywords": "무료, free, 일본어, jp", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🈯", "name_ko": "지정석", "name_en": "Japanese “Reserved”", "keywords": "지정, 예약, reserved, jp", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🈺", "name_ko": "영업중", "name_en": "Japanese “Open”", "keywords": "영업, open, jp", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🈳", "name_ko": "빈방", "name_en": "Japanese “Vacancy”", "keywords": "빈방, vacancy, jp", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+
+  // --- Status & Notification (상태) ---
+  { "emoji": "⭕", "name_ko": "동그라미", "name_en": "Hollow Red Circle", "keywords": "동그라미, 확인, circle, ok", "main_category": "Symbols", "sub_category": "Status & Notification" },
+  { "emoji": "❕", "name_ko": "흰 느낌표", "name_en": "White Exclamation Mark", "keywords": "느낌표, 주의, exclamation", "main_category": "Symbols", "sub_category": "Status & Notification" },
+  { "emoji": "❔", "name_ko": "흰 물음표", "name_en": "White Question Mark", "keywords": "물음표, 도움, question", "main_category": "Symbols", "sub_category": "Status & Notification" },
+
+  // --- Currency & Marks (화폐/표식) ---
+  { "emoji": "💱", "name_ko": "환전", "name_en": "Currency Exchange", "keywords": "환전, 통화, exchange, currency", "main_category": "Symbols", "sub_category": "Finance" },
+  { "emoji": "₿", "name_ko": "비트코인", "name_en": "Bitcoin Sign", "keywords": "비트코인, 암호화폐, bitcoin, crypto", "main_category": "Symbols", "sub_category": "Finance" },
+  { "emoji": "©", "name_ko": "저작권", "name_en": "Copyright", "keywords": "저작권, copyright, 표식", "main_category": "Symbols", "sub_category": "Symbols & Marks" },
+  { "emoji": "®", "name_ko": "등록상표", "name_en": "Registered", "keywords": "등록상표, registered, 표식", "main_category": "Symbols", "sub_category": "Symbols & Marks" },
+  { "emoji": "™", "name_ko": "상표", "name_en": "Trade Mark", "keywords": "상표, trademark, 표식", "main_category": "Symbols", "sub_category": "Symbols & Marks" }
+);
+
+symbols.push(
+  // Zodiac 확장
+  { "emoji": "⛎", "name_ko": "뱀주인자리", "name_en": "Ophiuchus", "keywords": "별자리, ophiuchus, zodiac", "main_category": "Symbols", "sub_category": "Zodiac" },
+
+  // Arrows
+  { "emoji": "⬆️", "name_ko": "위쪽 화살표", "name_en": "Up Arrow", "keywords": "up, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⬇️", "name_ko": "아래쪽 화살표", "name_en": "Down Arrow", "keywords": "down, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⬅️", "name_ko": "왼쪽 화살표", "name_en": "Left Arrow", "keywords": "left, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "➡️", "name_ko": "오른쪽 화살표", "name_en": "Right Arrow", "keywords": "right, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↗️", "name_ko": "우상향 화살표", "name_en": "Up-Right Arrow", "keywords": "northeast, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↘️", "name_ko": "우하향 화살표", "name_en": "Down-Right Arrow", "keywords": "southeast, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↙️", "name_ko": "좌하향 화살표", "name_en": "Down-Left Arrow", "keywords": "southwest, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↖️", "name_ko": "좌상향 화살표", "name_en": "Up-Left Arrow", "keywords": "northwest, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↕️", "name_ko": "상하 화살표", "name_en": "Up-Down Arrow", "keywords": "vertical, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "↔️", "name_ko": "좌우 화살표", "name_en": "Left-Right Arrow", "keywords": "horizontal, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⤴️", "name_ko": "위로 굽은 화살표", "name_en": "Right Arrow Curving Up", "keywords": "curve, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+  { "emoji": "⤵️", "name_ko": "아래로 굽은 화살표", "name_en": "Right Arrow Curving Down", "keywords": "curve, arrow", "main_category": "Symbols", "sub_category": "Arrows" },
+
+  // Media Controls
+  { "emoji": "▶️", "name_ko": "재생", "name_en": "Play", "keywords": "play", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏹️", "name_ko": "정지", "name_en": "Stop", "keywords": "stop", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏸️", "name_ko": "일시정지", "name_en": "Pause", "keywords": "pause", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏺️", "name_ko": "녹화", "name_en": "Record", "keywords": "record", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏩", "name_ko": "빨리감기", "name_en": "Fast Forward", "keywords": "ff", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏪", "name_ko": "되감기", "name_en": "Rewind", "keywords": "rewind", "main_category": "Symbols", "sub_category": "Media Controls" },
+  { "emoji": "⏯️", "name_ko": "재생/일시정지", "name_en": "Play/Pause", "keywords": "toggle", "main_category": "Symbols", "sub_category": "Media Controls" },
+
+  // Shapes & Colors
+  { "emoji": "🟠", "name_ko": "주황 원", "name_en": "Orange Circle", "keywords": "circle", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟣", "name_ko": "보라 원", "name_en": "Purple Circle", "keywords": "circle", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "⚫", "name_ko": "검은 원", "name_en": "Black Circle", "keywords": "circle", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟥", "name_ko": "빨간 사각형", "name_en": "Red Square", "keywords": "square", "main_category": "Symbols", "sub_category": "Shapes" },
+  { "emoji": "🟦", "name_ko": "파란 사각형", "name_en": "Blue Square", "keywords": "square", "main_category": "Symbols", "sub_category": "Shapes" },
+
+  // Language & Ideograph
+  { "emoji": "🔤", "name_ko": "영문 입력", "name_en": "Input Latin Letters", "keywords": "language", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🔡", "name_ko": "소문자 입력", "name_en": "Input Latin Lowercase", "keywords": "language", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🔠", "name_ko": "대문자 입력", "name_en": "Input Latin Uppercase", "keywords": "language", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🔣", "name_ko": "기호 입력", "name_en": "Input Symbols", "keywords": "language", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🈺", "name_ko": "영업중", "name_en": "Open", "keywords": "jp, open", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+  { "emoji": "🈳", "name_ko": "빈방", "name_en": "Vacancy", "keywords": "jp, vacancy", "main_category": "Symbols", "sub_category": "Language & Ideograph" },
+
+  // Status & Notification
+  { "emoji": "⭕", "name_ko": "동그라미", "name_en": "Hollow Red Circle", "keywords": "ok", "main_category": "Symbols", "sub_category": "Status & Notification" },
+  { "emoji": "❕", "name_ko": "흰 느낌표", "name_en": "White Exclamation", "keywords": "info", "main_category": "Symbols", "sub_category": "Status & Notification" },
+  { "emoji": "❔", "name_ko": "흰 물음표", "name_en": "White Question", "keywords": "help", "main_category": "Symbols", "sub_category": "Status & Notification" }
+);
+
+symbols.push(
+  // 별 관련 보강
+  { emoji: '⭐', name_ko: '별', name_en: 'Star', keywords: '별, star, 즐겨찾기', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '🌟', name_ko: '반짝이는 별', name_en: 'Glowing Star', keywords: '반짝이는 별, glow, sparkle', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '✨', name_ko: '반짝이', name_en: 'Sparkles', keywords: '반짝이, 빛, sparkle', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '✴️', name_ko: '팔각 별', name_en: 'Eight-pointed Star', keywords: '팔각 별, star', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '✳️', name_ko: '팔갈래 별', name_en: 'Eight-spoked Asterisk', keywords: '팔갈래, star', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '❇️', name_ko: '반짝이는 별', name_en: 'Sparkle', keywords: '스파클, sparkle', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+  { emoji: '🔯', name_ko: '점있는 육각별', name_en: 'Six-pointed Star with Dot', keywords: '다윗별, hexagram', main_category: 'Symbols', sub_category: 'Stars & Astral' },
+
+  // 별자리 확장
+  { emoji: '⛎', name_ko: '뱀주인자리', name_en: 'Ophiuchus', keywords: '별자리, ophiuchus, zodiac', main_category: 'Symbols', sub_category: 'Zodiac' },
+
+  // 상태/알림 보강
+  { emoji: '⭕', name_ko: '동그라미', name_en: 'Hollow Red Circle', keywords: 'ok, 확인', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '❕', name_ko: '흰 느낌표', name_en: 'White Exclamation Mark', keywords: '주의, 안내', main_category: 'Symbols', sub_category: 'Status & Notification' },
+  { emoji: '❔', name_ko: '흰 물음표', name_en: 'White Question Mark', keywords: '도움말, help', main_category: 'Symbols', sub_category: 'Status & Notification' },
+
+  // 언어/표기
+  { emoji: '🔤', name_ko: '영문 입력', name_en: 'Input Latin Letters', keywords: '언어, english, latin', main_category: 'Symbols', sub_category: 'Language & Ideograph' },
+  { emoji: '🔡', name_ko: '소문자 입력', name_en: 'Input Latin Lowercase', keywords: '언어, lowercase', main_category: 'Symbols', sub_category: 'Language & Ideograph' },
+  { emoji: '🔠', name_ko: '대문자 입력', name_en: 'Input Latin Uppercase', keywords: '언어, uppercase', main_category: 'Symbols', sub_category: 'Language & Ideograph' },
+  { emoji: '🔣', name_ko: '기호 입력', name_en: 'Input Symbols', keywords: '언어, symbols', main_category: 'Symbols', sub_category: 'Language & Ideograph' }
+);
