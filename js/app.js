@@ -10,6 +10,71 @@ import { symbols } from '../data/categories/symbols.js';
 import { festivalsEvents } from '../data/categories/festivals_events.js';
 import { flags } from '../data/categories/flags.js';
 import { FontConverter } from './fontConverter.js';
+/* --- safety shim: ensure window.matchEmoji exists --- */
+window.matchEmoji ??= function (e, q) {
+  const s = (q || '').trim().toLowerCase();
+  if (!s) return true;
+  const ko = (e.name_ko || e.name || '').toLowerCase();
+  const en = (e.name_en || '').toLowerCase();
+  const kw = (e.keywords || '').toLowerCase();
+  return ko.includes(s) || en.includes(s) || kw.includes(s);
+};
+
+/* === 정확도 보정 검색 헬퍼 === */
+// '별' 검색 때 제외할 합성어(뜻이 다른 단어들)
+const STAR_EXCLUDE = ['이별', '별로', '특별', '구별', '차별', '식별', '분별', '개별', '별칭', '별개', '별도', '별안간'];
+
+// '별'이 '단어'처럼 쓰였는지(또는 별 관련 용어) 판단
+function starWordMatch(s) {
+  if (!s) return false;
+  const str = String(s).toLowerCase();
+
+  // 1) 제외어 필터
+  for (const bad of STAR_EXCLUDE) {
+    if (str.includes(bad)) return false;
+  }
+  // 2) 허용 패턴(별/별자리/별똥별/반짝이는 별/영문 star 계열)
+  const allow = [
+    '별자리', '별똥별', '반짝이는 별', 'glowing star', 'shooting star', ' star'
+  ];
+  if (allow.some(p => str.includes(p))) return true;
+
+  // 3) '별'이 낱말처럼 쓰였는지(앞이 공백/시작 or 뒤가 공백/끝)
+  const i = str.indexOf('별');
+  if (i !== -1) {
+    const prev = str[i - 1]; // undefined면 시작
+    // 앞 글자가 한글이면(예: '이별') false, 공백/구분자면 true
+    if (!prev || !/[가-힣]/.test(prev)) return true;
+  }
+  return false;
+}
+
+// 실제 매칭 함수: '별'일 때만 특수 처리, 그 외엔 기존 부분일치
+function matchEmoji(emoji, query) {
+  const q = (query || '').trim().toLowerCase();
+  if (!q) return true;
+
+  const fields = [
+    (emoji.name_ko || ''), (emoji.name_en || ''), (emoji.keywords || '')
+  ];
+
+  if (q === '별') {
+    // 이모지 자체가 별/별자리 계열이면 바로 통과
+    if (['⭐', '🌟', '✨', '🌠', '🔯', '✴️', '✳️', '❇️',
+      '♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'].includes(emoji.emoji)) {
+      return true;
+    }
+    // 텍스트 필드로 판정
+    return fields.some(starWordMatch);
+  }
+
+  // 일반 검색: 부분일치 유지
+  const ql = q.toLowerCase();
+  return fields.some(v => String(v).toLowerCase().includes(ql));
+}
+window.matchEmoji = matchEmoji;
+
+
 
 // 플랫폼별 최적화된 이모지 폰트 설정
 function getOptimizedEmojiFontFamily() {
@@ -829,8 +894,9 @@ class EmojiApp {
   }
 
   // 이모지 필터링
+  // 이모지 필터링 (정확도 보정 검색 사용)
   filterEmojis() {
-    // 카테고리 이름 매핑
+    // 1) 카테고리 매핑 (기존과 동일)
     const categoryMap = {
       'smileys': 'Smileys & Emotion',
       'people': 'People & Body',
@@ -847,17 +913,10 @@ class EmojiApp {
       'status': 'Status & Notification'
     };
 
-    this.filteredEmojis = this.allEmojis.filter(emoji => {
-      const searchMatch = !this.searchQuery ||
-        (emoji.name_ko && emoji.name_ko.toLowerCase().includes(this.searchQuery)) ||
-        (emoji.name_en && emoji.name_en.toLowerCase().includes(this.searchQuery)) ||
-        (emoji.keywords && emoji.keywords.toLowerCase().includes(this.searchQuery));
-
-      if (!searchMatch) return false;
-
+    // 2) 카테고리 1차 필터링
+    const baseList = this.allEmojis.filter(emoji => {
       if (this.currentCategory === 'all') return true;
 
-      // 특수 카테고리 처리
       if (this.currentCategory === 'hands') {
         return emoji.sub_category === 'Hand Gestures';
       } else if (this.currentCategory === 'status') {
@@ -866,10 +925,25 @@ class EmojiApp {
         return emoji.sub_category === 'Professions' || emoji.main_category === 'Professions';
       }
 
-      // 일반 카테고리
       const mappedCategory = categoryMap[this.currentCategory];
       return emoji.main_category === mappedCategory;
     });
+
+    // 3) 검색어가 있으면 정확도 보정 검색기로 필터링/정렬
+    const q = (this.searchQuery || '').trim().toLowerCase();
+    let result = baseList;
+
+    if (q) {
+      // window.searchEmojisAccurate 는 하단 “정확도 보정 검색” 블록에서 정의됨
+      result = window.searchEmojisAccurate ? window.searchEmojisAccurate(baseList, q)
+        : baseList.filter(e =>
+          (e.name_ko && e.name_ko.toLowerCase().includes(q)) ||
+          (e.name_en && e.name_en.toLowerCase().includes(q)) ||
+          (e.keywords && e.keywords.toLowerCase().includes(q))
+        );
+    }
+
+    this.filteredEmojis = result;
   }
 
   async handleEmojiClick(emojiData) {
@@ -1302,7 +1376,7 @@ if ('serviceWorker' in navigator) {
 
 /* === 정확도 보정 검색 === */
 (function () {
-  const STAR_EXCLUDE = ['별로', '특별', '구별', '차별', '식별', '분별', '개별', '별칭', '별개', '별도', '별안간'];
+  const STAR_EXCLUDE = ['별로', '특별', '구별', '차별', '식별', '분별', '개별', '별칭', '별개', '별도', '별안간', '이별'];
 
   function starWordMatch(s) {
     if (!s) return false;
@@ -1332,6 +1406,8 @@ if ('serviceWorker' in navigator) {
     // 일반 쿼리: 부분포함(기존 동작 유지)
     return [ko, en, kw].some(v => v.includes(qn));
   }
+  window.matchEmoji = matchEmoji;
+
 
   function score(e, q) {
     let s = 0;
@@ -1347,7 +1423,7 @@ if ('serviceWorker' in navigator) {
 
   // drop-in: 기존 검색 사용부에서 이 함수로 바꿔 호출
   window.searchEmojisAccurate = function (list, query) {
-    const res = list.filter(e => matchEmoji(e, query));
+    const res = list.filter(e => window.matchEmoji(e, query));
     // 중복 제거(같은 이모지 중복 방지)
     const seen = new Set();
     const uniq = [];
@@ -1360,6 +1436,8 @@ if ('serviceWorker' in navigator) {
     uniq.sort((a, b) => score(b, query) - score(a, query));
     return uniq;
   };
+  window.matchEmoji = matchEmoji;
+
 })();
 
 // ===== 상단 라인 맞춤: 우측 '최근 복사'와 좌측 결과 그리드의 윗선 정렬 =====
