@@ -181,9 +181,9 @@ export const foodDrink = [
     "emoji": "🍩",
     "name_ko": "도넛",
     "name_en": "Doughnut",
-    "keywords": "도넛, 디저트, donut, dessert",
+    "keywords": "도넛, 디저트, 단맛, doughnut, dessert, sweet",
     "main_category": "Food & Drink",
-    "sub_category": "Dessert"
+    "sub_category": "Desserts"
   },
   {
     "emoji": "🍦",

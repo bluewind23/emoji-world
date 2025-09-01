@@ -648,5 +648,29 @@ export const activities = [
     "keywords": "집순이, 집콕, 힐링, 휴식, stay home, homebody, healing, rest",
     "main_category": "Activities",
     "sub_category": "Relaxation"
+  },
+  {
+    "emoji": "🤾",
+    "name_ko": "핸드볼",
+    "name_en": "Handball",
+    "keywords": "핸드볼, 스포츠, 공, handball, sport, ball",
+    "main_category": "Activities",
+    "sub_category": "Sports"
+  },
+  {
+    "emoji": "🏋️",
+    "name_ko": "역도",
+    "name_en": "Weightlifting",
+    "keywords": "역도, 운동, 체육관, weightlifting, gym, sport",
+    "main_category": "Activities",
+    "sub_category": "Sports"
+  },
+  {
+    "emoji": "🤺",
+    "name_ko": "펜싱",
+    "name_en": "Fencing",
+    "keywords": "펜싱, 스포츠, 검, fencing, sport, sword",
+    "main_category": "Activities",
+    "sub_category": "Sports"
   }
 ]

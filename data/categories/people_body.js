@@ -250,12 +250,28 @@ export const peopleBody = [
     "sub_category": "Body Parts"
   },
   {
+    "emoji": "🍼",
+    "name_ko": "젖병",
+    "name_en": "Baby Bottle",
+    "keywords": "젖병, 아기, 유아, baby bottle, infant, milk",
+    "main_category": "People & Body",
+    "sub_category": "Baby"
+  },
+  {
     "emoji": "👶",
     "name_ko": "아기",
     "name_en": "Baby",
-    "keywords": "아기, 신생아, baby, infant",
+    "keywords": "아기, 유아, 어린이, baby, infant, child",
     "main_category": "People & Body",
-    "sub_category": "People"
+    "sub_category": "Baby"
+  },
+  {
+    "emoji": "🛏️",
+    "name_ko": "침대",
+    "name_en": "Bed",
+    "keywords": "침대, 아기, 잠, bed, sleep, baby",
+    "main_category": "People & Body",
+    "sub_category": "Baby"
   },
   {
     "emoji": "🧒",
