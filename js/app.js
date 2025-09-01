@@ -457,6 +457,7 @@ class EmojiApp {
       loading: document.getElementById('loading'),
       subcategoryTags: document.getElementById('subcategoryTags'),
       subcategoryButtons: document.getElementById('subcategoryButtons'),
+      mainAdContainer: document.getElementById('mainAdContainer'), // 광고 컨테이너 추가
       // 언어 관련 요소들
       languageBtns: document.querySelectorAll('.search-lang-btn'),
       logoText: document.getElementById('logoText'),
@@ -865,14 +866,48 @@ class EmojiApp {
 
   // 이모지 렌더링
   renderEmojis() {
+    // 검색 결과가 없을 때
     if (this.filteredEmojis.length === 0) {
       this.elements.emojiGrid.style.display = 'none';
       this.elements.noResults.style.display = 'block';
+      if (this.elements.mainAdContainer) {
+        this.elements.mainAdContainer.style.display = 'none';
+      }
+
+      // 사용자에게 더 유용한 정보 제공
+      const noResultsHTML = `
+        <div class="no-results-icon">🤷</div>
+        <h3>'${this.searchQuery}'에 대한 결과가 없습니다.</h3>
+        <p>오타를 확인하거나 다른 키워드로 검색해보세요.</p>
+        <div class="suggestion-box">
+          <p><strong>추천 검색어:</strong></p>
+          <div class="suggestion-tags">
+            <span class="suggestion-tag">하트</span>
+            <span class="suggestion-tag">웃음</span>
+            <span class="suggestion-tag">음식</span>
+            <span class="suggestion-tag">동물</span>
+          </div>
+        </div>
+      `;
+      this.elements.noResults.innerHTML = noResultsHTML;
+
+      // 추천 검색어 클릭 이벤트
+      this.elements.noResults.querySelectorAll('.suggestion-tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+          this.elements.searchInput.value = tag.textContent;
+          this.handleSearch(tag.textContent);
+        });
+      });
+
       return;
     }
 
+    // 검색 결과가 있을 때
     this.elements.emojiGrid.style.display = 'grid';
     this.elements.noResults.style.display = 'none';
+    if (this.elements.mainAdContainer) {
+      this.elements.mainAdContainer.style.display = 'block';
+    }
 
     this.elements.emojiGrid.innerHTML = this.filteredEmojis.map(emoji => {
       // 언어에 따른 이름 선택
