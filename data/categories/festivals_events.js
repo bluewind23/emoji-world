@@ -247,9 +247,9 @@ export const festivalsEvents = [
     "emoji": "🎆",
     "name_ko": "불꽃놀이",
     "name_en": "Fireworks",
-    "keywords": "불꽃놀이, 축제, 새해, fireworks, festival, new year",
+    "keywords": "불꽃놀이, 축제, 새해, 독립기념일, fireworks, festival, celebration",
     "main_category": "Festivals & Events",
-    "sub_category": "General"
+    "sub_category": "Celebrations"
   },
   {
     "emoji": "🎇",
@@ -290,5 +290,21 @@ export const festivalsEvents = [
     "keywords": "샴페인, 축하, 파티, 술, champagne, celebration, party, alcohol",
     "main_category": "Festivals & Events",
     "sub_category": "General"
-  }
+  },
+  {
+    "emoji": "🎎",
+    "name_ko": "히나마츠리",
+    "name_en": "Japanese Dolls",
+    "keywords": "히나마츠리, 일본, 기념일, 축제, dolls, japan, festival",
+    "main_category": "Festivals & Events",
+    "sub_category": "Cultural"
+  },
+  {
+    "emoji": "🧧",
+    "name_ko": "복주머니",
+    "name_en": "Red Envelope",
+    "keywords": "복주머니, 설날, 새해, 중국, red envelope, new year, luck",
+    "main_category": "Festivals & Events",
+    "sub_category": "New Year"
+  },
 ]

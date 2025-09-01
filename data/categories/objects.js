@@ -880,5 +880,29 @@ export const objects = [
     "keywords": "구글캘린더, 일정, 스케줄, 달력, google calendar, schedule, calendar, appointment",
     "main_category": "Objects",
     "sub_category": "Technology Brands"
+  },
+  {
+    "emoji": "💨",
+    "name_ko": "방귀",
+    "name_en": "Dashing Away",
+    "keywords": "방귀, 연기, 기체, 바람, dash, smoke, wind",
+    "main_category": "Objects",
+    "sub_category": "Gases"
+  },
+  {
+    "emoji": "💦",
+    "name_ko": "물방울",
+    "name_en": "Sweat Droplets",
+    "keywords": "물방울, 땀, 액체, 물, drop, sweat, liquid",
+    "main_category": "Objects",
+    "sub_category": "Liquids"
+  },
+  {
+    "emoji": "🌫️",
+    "name_ko": "안개",
+    "name_en": "Fog",
+    "keywords": "안개, 연기, 기체, 흐림, fog, smoke, gas",
+    "main_category": "Objects",
+    "sub_category": "Gases"
   }
 ]
